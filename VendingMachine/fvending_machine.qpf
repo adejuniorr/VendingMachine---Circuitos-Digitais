@@ -18,13 +18,14 @@
 #
 # Quartus II 64-Bit
 # Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-# Date created = 19:17:19  November 30, 2023
+# Date created = 19:09:38  December 07, 2023
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "13.0"
-DATE = "19:17:19  November 30, 2023"
+DATE = "19:09:38  December 07, 2023"
 
 # Revisions
 
+PROJECT_REVISION = "fvending_machine"
 PROJECT_REVISION = "VendingMachine"

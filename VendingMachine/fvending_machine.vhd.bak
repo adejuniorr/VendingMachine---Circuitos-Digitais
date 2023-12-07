@@ -18,7 +18,7 @@ entity fvending_machine is
 		
 		seven_segment : out std_logic_vector(7 downto 0);
 		digit_select  : out std_logic_vector(3 downto 0);
-		tx				  : out std_logic -- ???
+		tx				: out std_logic -- ???
 	);
 end fvending_machine;
 

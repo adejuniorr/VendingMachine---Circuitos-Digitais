@@ -1,0 +1,20 @@
+Fitter Status : Successful - Fri Dec 01 11:02:39 2023
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : acumulador8
+Top-level Entity Name : acumulador8
+Family : Cyclone IV GX
+Device : EP4CGX15BF14C6
+Timing Models : Final
+Total logic elements : 19 / 14,400 ( < 1 % )
+    Total combinational functions : 19 / 14,400 ( < 1 % )
+    Dedicated logic registers : 8 / 14,400 ( < 1 % )
+Total registers : 8
+Total pins : 19 / 81 ( 23 % )
+Total virtual pins : 0
+Total memory bits : 0 / 552,960 ( 0 % )
+Embedded Multiplier 9-bit elements : 0
+Total GXB Receiver Channel PCS : 0 / 2 ( 0 % )
+Total GXB Receiver Channel PMA : 0 / 2 ( 0 % )
+Total GXB Transmitter Channel PCS : 0 / 2 ( 0 % )
+Total GXB Transmitter Channel PMA : 0 / 2 ( 0 % )
+Total PLLs : 0 / 3 ( 0 % )

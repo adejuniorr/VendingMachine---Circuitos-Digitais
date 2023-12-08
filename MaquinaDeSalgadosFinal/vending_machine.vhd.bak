@@ -120,7 +120,7 @@ begin
 						D <= "001";	--S0
 						stock_S0_reg <= stock_S0_reg - 1;
 					else 
-						--D <= "111"; -- sem estoque
+						D <= "111"; -- sem estoque
 					end if;	
 				elsif(choice_reg = "010") then 
 					D <= "010";	--S1
@@ -139,9 +139,9 @@ begin
 
 	next_state : process( CSTATE, balance, C, balance_equal, balance_greater, coins_to_return)
     begin
-      NSTATE <= CSTATE;
+        NSTATE <= CSTATE;
 		nRST_acc <= '1';
-      price_choice_reg_EN <= '0';
+        price_choice_reg_EN <= '0';
 		dispensation_EN <= '0';
 		p <= (others => '0');
 		E <= (others => '0');

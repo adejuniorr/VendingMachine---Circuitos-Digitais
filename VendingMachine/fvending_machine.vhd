@@ -16,8 +16,8 @@ entity fvending_machine is
 		not_en_mon	: out std_logic; -- alarme de dinheiro insuficiente
 		not_stock	: out std_logic; -- alarme para estoque vazio
 		
-		seven_segment : out std_logic_vector(7 downto 0);
-		digit_select  : out std_logic_vector(3 downto 0);
+		seven_segment : out std_logic_vector(7 downto 0); -- Catodos para os segmentos (???)
+		digit_select  : out std_logic_vector(3 downto 0); -- Anodos apra os segmentos (???)
 		tx				  : out std_logic -- ???
 	);
 end fvending_machine;

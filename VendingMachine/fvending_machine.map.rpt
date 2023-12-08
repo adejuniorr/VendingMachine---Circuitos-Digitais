@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fvending_machine
-Thu Dec 07 19:09:47 2023
+Thu Dec 07 19:33:59 2023
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Dec 07 19:09:47 2023               ;
+; Analysis & Synthesis Status        ; Failed - Thu Dec 07 19:33:59 2023               ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; fvending_machine                                ;
 ; Top-level Entity Name              ; fvending_machine                                ;
@@ -160,14 +160,23 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Dec 07 19:09:44 2023
+    Info: Processing started: Thu Dec 07 19:33:57 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fvending_machine -c fvending_machine
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Warning (10335): Unrecognized synthesis attribute "clock_signal" at clock_manager.vhd(17)
+Info (12021): Found 2 design units, including 1 entities, in source file clock_manager.vhd
+    Info (12022): Found design unit 1: clock_manager-bhv
+    Info (12023): Found entity 1: clock_manager
+Info (12021): Found 2 design units, including 1 entities, in source file sync_input.vhd
+    Info (12022): Found design unit 1: sync_input-bhv
+    Info (12023): Found entity 1: sync_input
 Warning (12125): Using design file fvending_machine.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: fvending_machine-bhv
     Info (12023): Found entity 1: fvending_machine
 Info (12127): Elaborating entity "fvending_machine" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at fvending_machine.vhd(17): used implicit default value for signal "not_stock" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info (12128): Elaborating entity "clock_manager" for hierarchy "clock_manager:Inst_clock_manager"
+Info (12128): Elaborating entity "sync_input" for hierarchy "sync_input:Inst_sync_input"
 Warning (12125): Using design file vm_cpu.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: vm_cpu-bhv
     Info (12023): Found entity 1: vm_cpu
@@ -176,14 +185,12 @@ Warning (12125): Using design file vm_display_manager.vhd, which is not specifie
     Info (12022): Found design unit 1: vm_display_manager-Behavioral
     Info (12023): Found entity 1: vm_display_manager
 Info (12128): Elaborating entity "vm_display_manager" for hierarchy "vm_display_manager:Inst_vm_display_manager"
-Error (12006): Node instance "Inst_clock_manager" instantiates undefined entity "clock_manager" File: C:/Users/adejr/OneDrive/Documents/GitHub/CircuitosDigitais/VendingMachine---Circuitos-Digitais/VendingMachine/fvending_machine.vhd Line: 129
-Error (12006): Node instance "Inst_sync_input" instantiates undefined entity "sync_input" File: C:/Users/adejr/OneDrive/Documents/GitHub/CircuitosDigitais/VendingMachine---Circuitos-Digitais/VendingMachine/fvending_machine.vhd Line: 137
 Error (12006): Node instance "Inst_display_text" instantiates undefined entity "display_text" File: C:/Users/adejr/OneDrive/Documents/GitHub/CircuitosDigitais/VendingMachine---Circuitos-Digitais/VendingMachine/vm_display_manager.vhd Line: 82
 Error (12006): Node instance "Inst_display_10base" instantiates undefined entity "display_10base" File: C:/Users/adejr/OneDrive/Documents/GitHub/CircuitosDigitais/VendingMachine---Circuitos-Digitais/VendingMachine/vm_display_manager.vhd Line: 93
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 4 errors, 5 warnings
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 2 errors, 6 warnings
     Error: Peak virtual memory: 4674 megabytes
-    Error: Processing ended: Thu Dec 07 19:09:47 2023
-    Error: Elapsed time: 00:00:03
+    Error: Processing ended: Thu Dec 07 19:33:59 2023
+    Error: Elapsed time: 00:00:02
     Error: Total CPU time (on all processors): 00:00:02
 
 

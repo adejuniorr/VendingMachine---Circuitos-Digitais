@@ -1,0 +1,35 @@
+library ieee;
+
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity maquina_salgados is
+	port(
+	-- clock : in std_logic; ?
+		-- salgados
+		BFG	: in std_logic; -- Batata Frita Grande (250)
+		BFM	: in std_logic; -- Batata Frita Media (150)
+		BFP	: in std_logic; -- Batata Frita Pequena (075)
+		TG		: in std_logic; -- Tortilha Grande (350)
+		TP		: in std_logic; -- Tortilha Pequena (200)
+		
+	-- coin25  : in integer range -65535 to 65535; -- moeda de 025
+	-- coin50  : in integer range -65535 to 65535; -- moeda de 050
+	-- coin100 : in integer range -65535 to 65535; -- moeda de 100
+		coin 			: in integer range -65535 to 65535;
+		cancel_btn 	: in std_logic; -- botao cancelar
+		buy_btn		: in std_logic; -- botao comprar
+	-- price			: in integer range -65535 to 65535; -- (?)
+		
+		money_alert	: out std_logic; -- alarme para dinheiro insuficiente
+		stock_alert	: out std_logic; -- alarme para falta de estoque
+		free_coins	: out std_logic; -- led para liberar todas as moedas
+		salgado_out : out std_logic; -- led para salgado liberado
+		troco			: out std_logic; -- led para troco liberado
+		
+	);
+end maquina_salgados;
+
+entity coin_display is
+end coin_display;

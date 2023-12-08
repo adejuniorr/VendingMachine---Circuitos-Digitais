@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity vm_display_manager is
 	port (
-		clk_50 : in std_logic; -- 50MHz clock
+		auto_clk : in std_logic; -- 50MHz clock
 		clk : in std_logic;
 		reset : in std_logic;
 		tx : out std_logic;
@@ -12,24 +12,24 @@ entity vm_display_manager is
 		seven_segment : out std_logic_vector (7 downto 0);
 		digit_select : out std_logic_vector(3 downto 0);
 		buy : in std_logic;
-		release_can : in std_logic;
-		alarm : in std_logic;
+		food_out : in std_logic;
+		not_en_mon : in std_logic;
 		new_value : in std_logic
 	);
 end vm_display_manager;
 
-architecture Behavioral of vm_display_manager is
+architecture bhv of vm_display_manager is
 	signal seven_segment_temp, seven_segment_text, seven_segment_10base : std_logic_vector (7 downto 0);
 	signal digit_select_temp, digit_select_text, digit_select_10base : std_logic_vector(3 downto 0);
 
 -----------------------------------------------------------------------------
--- Display 10 base
--- Used to display the binary price and coin sum as a 10 base number
+-- Display na base 10
+-- Apresenta o preco e a soma de moedas na forma decimal
 -----------------------------------------------------------------------------
 
 	COMPONENT display_10base
 	PORT(
-		clk_50 : IN std_logic;
+		auto_clk : IN std_logic;
 		clk : IN std_logic;  
 		reset : IN std_logic;
 		seven_segment : OUT std_logic_vector(7 downto 0);
@@ -54,9 +54,9 @@ architecture Behavioral of vm_display_manager is
 		seven_segment : OUT std_logic_vector(7 downto 0);
 		digit_select : OUT std_logic_vector(3 downto 0);
 		reset : IN std_logic;
-		release_can : IN std_logic;
-		alarm : IN std_logic;
-		flavor : IN std_logic
+		food_out : IN std_logic;
+		not_en_mon : IN std_logic;
+		food : IN std_logic
 		);
 	END COMPONENT;
 	
@@ -84,14 +84,14 @@ begin
 		reset => reset,
 		seven_segment => seven_segment_text,
 		digit_select => digit_select_text,
-		release_can => release_can,
-		alarm => alarm,
-		flavor => price(0) -- Determine flavor based on if it's an equal or unequal number
+		food_out => food_out,
+		not_en_mon => not_en_mon,
+		food => price(0) -- Determine flavor based on if it's an equal or unequal number
 	);
 	
 	-- Display 10 base instance
 	Inst_display_10base: display_10base PORT MAP(
-		clk_50 => clk_50,
+		auto_clk => auto_clk,
 		clk => clk,
 		reset => reset,		
 		seven_segment => seven_segment_10base,
@@ -101,5 +101,4 @@ begin
 		new_value => new_value,
 		tx => tx
 	);
-
-end Behavioral;
+end bhv;

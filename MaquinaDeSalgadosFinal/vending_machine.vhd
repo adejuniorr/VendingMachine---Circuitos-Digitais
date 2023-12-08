@@ -14,11 +14,11 @@ entity vending_machine is
 		S2 : in std_logic_vector(7 downto 0); --price of choice 3, defined by vending machin owner.
 		S3 : in std_logic_vector(7 downto 0); --price of choice 4, defined by vending machin owner.
 		S4 : in std_logic_vector(7 downto 0); --price of choice 5, defined by vending machin owner.
-		choice : in std_logic_vector(2 downto 0);
-		P : out std_logic_vector(7 downto 0); --Display
+		choice : in std_logic_vector(2 downto 0); --choice product
+		P : out std_logic_vector(7 downto 0); --Acumulated coin display
 		E : out std_logic_vector(7 downto 0); --return change
-		D : out std_logic_vector(2 downto 0); --soda dispensation
-		ESTQ : out std_logic_vector(7 downto 0) -- aviso de falta de estoque
+		D : out std_logic_vector(2 downto 0); --food dispensation
+		ESTQ : out std_logic_vector(7 downto 0) --aviso de falta de estoque [!]
 		);
 end vending_machine;
 
@@ -139,9 +139,9 @@ begin
 
 	next_state : process( CSTATE, balance, C, balance_equal, balance_greater, coins_to_return)
     begin
-      NSTATE <= CSTATE;
+        NSTATE <= CSTATE;
 		nRST_acc <= '1';
-      price_choice_reg_EN <= '0';
+        price_choice_reg_EN <= '0';
 		dispensation_EN <= '0';
 		p <= (others => '0');
 		E <= (others => '0');

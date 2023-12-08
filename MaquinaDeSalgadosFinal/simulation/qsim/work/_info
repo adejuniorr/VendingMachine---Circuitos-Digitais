@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\adejr\OneDrive\Documents\GitHub\CircuitosDigitais\VendingMachine---Circuitos-Digitais\MaquinaDeSalgadosFinal\simulation\qsim
+vvending_machine
+Z1 !s100 20OiT:=fbIWj:ijNR_^7D2
+Z2 IQeeKJnioRbHY`SmE49[:>0
+Z3 V?[?J[i<JNMBX<>WRU_>6I0
+Z4 dC:\Users\adejr\OneDrive\Documents\GitHub\CircuitosDigitais\VendingMachine---Circuitos-Digitais\MaquinaDeSalgadosFinal\simulation\qsim
+Z5 w1702047200
+Z6 8MaquinaDeSalgadosFinal.vo
+Z7 FMaquinaDeSalgadosFinal.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|MaquinaDeSalgadosFinal.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1702047201.087000
+Z12 !s107 MaquinaDeSalgadosFinal.vo|
+!s101 -O0
+vvending_machine_vlg_check_tst
+!i10b 1
+Z13 !s100 JdGi_6XWPWlN1Y`H=C09a1
+Z14 IGJWSIJ@>cCY47FM^g9^^b2
+Z15 V:m7bfOF_lA>7YB30i2Na<2
+R4
+Z16 w1702047198
+Z17 8MaquinaDeSalgadosFinal.vt
+Z18 FMaquinaDeSalgadosFinal.vt
+L0 75
+R8
+r1
+!s85 0
+31
+Z19 !s108 1702047201.245000
+Z20 !s107 MaquinaDeSalgadosFinal.vt|
+Z21 !s90 -work|work|MaquinaDeSalgadosFinal.vt|
+!s101 -O0
+R10
+vvending_machine_vlg_sample_tst
+!i10b 1
+Z22 !s100 DiL1f[cZZB=EJG@Fcjjk50
+Z23 Ia27WK@6S]c7kCY9bB0DjH0
+Z24 VanaVBXb;YAQ[zX_CZXggA1
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vvending_machine_vlg_vec_tst
+!i10b 1
+!s100 Gi:W`?Ri<=_0HBej8Iz8k0
+I1EI2T4YGXSCZY^c`]>83b2
+Z25 Vc_h5K@]2PD5]EHm=Kj0_:3
+R4
+R16
+R17
+R18
+Z26 L0 688
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10

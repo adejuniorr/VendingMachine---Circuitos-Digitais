@@ -3,12 +3,13 @@ USE ieee.std_logic_1164.all;
 use IEEE.NUMERIC_STD.ALL;
 
 ENTITY adder8 IS
-  PORT(
+  PORT(|vending_machine|subtractor8:subtractor|adder8:subtractor
 	a : in std_logic_vector(7 downto 0);
 	b : in std_logic_vector(7 downto 0);
 	c_in: in std_logic;
 	s: out std_logic_vector(7 downto 0);
-	c_out: out std_logic);
+	c_out: out std_logic
+	);
 end adder8;
 
 architecture model of adder8 is

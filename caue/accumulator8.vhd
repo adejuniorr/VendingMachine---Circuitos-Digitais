@@ -40,11 +40,15 @@ begin
             if nRST_acc = '0' then
                 -- Reset only when necessary
                 temp2 <= (others => '0');
+					 c_return <= '0';
             elsif (C = '1') then
                 -- Verifica se a moeda é uma das moedas desejadas
                 if (data_in = "00011001" or data_in = "00110010" or data_in = "01100100") then
                     -- Accumulate only for valid coins
                     temp2 <= temp1;
+						  c_return <= '0';
+					 else
+						c_return <= '1';
                 end if;
             end if;
         end if;

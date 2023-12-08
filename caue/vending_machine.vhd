@@ -15,9 +15,10 @@ entity vending_machine is
 		S3 : in std_logic_vector(7 downto 0); --price of choice 4, defined by vending machin owner.
 		S4 : in std_logic_vector(7 downto 0); --price of choice 5, defined by vending machin owner.
 		choice : in std_logic_vector(2 downto 0);
-		P : out std_logic_vector(7 downto 0); --Display
-		E : out std_logic_vector(7 downto 0); --return change
-		D : out std_logic_vector(2 downto 0); --soda dispensation
+		P : out std_logic_vector(7 downto 0); --Display for not enough money
+		E : out std_logic_vector(7 downto 0); --return exchange
+		CR : out std_logic_vector(7 downto 0); --return invalid coin
+		D : out std_logic_vector(2 downto 0); --salgado dispensation
 		ESTQ : out std_logic_vector(7 downto 0) -- aviso de falta de estoque
 		);
 end vending_machine;
@@ -72,7 +73,7 @@ component mux21 is
 		);
 end component;
 
-type FSMTYPE is (INIT_STATE, Coin_Reception, soda_dispensation);
+type FSMTYPE is (INIT_STATE, Coin_Reception, salgado_dispensation, coin_return);
 
 signal CSTATE, NSTATE : FSMTYPE;
 signal balance, price, price_reg, coins_to_return : std_logic_vector(7 downto 0);
@@ -98,6 +99,9 @@ begin
     end process ; -- price_registration
 
 
+	 ---------------------------------
+	 --
+	 -- 
 	state_registration : process( CLK )
     begin
         if (CLK'event and CLK = '1') then
@@ -111,7 +115,7 @@ begin
 	 
 	
 
-	soda_dispensation_proc: process(clk)
+	salgado_dispensation_proc: process(clk)
 	begin
 		if (CLK'event and CLK = '1') then
 			if (dispensation_EN = '1') then
@@ -120,7 +124,8 @@ begin
 						D <= "001";	--S0
 						stock_S0_reg <= stock_S0_reg - 1;
 					else 
-						--D <= "111"; -- sem estoque
+						D <= "111"; -- sem estoque
+						
 					end if;	
 				elsif(choice_reg = "010") then 
 					D <= "010";	--S1
@@ -135,7 +140,7 @@ begin
 				D <= "000";
 			end if;
 		end if;
-	end process; --soda_dispensation_Proc;
+	end process; --salgado_dispensation_Proc;
 
 	next_state : process( CSTATE, balance, C, balance_equal, balance_greater, coins_to_return)
     begin
@@ -186,10 +191,10 @@ begin
             when Coin_Reception =>
 				P <= balance;
                 if (balance_equal = '1' or balance_greater = '1') then
-                    NSTATE <= soda_dispensation ;
+                    NSTATE <= salgado_dispensation ;
                 end if ;
             
-            when soda_dispensation =>
+            when salgado_dispensation =>
 				dispensation_EN <= '1';
 				E <= coins_to_return;
 				nRST_acc <= '0';

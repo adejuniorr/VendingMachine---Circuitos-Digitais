@@ -1,6 +1,3 @@
--- Engineer: Mohammad Niknam
--- Project Name: vending_machine_processor
--- Module Name:  mux21
 library ieee;
 USE ieee.std_logic_1164.all;
 use IEEE.NUMERIC_STD.ALL;

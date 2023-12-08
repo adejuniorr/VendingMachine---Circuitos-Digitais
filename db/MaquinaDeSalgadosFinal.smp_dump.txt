@@ -1,0 +1,6 @@
+
+State Machine - |vending_machine|CSTATE
+Name CSTATE.soda_dispensation CSTATE.Coin_Reception CSTATE.INIT_STATE 
+CSTATE.INIT_STATE 0 0 0 
+CSTATE.Coin_Reception 0 1 1 
+CSTATE.soda_dispensation 1 0 1 

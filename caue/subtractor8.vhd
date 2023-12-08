@@ -1,6 +1,3 @@
--- Engineer: Mohammad Niknam
--- Project Name:  vending_machine_processor
--- Module Name:  subtractor8 - structural
 library ieee;
 USE ieee.std_logic_1164.all;
 use IEEE.NUMERIC_STD.ALL;

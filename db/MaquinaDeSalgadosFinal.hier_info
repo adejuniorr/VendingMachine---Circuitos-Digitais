@@ -1,0 +1,687 @@
+|vending_machine
+nRST => CSTATE.OUTPUTSELECT
+nRST => CSTATE.OUTPUTSELECT
+nRST => CSTATE.OUTPUTSELECT
+clk => accumulator8:accumulator.clk
+clk => stock_S0_reg[0].CLK
+clk => stock_S0_reg[1].CLK
+clk => stock_S0_reg[2].CLK
+clk => stock_S0_reg[3].CLK
+clk => stock_S0_reg[4].CLK
+clk => stock_S0_reg[5].CLK
+clk => stock_S0_reg[6].CLK
+clk => stock_S0_reg[7].CLK
+clk => stock_S0_reg[8].CLK
+clk => stock_S0_reg[9].CLK
+clk => stock_S0_reg[10].CLK
+clk => stock_S0_reg[11].CLK
+clk => stock_S0_reg[12].CLK
+clk => stock_S0_reg[13].CLK
+clk => stock_S0_reg[14].CLK
+clk => stock_S0_reg[15].CLK
+clk => stock_S0_reg[16].CLK
+clk => stock_S0_reg[17].CLK
+clk => stock_S0_reg[18].CLK
+clk => stock_S0_reg[19].CLK
+clk => stock_S0_reg[20].CLK
+clk => stock_S0_reg[21].CLK
+clk => stock_S0_reg[22].CLK
+clk => stock_S0_reg[23].CLK
+clk => stock_S0_reg[24].CLK
+clk => stock_S0_reg[25].CLK
+clk => stock_S0_reg[26].CLK
+clk => stock_S0_reg[27].CLK
+clk => stock_S0_reg[28].CLK
+clk => stock_S0_reg[29].CLK
+clk => stock_S0_reg[30].CLK
+clk => stock_S0_reg[31].CLK
+clk => D[0]~reg0.CLK
+clk => D[1]~reg0.CLK
+clk => D[2]~reg0.CLK
+clk => choice_reg[0].CLK
+clk => choice_reg[1].CLK
+clk => choice_reg[2].CLK
+clk => price_reg[0].CLK
+clk => price_reg[1].CLK
+clk => price_reg[2].CLK
+clk => price_reg[3].CLK
+clk => price_reg[4].CLK
+clk => price_reg[5].CLK
+clk => price_reg[6].CLK
+clk => price_reg[7].CLK
+clk => CSTATE~1.DATAIN
+C => NSTATE.OUTPUTSELECT
+C => NSTATE.OUTPUTSELECT
+C => NSTATE.OUTPUTSELECT
+C => Selector0.IN2
+C => accumulator8:accumulator.C
+V[0] => accumulator8:accumulator.data_in[0]
+V[1] => accumulator8:accumulator.data_in[1]
+V[2] => accumulator8:accumulator.data_in[2]
+V[3] => accumulator8:accumulator.data_in[3]
+V[4] => accumulator8:accumulator.data_in[4]
+V[5] => accumulator8:accumulator.data_in[5]
+V[6] => accumulator8:accumulator.data_in[6]
+V[7] => accumulator8:accumulator.data_in[7]
+S0[0] => mux21:mux.A[0]
+S0[1] => mux21:mux.A[1]
+S0[2] => mux21:mux.A[2]
+S0[3] => mux21:mux.A[3]
+S0[4] => mux21:mux.A[4]
+S0[5] => mux21:mux.A[5]
+S0[6] => mux21:mux.A[6]
+S0[7] => mux21:mux.A[7]
+S1[0] => mux21:mux.B[0]
+S1[1] => mux21:mux.B[1]
+S1[2] => mux21:mux.B[2]
+S1[3] => mux21:mux.B[3]
+S1[4] => mux21:mux.B[4]
+S1[5] => mux21:mux.B[5]
+S1[6] => mux21:mux.B[6]
+S1[7] => mux21:mux.B[7]
+S2[0] => mux21:mux.C[0]
+S2[1] => mux21:mux.C[1]
+S2[2] => mux21:mux.C[2]
+S2[3] => mux21:mux.C[3]
+S2[4] => mux21:mux.C[4]
+S2[5] => mux21:mux.C[5]
+S2[6] => mux21:mux.C[6]
+S2[7] => mux21:mux.C[7]
+S3[0] => mux21:mux.D[0]
+S3[1] => mux21:mux.D[1]
+S3[2] => mux21:mux.D[2]
+S3[3] => mux21:mux.D[3]
+S3[4] => mux21:mux.D[4]
+S3[5] => mux21:mux.D[5]
+S3[6] => mux21:mux.D[6]
+S3[7] => mux21:mux.D[7]
+S4[0] => mux21:mux.E[0]
+S4[1] => mux21:mux.E[1]
+S4[2] => mux21:mux.E[2]
+S4[3] => mux21:mux.E[3]
+S4[4] => mux21:mux.E[4]
+S4[5] => mux21:mux.E[5]
+S4[6] => mux21:mux.E[6]
+S4[7] => mux21:mux.E[7]
+choice[0] => mux21:mux.s[0]
+choice[0] => choice_reg[0].DATAIN
+choice[1] => mux21:mux.s[1]
+choice[1] => choice_reg[1].DATAIN
+choice[2] => mux21:mux.s[2]
+choice[2] => choice_reg[2].DATAIN
+P[0] <= P.DB_MAX_OUTPUT_PORT_TYPE
+P[1] <= P.DB_MAX_OUTPUT_PORT_TYPE
+P[2] <= P.DB_MAX_OUTPUT_PORT_TYPE
+P[3] <= P.DB_MAX_OUTPUT_PORT_TYPE
+P[4] <= P.DB_MAX_OUTPUT_PORT_TYPE
+P[5] <= P.DB_MAX_OUTPUT_PORT_TYPE
+P[6] <= P.DB_MAX_OUTPUT_PORT_TYPE
+P[7] <= P.DB_MAX_OUTPUT_PORT_TYPE
+E[0] <= Selector8.DB_MAX_OUTPUT_PORT_TYPE
+E[1] <= Selector7.DB_MAX_OUTPUT_PORT_TYPE
+E[2] <= Selector6.DB_MAX_OUTPUT_PORT_TYPE
+E[3] <= Selector5.DB_MAX_OUTPUT_PORT_TYPE
+E[4] <= Selector4.DB_MAX_OUTPUT_PORT_TYPE
+E[5] <= Selector3.DB_MAX_OUTPUT_PORT_TYPE
+E[6] <= Selector2.DB_MAX_OUTPUT_PORT_TYPE
+E[7] <= Selector1.DB_MAX_OUTPUT_PORT_TYPE
+D[0] <= D[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D[1] <= D[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D[2] <= D[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ESTQ[0] <= ESTQ.DB_MAX_OUTPUT_PORT_TYPE
+ESTQ[1] <= ESTQ.DB_MAX_OUTPUT_PORT_TYPE
+ESTQ[2] <= ESTQ.DB_MAX_OUTPUT_PORT_TYPE
+ESTQ[3] <= <GND>
+ESTQ[4] <= <GND>
+ESTQ[5] <= <GND>
+ESTQ[6] <= <GND>
+ESTQ[7] <= <GND>
+
+
+|vending_machine|mux21:mux
+A[0] => output[0].DATAB
+A[1] => output[1].DATAB
+A[2] => output[2].DATAB
+A[3] => output[3].DATAB
+A[4] => output[4].DATAB
+A[5] => output[5].DATAB
+A[6] => output[6].DATAB
+A[7] => output[7].DATAB
+B[0] => output[0].DATAB
+B[1] => output[1].DATAB
+B[2] => output[2].DATAB
+B[3] => output[3].DATAB
+B[4] => output[4].DATAB
+B[5] => output[5].DATAB
+B[6] => output[6].DATAB
+B[7] => output[7].DATAB
+C[0] => output[0].DATAB
+C[1] => output[1].DATAB
+C[2] => output[2].DATAB
+C[3] => output[3].DATAB
+C[4] => output[4].DATAB
+C[5] => output[5].DATAB
+C[6] => output[6].DATAB
+C[7] => output[7].DATAB
+D[0] => output[0].DATAB
+D[1] => output[1].DATAB
+D[2] => output[2].DATAB
+D[3] => output[3].DATAB
+D[4] => output[4].DATAB
+D[5] => output[5].DATAB
+D[6] => output[6].DATAB
+D[7] => output[7].DATAB
+E[0] => output[0].DATAA
+E[1] => output[1].DATAA
+E[2] => output[2].DATAA
+E[3] => output[3].DATAA
+E[4] => output[4].DATAA
+E[5] => output[5].DATAA
+E[6] => output[6].DATAA
+E[7] => output[7].DATAA
+s[0] => Equal0.IN2
+s[0] => Equal1.IN1
+s[0] => Equal2.IN2
+s[0] => Equal3.IN1
+s[0] => Equal4.IN2
+s[1] => Equal0.IN0
+s[1] => Equal1.IN0
+s[1] => Equal2.IN1
+s[1] => Equal3.IN2
+s[1] => Equal4.IN1
+s[2] => Equal0.IN1
+s[2] => Equal1.IN2
+s[2] => Equal2.IN0
+s[2] => Equal3.IN0
+s[2] => Equal4.IN0
+output[0] <= output[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+output[4] <= output[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+output[5] <= output[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+output[6] <= output[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+output[7] <= output[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|accumulator8:accumulator
+clk => temp2[0].CLK
+clk => temp2[1].CLK
+clk => temp2[2].CLK
+clk => temp2[3].CLK
+clk => temp2[4].CLK
+clk => temp2[5].CLK
+clk => temp2[6].CLK
+clk => temp2[7].CLK
+nRST_acc => temp2.OUTPUTSELECT
+nRST_acc => temp2.OUTPUTSELECT
+nRST_acc => temp2.OUTPUTSELECT
+nRST_acc => temp2.OUTPUTSELECT
+nRST_acc => temp2.OUTPUTSELECT
+nRST_acc => temp2.OUTPUTSELECT
+nRST_acc => temp2.OUTPUTSELECT
+nRST_acc => temp2.OUTPUTSELECT
+C => temp2.OUTPUTSELECT
+C => temp2.OUTPUTSELECT
+C => temp2.OUTPUTSELECT
+C => temp2.OUTPUTSELECT
+C => temp2.OUTPUTSELECT
+C => temp2.OUTPUTSELECT
+C => temp2.OUTPUTSELECT
+C => temp2.OUTPUTSELECT
+data_in[0] => adder8:adder.a[0]
+data_in[0] => Equal0.IN2
+data_in[0] => Equal1.IN7
+data_in[0] => Equal2.IN7
+data_in[1] => adder8:adder.a[1]
+data_in[1] => Equal0.IN7
+data_in[1] => Equal1.IN2
+data_in[1] => Equal2.IN6
+data_in[2] => adder8:adder.a[2]
+data_in[2] => Equal0.IN6
+data_in[2] => Equal1.IN6
+data_in[2] => Equal2.IN2
+data_in[3] => adder8:adder.a[3]
+data_in[3] => Equal0.IN1
+data_in[3] => Equal1.IN5
+data_in[3] => Equal2.IN5
+data_in[4] => adder8:adder.a[4]
+data_in[4] => Equal0.IN0
+data_in[4] => Equal1.IN1
+data_in[4] => Equal2.IN4
+data_in[5] => adder8:adder.a[5]
+data_in[5] => Equal0.IN5
+data_in[5] => Equal1.IN0
+data_in[5] => Equal2.IN1
+data_in[6] => adder8:adder.a[6]
+data_in[6] => Equal0.IN4
+data_in[6] => Equal1.IN4
+data_in[6] => Equal2.IN0
+data_in[7] => adder8:adder.a[7]
+data_in[7] => Equal0.IN3
+data_in[7] => Equal1.IN3
+data_in[7] => Equal2.IN3
+data_out[0] <= temp2[0].DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] <= temp2[1].DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] <= temp2[2].DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] <= temp2[3].DB_MAX_OUTPUT_PORT_TYPE
+data_out[4] <= temp2[4].DB_MAX_OUTPUT_PORT_TYPE
+data_out[5] <= temp2[5].DB_MAX_OUTPUT_PORT_TYPE
+data_out[6] <= temp2[6].DB_MAX_OUTPUT_PORT_TYPE
+data_out[7] <= temp2[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|accumulator8:accumulator|adder8:adder
+a[0] => full_adder:bit0.a
+a[1] => full_adder:bit1.a
+a[2] => full_adder:bit2.a
+a[3] => full_adder:bit3.a
+a[4] => full_adder:bit4.a
+a[5] => full_adder:bit5.a
+a[6] => full_adder:bit6.a
+a[7] => full_adder:bit7.a
+b[0] => full_adder:bit0.b
+b[1] => full_adder:bit1.b
+b[2] => full_adder:bit2.b
+b[3] => full_adder:bit3.b
+b[4] => full_adder:bit4.b
+b[5] => full_adder:bit5.b
+b[6] => full_adder:bit6.b
+b[7] => full_adder:bit7.b
+c_in => full_adder:bit0.c_in
+s[0] <= full_adder:bit0.sum
+s[1] <= full_adder:bit1.sum
+s[2] <= full_adder:bit2.sum
+s[3] <= full_adder:bit3.sum
+s[4] <= full_adder:bit4.sum
+s[5] <= full_adder:bit5.sum
+s[6] <= full_adder:bit6.sum
+s[7] <= full_adder:bit7.sum
+c_out <= full_adder:bit7.c_out
+
+
+|vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit0
+a => sum.IN0
+a => c_out.IN0
+b => sum.IN1
+b => c_out.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit1
+a => sum.IN0
+a => c_out.IN0
+b => sum.IN1
+b => c_out.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit2
+a => sum.IN0
+a => c_out.IN0
+b => sum.IN1
+b => c_out.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit3
+a => sum.IN0
+a => c_out.IN0
+b => sum.IN1
+b => c_out.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit4
+a => sum.IN0
+a => c_out.IN0
+b => sum.IN1
+b => c_out.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit5
+a => sum.IN0
+a => c_out.IN0
+b => sum.IN1
+b => c_out.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit6
+a => sum.IN0
+a => c_out.IN0
+b => sum.IN1
+b => c_out.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit7
+a => sum.IN0
+a => c_out.IN0
+b => sum.IN1
+b => c_out.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|comparator8:comparator
+a[0] => comparator_CO:bit0.a
+a[1] => comparator_CO:bit1.a
+a[2] => comparator_CO:bit2.a
+a[3] => comparator_CO:bit3.a
+a[4] => comparator_CO:bit4.a
+a[5] => comparator_CO:bit5.a
+a[6] => comparator_CO:bit6.a
+a[7] => comparator_1bit:bit7.a
+b[0] => comparator_CO:bit0.b
+b[1] => comparator_CO:bit1.b
+b[2] => comparator_CO:bit2.b
+b[3] => comparator_CO:bit3.b
+b[4] => comparator_CO:bit4.b
+b[5] => comparator_CO:bit5.b
+b[6] => comparator_CO:bit6.b
+b[7] => comparator_1bit:bit7.b
+g_out <= comparator_CO:bit0.g
+e_out <= comparator_CO:bit0.e
+l_out <= comparator_CO:bit0.l
+
+
+|vending_machine|comparator8:comparator|comparator_1bit:bit7
+a => g.IN0
+a => e.IN0
+a => l.IN0
+b => e.IN1
+b => l.IN1
+b => g.IN1
+g <= g.DB_MAX_OUTPUT_PORT_TYPE
+e <= e.DB_MAX_OUTPUT_PORT_TYPE
+l <= l.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|comparator8:comparator|comparator_CO:bit6
+g_old => g.IN1
+e_old => g.IN1
+e_old => e.IN1
+e_old => l.IN1
+l_old => l.IN1
+a => g.IN0
+a => e.IN0
+a => l.IN0
+b => e.IN1
+b => l.IN1
+b => g.IN1
+g <= g.DB_MAX_OUTPUT_PORT_TYPE
+e <= e.DB_MAX_OUTPUT_PORT_TYPE
+l <= l.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|comparator8:comparator|comparator_CO:bit5
+g_old => g.IN1
+e_old => g.IN1
+e_old => e.IN1
+e_old => l.IN1
+l_old => l.IN1
+a => g.IN0
+a => e.IN0
+a => l.IN0
+b => e.IN1
+b => l.IN1
+b => g.IN1
+g <= g.DB_MAX_OUTPUT_PORT_TYPE
+e <= e.DB_MAX_OUTPUT_PORT_TYPE
+l <= l.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|comparator8:comparator|comparator_CO:bit4
+g_old => g.IN1
+e_old => g.IN1
+e_old => e.IN1
+e_old => l.IN1
+l_old => l.IN1
+a => g.IN0
+a => e.IN0
+a => l.IN0
+b => e.IN1
+b => l.IN1
+b => g.IN1
+g <= g.DB_MAX_OUTPUT_PORT_TYPE
+e <= e.DB_MAX_OUTPUT_PORT_TYPE
+l <= l.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|comparator8:comparator|comparator_CO:bit3
+g_old => g.IN1
+e_old => g.IN1
+e_old => e.IN1
+e_old => l.IN1
+l_old => l.IN1
+a => g.IN0
+a => e.IN0
+a => l.IN0
+b => e.IN1
+b => l.IN1
+b => g.IN1
+g <= g.DB_MAX_OUTPUT_PORT_TYPE
+e <= e.DB_MAX_OUTPUT_PORT_TYPE
+l <= l.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|comparator8:comparator|comparator_CO:bit2
+g_old => g.IN1
+e_old => g.IN1
+e_old => e.IN1
+e_old => l.IN1
+l_old => l.IN1
+a => g.IN0
+a => e.IN0
+a => l.IN0
+b => e.IN1
+b => l.IN1
+b => g.IN1
+g <= g.DB_MAX_OUTPUT_PORT_TYPE
+e <= e.DB_MAX_OUTPUT_PORT_TYPE
+l <= l.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|comparator8:comparator|comparator_CO:bit1
+g_old => g.IN1
+e_old => g.IN1
+e_old => e.IN1
+e_old => l.IN1
+l_old => l.IN1
+a => g.IN0
+a => e.IN0
+a => l.IN0
+b => e.IN1
+b => l.IN1
+b => g.IN1
+g <= g.DB_MAX_OUTPUT_PORT_TYPE
+e <= e.DB_MAX_OUTPUT_PORT_TYPE
+l <= l.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|comparator8:comparator|comparator_CO:bit0
+g_old => g.IN1
+e_old => g.IN1
+e_old => e.IN1
+e_old => l.IN1
+l_old => l.IN1
+a => g.IN0
+a => e.IN0
+a => l.IN0
+b => e.IN1
+b => l.IN1
+b => g.IN1
+g <= g.DB_MAX_OUTPUT_PORT_TYPE
+e <= e.DB_MAX_OUTPUT_PORT_TYPE
+l <= l.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|subtractor8:subtractor
+a[0] => adder8:subtractor.a[0]
+a[1] => adder8:subtractor.a[1]
+a[2] => adder8:subtractor.a[2]
+a[3] => adder8:subtractor.a[3]
+a[4] => adder8:subtractor.a[4]
+a[5] => adder8:subtractor.a[5]
+a[6] => adder8:subtractor.a[6]
+a[7] => adder8:subtractor.a[7]
+b[0] => adder8:subtractor.b[0]
+b[1] => adder8:subtractor.b[1]
+b[2] => adder8:subtractor.b[2]
+b[3] => adder8:subtractor.b[3]
+b[4] => adder8:subtractor.b[4]
+b[5] => adder8:subtractor.b[5]
+b[6] => adder8:subtractor.b[6]
+b[7] => adder8:subtractor.b[7]
+result[0] <= adder8:subtractor.s[0]
+result[1] <= adder8:subtractor.s[1]
+result[2] <= adder8:subtractor.s[2]
+result[3] <= adder8:subtractor.s[3]
+result[4] <= adder8:subtractor.s[4]
+result[5] <= adder8:subtractor.s[5]
+result[6] <= adder8:subtractor.s[6]
+result[7] <= adder8:subtractor.s[7]
+
+
+|vending_machine|subtractor8:subtractor|adder8:subtractor
+a[0] => full_adder:bit0.a
+a[1] => full_adder:bit1.a
+a[2] => full_adder:bit2.a
+a[3] => full_adder:bit3.a
+a[4] => full_adder:bit4.a
+a[5] => full_adder:bit5.a
+a[6] => full_adder:bit6.a
+a[7] => full_adder:bit7.a
+b[0] => full_adder:bit0.b
+b[1] => full_adder:bit1.b
+b[2] => full_adder:bit2.b
+b[3] => full_adder:bit3.b
+b[4] => full_adder:bit4.b
+b[5] => full_adder:bit5.b
+b[6] => full_adder:bit6.b
+b[7] => full_adder:bit7.b
+c_in => full_adder:bit0.c_in
+s[0] <= full_adder:bit0.sum
+s[1] <= full_adder:bit1.sum
+s[2] <= full_adder:bit2.sum
+s[3] <= full_adder:bit3.sum
+s[4] <= full_adder:bit4.sum
+s[5] <= full_adder:bit5.sum
+s[6] <= full_adder:bit6.sum
+s[7] <= full_adder:bit7.sum
+c_out <= full_adder:bit7.c_out
+
+
+|vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit0
+a => sum.IN0
+a => c_out.IN0
+b => sum.IN1
+b => c_out.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit1
+a => sum.IN0
+a => c_out.IN0
+b => sum.IN1
+b => c_out.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit2
+a => sum.IN0
+a => c_out.IN0
+b => sum.IN1
+b => c_out.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit3
+a => sum.IN0
+a => c_out.IN0
+b => sum.IN1
+b => c_out.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit4
+a => sum.IN0
+a => c_out.IN0
+b => sum.IN1
+b => c_out.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit5
+a => sum.IN0
+a => c_out.IN0
+b => sum.IN1
+b => c_out.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit6
+a => sum.IN0
+a => c_out.IN0
+b => sum.IN1
+b => c_out.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit7
+a => sum.IN0
+a => c_out.IN0
+b => sum.IN1
+b => c_out.IN1
+c_in => sum.IN1
+c_in => c_out.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+

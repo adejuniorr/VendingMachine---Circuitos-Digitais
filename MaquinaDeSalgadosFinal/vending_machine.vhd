@@ -78,7 +78,7 @@ component mux21 is
 		);
 end component;
 
-type FSMTYPE is (INIT_STATE, Coin_Reception, soda_dispensation);
+type FSMTYPE is (INIT_STATE, Coin_Reception, salgado_dispensation);
 
 signal CSTATE, NSTATE : FSMTYPE;
 signal balance, price, price_reg, coins_to_return : std_logic_vector(8 downto 0);
@@ -116,7 +116,7 @@ begin
     end process ; -- state_registration
 	 
 
-	soda_dispensation_proc: process(clk)
+	salgado_dispensation_proc: process(clk)
 	begin
 		if (CLK'event and CLK = '1') then
 			if (dispensation_EN = '1') then
@@ -125,22 +125,42 @@ begin
 						D <= "001";	--S0
 						stock_S0_reg <= stock_S0_reg - 1;
 					else 
-						--D <= "111"; -- sem estoque
+						D <= "111"; -- sem estoque
 					end if;	
 				elsif(choice_reg = "010") then 
-					D <= "010";	--S1
+					if stock_S1_reg > 0 then
+						D <= "010";	--S1
+						stock_S1_reg <= stock_S1_reg - 1;
+					else 
+						D <= "111"; -- sem estoque
+					end if;
 				elsif(choice_reg = "011") then 
-					D <= "011";	--S2
+					if stock_S2_reg > 0 then
+						D <= "011";	--S2
+						stock_S2_reg <= stock_S2_reg - 1;
+					else 
+						D <= "111"; -- sem estoque
+					end if;
 				elsif(choice_reg = "100") then 
-					D <= "100";	--S3
+					if stock_S3_reg > 0 then	
+						D <= "100";	--S3
+						stock_S3_reg <= stock_S3_reg - 1;
+					else 
+						D <= "111"; -- sem estoque
+					end if;
 				elsif(choice_reg = "101") then 
-					D <= "101";	--S4
+					if stock_S4_reg > 0 then	
+						D <= "101";	--S4
+						stock_S4_reg <= stock_S4_reg - 1;
+					else 
+						D <= "111"; -- sem estoque
+					end if;
 				end if;
 			else
 				D <= "000";
 			end if;
 		end if;
-	end process; --soda_dispensation_Proc;
+	end process; --salgado_dispensation_Proc;
 
 	next_state : process( CSTATE, balance, C, balance_equal, balance_greater, coins_to_return)
     begin
@@ -169,7 +189,7 @@ begin
                     when "010" =>
                         if stock_S1_reg <= 0 then
                             -- Out of stock for S1, stay in INIT_STATE
-                            ESTQ <= "00000111";
+                            ESTQ <= "000000111";
                             NSTATE <= INIT_STATE;
                         end if;
                     -- Repeat for other choices
@@ -191,10 +211,10 @@ begin
             when Coin_Reception =>
 				P <= balance;
                 if (balance_equal = '1' or balance_greater = '1') then
-                    NSTATE <= soda_dispensation ;
+                    NSTATE <= salgado_dispensation ;
                 end if ;
             
-            when soda_dispensation =>
+            when salgado_dispensation =>
 				dispensation_EN <= '1';
 				E <= coins_to_return;
 				nRST_acc <= '0';
@@ -209,4 +229,3 @@ begin
 	subtractor : subtractor8 port map (balance, price_reg, coins_to_return);
 
 end rtl;
-

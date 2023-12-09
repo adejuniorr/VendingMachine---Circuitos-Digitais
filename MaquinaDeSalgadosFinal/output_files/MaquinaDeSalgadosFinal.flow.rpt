@@ -1,6 +1,6 @@
 Flow report for MaquinaDeSalgadosFinal
-Sat Dec 09 18:52:34 2023
-Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+Sat Dec 09 19:11:52 2023
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -37,28 +37,28 @@ applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------+
-; Flow Summary                                                                    ;
-+------------------------------------+--------------------------------------------+
-; Flow Status                        ; Flow Failed - Sat Dec 09 18:52:34 2023     ;
-; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
-; Revision Name                      ; MaquinaDeSalgadosFinal                     ;
-; Top-level Entity Name              ; vending_machine                            ;
-; Family                             ; Cyclone IV GX                              ;
-; Total logic elements               ; N/A until Partition Merge                  ;
-;     Total combinational functions  ; N/A until Partition Merge                  ;
-;     Dedicated logic registers      ; N/A until Partition Merge                  ;
-; Total registers                    ; N/A until Partition Merge                  ;
-; Total pins                         ; N/A until Partition Merge                  ;
-; Total virtual pins                 ; N/A until Partition Merge                  ;
-; Total memory bits                  ; N/A until Partition Merge                  ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
-; Total GXB Receiver Channel PCS     ; N/A until Partition Merge                  ;
-; Total GXB Receiver Channel PMA     ; N/A until Partition Merge                  ;
-; Total GXB Transmitter Channel PCS  ; N/A until Partition Merge                  ;
-; Total GXB Transmitter Channel PMA  ; N/A until Partition Merge                  ;
-; Total PLLs                         ; N/A until Partition Merge                  ;
-+------------------------------------+--------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Flow Summary                                                                         ;
++------------------------------------+-------------------------------------------------+
+; Flow Status                        ; Successful - Sat Dec 09 19:11:52 2023           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; MaquinaDeSalgadosFinal                          ;
+; Top-level Entity Name              ; vending_machine                                 ;
+; Family                             ; Cyclone IV GX                                   ;
+; Total logic elements               ; 301                                             ;
+;     Total combinational functions  ; 295                                             ;
+;     Dedicated logic registers      ; 182                                             ;
+; Total registers                    ; 182                                             ;
+; Total pins                         ; 45                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total GXB Receiver Channel PCS     ; 0                                               ;
+; Total GXB Receiver Channel PMA     ; 0                                               ;
+; Total GXB Transmitter Channel PCS  ; 0                                               ;
+; Total GXB Transmitter Channel PMA  ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
 
 
 +--------------------------------------------+
@@ -66,7 +66,7 @@ applicable agreement for further details.
 +-------------------+------------------------+
 ; Option            ; Setting                ;
 +-------------------+------------------------+
-; Start date & time ; 12/09/2023 18:52:32    ;
+; Start date & time ; 12/09/2023 19:11:49    ;
 ; Main task         ; Compilation            ;
 ; Revision Name     ; MaquinaDeSalgadosFinal ;
 +-------------------+------------------------+
@@ -77,7 +77,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------+------------------------+-----------------+----------------+
 ; Assignment Name                     ; Value                                                                                                               ; Default Value          ; Entity Name     ; Section Id     ;
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------+------------------------+-----------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 31032335310452.170215875203324                                                                                      ; --                     ; --              ; --             ;
+; COMPILER_SIGNATURE_ID               ; 123598314814239.170215990802632                                                                                     ; --                     ; --              ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                                                                                                                  ; --                     ; --              ; eda_simulation ;
 ; EDA_NETLIST_WRITER_OUTPUT_DIR       ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/simulation/qsim/ ; --                     ; --              ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                                                                                         ; --                     ; --              ; eda_simulation ;
@@ -95,8 +95,8 @@ applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:03     ; 1.0                     ; 4691 MB             ; 00:00:03                           ;
-; Total                ; 00:00:03     ; --                      ; --                  ; 00:00:03                           ;
+; Analysis & Synthesis ; 00:00:04     ; 1.0                     ; 4675 MB             ; 00:00:02                           ;
+; Total                ; 00:00:04     ; --                      ; --                  ; 00:00:02                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -105,7 +105,7 @@ applicable agreement for further details.
 +----------------------+------------------+-----------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +----------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-I9P6B4R  ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis ; LAPTOP-CUFVOCGT  ; Windows 7 ; 6.2        ; x86_64         ;
 +----------------------+------------------+-----------+------------+----------------+
 
 

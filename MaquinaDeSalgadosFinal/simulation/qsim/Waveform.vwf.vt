@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "12/09/2023 18:18:29"
+// Generated on "12/09/2023 18:49:22"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    vending_machine
 // 
@@ -38,7 +38,7 @@ input  C;
 input [2:0] choice;
 input  clk;
 input  nRST;
-input [7:0] V;
+input [8:0] V;
 output sampler_tx;
 
 reg sample;
@@ -70,30 +70,30 @@ module vending_machine_vlg_check_tst (
 	sampler_rx
 );
 input [2:0] D;
-input [7:0] E;
-input [7:0] ESTQ;
-input [7:0] P;
+input [8:0] E;
+input [8:0] ESTQ;
+input [8:0] P;
 input sampler_rx;
 
 reg [2:0] D_expected;
-reg [7:0] E_expected;
-reg [7:0] ESTQ_expected;
-reg [7:0] P_expected;
+reg [8:0] E_expected;
+reg [8:0] ESTQ_expected;
+reg [8:0] P_expected;
 
 reg [2:0] D_prev;
-reg [7:0] E_prev;
-reg [7:0] ESTQ_prev;
-reg [7:0] P_prev;
+reg [8:0] E_prev;
+reg [8:0] ESTQ_prev;
+reg [8:0] P_prev;
 
 reg [2:0] D_expected_prev;
-reg [7:0] E_expected_prev;
-reg [7:0] ESTQ_expected_prev;
-reg [7:0] P_expected_prev;
+reg [8:0] E_expected_prev;
+reg [8:0] ESTQ_expected_prev;
+reg [8:0] P_expected_prev;
 
 reg [2:0] last_D_exp;
-reg [7:0] last_E_exp;
-reg [7:0] last_ESTQ_exp;
-reg [7:0] last_P_exp;
+reg [8:0] last_E_exp;
+reg [8:0] last_ESTQ_exp;
+reg [8:0] last_P_exp;
 
 reg trigger;
 
@@ -150,145 +150,187 @@ begin
 	D_expected[0] = 1'bX;
 	D_expected[0] = #999000 1'b0;
 end 
-// expected E[ 7 ]
+
+// expected E[8]
+initial
+begin
+	E_expected[8] = 1'bX;
+end 
+
+// expected E[7]
 initial
 begin
 	E_expected[7] = 1'bX;
 	E_expected[7] = #999000 1'b0;
 end 
-// expected E[ 6 ]
+
+// expected E[6]
 initial
 begin
 	E_expected[6] = 1'bX;
 	E_expected[6] = #999000 1'b0;
 end 
-// expected E[ 5 ]
+
+// expected E[5]
 initial
 begin
 	E_expected[5] = 1'bX;
 	E_expected[5] = #999000 1'b0;
 end 
-// expected E[ 4 ]
+
+// expected E[4]
 initial
 begin
 	E_expected[4] = 1'bX;
 	E_expected[4] = #999000 1'b0;
 end 
-// expected E[ 3 ]
+
+// expected E[3]
 initial
 begin
 	E_expected[3] = 1'bX;
 	E_expected[3] = #999000 1'b0;
 end 
-// expected E[ 2 ]
+
+// expected E[2]
 initial
 begin
 	E_expected[2] = 1'bX;
 	E_expected[2] = #999000 1'b0;
 end 
-// expected E[ 1 ]
+
+// expected E[1]
 initial
 begin
 	E_expected[1] = 1'bX;
 	E_expected[1] = #999000 1'b0;
 end 
-// expected E[ 0 ]
+
+// expected E[0]
 initial
 begin
 	E_expected[0] = 1'bX;
 	E_expected[0] = #999000 1'b0;
 end 
-// expected P[ 7 ]
+
+// expected P[8]
+initial
+begin
+	P_expected[8] = 1'bX;
+end 
+
+// expected P[7]
 initial
 begin
 	P_expected[7] = 1'bX;
 	P_expected[7] = #999000 1'b0;
 end 
-// expected P[ 6 ]
+
+// expected P[6]
 initial
 begin
 	P_expected[6] = 1'bX;
 	P_expected[6] = #999000 1'b0;
 end 
-// expected P[ 5 ]
+
+// expected P[5]
 initial
 begin
 	P_expected[5] = 1'bX;
 	P_expected[5] = #999000 1'b0;
 end 
-// expected P[ 4 ]
+
+// expected P[4]
 initial
 begin
 	P_expected[4] = 1'bX;
 	P_expected[4] = #999000 1'b0;
 end 
-// expected P[ 3 ]
+
+// expected P[3]
 initial
 begin
 	P_expected[3] = 1'bX;
 	P_expected[3] = #999000 1'b0;
 end 
-// expected P[ 2 ]
+
+// expected P[2]
 initial
 begin
 	P_expected[2] = 1'bX;
 	P_expected[2] = #999000 1'b0;
 end 
-// expected P[ 1 ]
+
+// expected P[1]
 initial
 begin
 	P_expected[1] = 1'bX;
 	P_expected[1] = #999000 1'b0;
 end 
-// expected P[ 0 ]
+
+// expected P[0]
 initial
 begin
 	P_expected[0] = 1'bX;
 	P_expected[0] = #999000 1'b0;
 end 
-// expected ESTQ[ 7 ]
+
+// expected ESTQ[8]
+initial
+begin
+	ESTQ_expected[8] = 1'bX;
+end 
+
+// expected ESTQ[7]
 initial
 begin
 	ESTQ_expected[7] = 1'bX;
 	ESTQ_expected[7] = #999000 1'b0;
 end 
-// expected ESTQ[ 6 ]
+
+// expected ESTQ[6]
 initial
 begin
 	ESTQ_expected[6] = 1'bX;
 	ESTQ_expected[6] = #999000 1'b0;
 end 
-// expected ESTQ[ 5 ]
+
+// expected ESTQ[5]
 initial
 begin
 	ESTQ_expected[5] = 1'bX;
 	ESTQ_expected[5] = #999000 1'b0;
 end 
-// expected ESTQ[ 4 ]
+
+// expected ESTQ[4]
 initial
 begin
 	ESTQ_expected[4] = 1'bX;
 	ESTQ_expected[4] = #999000 1'b0;
 end 
-// expected ESTQ[ 3 ]
+
+// expected ESTQ[3]
 initial
 begin
 	ESTQ_expected[3] = 1'bX;
 	ESTQ_expected[3] = #999000 1'b0;
 end 
-// expected ESTQ[ 2 ]
+
+// expected ESTQ[2]
 initial
 begin
 	ESTQ_expected[2] = 1'bX;
 	ESTQ_expected[2] = #999000 1'b0;
 end 
-// expected ESTQ[ 1 ]
+
+// expected ESTQ[1]
 initial
 begin
 	ESTQ_expected[1] = 1'bX;
 	ESTQ_expected[1] = #999000 1'b0;
 end 
-// expected ESTQ[ 0 ]
+
+// expected ESTQ[0]
 initial
 begin
 	ESTQ_expected[0] = 1'bX;
@@ -452,6 +494,19 @@ begin
 		last_E_exp[7] = E_expected_prev[7];
 	end
 	if (
+		( E_expected_prev[8] !== 1'bx ) && ( E_prev[8] !== E_expected_prev[8] )
+		&& ((E_expected_prev[8] !== last_E_exp[8]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port E[8] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", E_expected_prev);
+		$display ("     Real value = %b", E_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_E_exp[8] = E_expected_prev[8];
+	end
+	if (
 		( ESTQ_expected_prev[0] !== 1'bx ) && ( ESTQ_prev[0] !== ESTQ_expected_prev[0] )
 		&& ((ESTQ_expected_prev[0] !== last_ESTQ_exp[0]) ||
 			on_first_change[3])
@@ -554,6 +609,19 @@ begin
 		nummismatches = nummismatches + 1;
 		on_first_change[3] = 1'b0;
 		last_ESTQ_exp[7] = ESTQ_expected_prev[7];
+	end
+	if (
+		( ESTQ_expected_prev[8] !== 1'bx ) && ( ESTQ_prev[8] !== ESTQ_expected_prev[8] )
+		&& ((ESTQ_expected_prev[8] !== last_ESTQ_exp[8]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port ESTQ[8] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", ESTQ_expected_prev);
+		$display ("     Real value = %b", ESTQ_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_ESTQ_exp[8] = ESTQ_expected_prev[8];
 	end
 	if (
 		( P_expected_prev[0] !== 1'bx ) && ( P_prev[0] !== P_expected_prev[0] )
@@ -659,6 +727,19 @@ begin
 		on_first_change[4] = 1'b0;
 		last_P_exp[7] = P_expected_prev[7];
 	end
+	if (
+		( P_expected_prev[8] !== 1'bx ) && ( P_prev[8] !== P_expected_prev[8] )
+		&& ((P_expected_prev[8] !== last_P_exp[8]) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port P[8] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", P_expected_prev);
+		$display ("     Real value = %b", P_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_P_exp[8] = P_expected_prev[8];
+	end
 
 	trigger <= ~trigger;
 end
@@ -682,12 +763,12 @@ reg C;
 reg [2:0] choice;
 reg clk;
 reg nRST;
-reg [7:0] V;
+reg [8:0] V;
 // wires                                               
 wire [2:0] D;
-wire [7:0] E;
-wire [7:0] ESTQ;
-wire [7:0] P;
+wire [8:0] E;
+wire [8:0] ESTQ;
+wire [8:0] P;
 
 wire sampler;                             
 
@@ -780,12 +861,20 @@ begin
 	nRST = #41000 1'b1;
 	nRST = #1160000 1'b0;
 end 
-// V[ 7 ]
+
+// V[8]
+initial
+begin
+	V[8] = 1'b0;
+end 
+
+// V[7]
 initial
 begin
 	V[7] = 1'b0;
 end 
-// V[ 6 ]
+
+// V[6]
 initial
 begin
 	V[6] = 1'b0;
@@ -794,7 +883,8 @@ begin
 	V[6] = #560000 1'b1;
 	V[6] = #920000 1'b0;
 end 
-// V[ 5 ]
+
+// V[5]
 initial
 begin
 	V[5] = 1'b1;
@@ -804,15 +894,17 @@ begin
 	V[5] = #560000 1'b1;
 	V[5] = #920000 1'b0;
 end 
-// V[ 4 ]
+
+// V[4]
 initial
 begin
 	V[4] = 1'b1;
-	V[4] = #280000 1'b0;
-	V[4] = #160000 1'b1;
+	V[4] = #80000 1'b0;
+	V[4] = #360000 1'b1;
 	V[4] = #260000 1'b0;
 end 
-// V[ 3 ]
+
+// V[3]
 initial
 begin
 	V[3] = 1'b0;
@@ -821,7 +913,8 @@ begin
 	V[3] = #160000 1'b1;
 	V[3] = #559000 1'b0;
 end 
-// V[ 2 ]
+
+// V[2]
 initial
 begin
 	V[2] = 1'b0;
@@ -830,21 +923,21 @@ begin
 	V[2] = #560000 1'b1;
 	V[2] = #920000 1'b0;
 end 
-// V[ 1 ]
+
+// V[1]
 initial
 begin
 	V[1] = 1'b1;
-	V[1] = #80000 1'b0;
-	V[1] = #620000 1'b1;
+	V[1] = #280000 1'b0;
+	V[1] = #420000 1'b1;
 	V[1] = #299000 1'b0;
 end 
-// V[ 0 ]
+
+// V[0]
 initial
 begin
 	V[0] = 1'b0;
-	V[0] = #80000 1'b1;
-	V[0] = #200000 1'b0;
-	V[0] = #160000 1'b1;
+	V[0] = #440000 1'b1;
 	V[0] = #260000 1'b0;
 end 
 

@@ -3,72 +3,72 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -2.777
-TNS   : -115.096
+Slack : -2.964
+TNS   : -121.844
 
 Type  : Slow 1200mV 85C Model Setup 'choice[0]'
-Slack : -0.143
-TNS   : -0.143
-
-Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : -0.256
-TNS   : -0.256
+Slack : -0.137
+TNS   : -0.137
 
 Type  : Slow 1200mV 85C Model Hold 'choice[0]'
-Slack : -0.218
-TNS   : -0.218
+Slack : -0.219
+TNS   : -0.219
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : -0.141
+TNS   : -0.141
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -56.000
+TNS   : -57.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'choice[0]'
 Slack : -3.000
 TNS   : -3.000
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -2.419
-TNS   : -98.998
+Slack : -2.570
+TNS   : -104.601
 
 Type  : Slow 1200mV 0C Model Setup 'choice[0]'
-Slack : -0.100
-TNS   : -0.100
+Slack : -0.090
+TNS   : -0.090
 
 Type  : Slow 1200mV 0C Model Hold 'choice[0]'
-Slack : -0.196
-TNS   : -0.196
+Slack : -0.197
+TNS   : -0.197
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : -0.192
-TNS   : -0.192
+Slack : -0.084
+TNS   : -0.084
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -56.000
+TNS   : -57.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'choice[0]'
 Slack : -3.000
 TNS   : -3.000
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -1.084
-TNS   : -40.186
+Slack : -1.186
+TNS   : -45.316
 
 Type  : Fast 1200mV 0C Model Setup 'choice[0]'
-Slack : 0.461
+Slack : 0.474
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : -0.245
-TNS   : -0.245
+Slack : -0.169
+TNS   : -0.169
 
 Type  : Fast 1200mV 0C Model Hold 'choice[0]'
-Slack : -0.126
-TNS   : -0.126
+Slack : -0.124
+TNS   : -0.124
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -57.637
+TNS   : -58.729
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'choice[0]'
 Slack : -3.000

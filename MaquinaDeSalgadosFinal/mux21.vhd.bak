@@ -4,13 +4,13 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity mux21 is
 	port(
-		A : in std_logic_vector(8 downto 0);
-		B : in std_logic_vector(8 downto 0);
-		C : in std_logic_vector(8 downto 0);
-		D : in std_logic_vector(8 downto 0);
-		E : in std_logic_vector(8 downto 0);
+		A : in std_logic_vector(7 downto 0);
+		B : in std_logic_vector(7 downto 0);
+		C : in std_logic_vector(7 downto 0);
+		D : in std_logic_vector(7 downto 0);
+		E : in std_logic_vector(7 downto 0);
 		s : in std_logic_vector(2 downto 0);
-		output : out std_logic_vector(8 downto 0)
+		output : out std_logic_vector(7 downto 0)
 		);
 end mux21;
 

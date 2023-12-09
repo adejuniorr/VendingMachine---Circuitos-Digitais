@@ -6,11 +6,6 @@ entity vending_machine is
         clk             : in     vl_logic;
         C               : in     vl_logic;
         V               : in     vl_logic_vector(7 downto 0);
-        S0              : in     vl_logic_vector(7 downto 0);
-        S1              : in     vl_logic_vector(7 downto 0);
-        S2              : in     vl_logic_vector(7 downto 0);
-        S3              : in     vl_logic_vector(7 downto 0);
-        S4              : in     vl_logic_vector(7 downto 0);
         choice          : in     vl_logic_vector(2 downto 0);
         P               : out    vl_logic_vector(7 downto 0);
         E               : out    vl_logic_vector(7 downto 0);

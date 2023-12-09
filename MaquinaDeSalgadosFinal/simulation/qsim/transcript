@@ -13,40 +13,52 @@
 # 
 # Top level modules:
 # 	vending_machine_vlg_vec_tst
-# vsim -L cycloneiv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.vending_machine_vlg_vec_tst 
+# vsim -L cycloneiv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -voptargs=\"+acc\" -t 1ps -novopt work.vending_machine_vlg_vec_tst 
 # Loading work.vending_machine_vlg_vec_tst
 # Loading work.vending_machine
-# Loading altera_ver.dffeas
-# Loading cycloneiv_ver.cycloneiv_lcell_comb
-# Loading cycloneiv_ver.cycloneiv_io_ibuf
 # Loading cycloneiv_ver.cycloneiv_io_obuf
+# Loading cycloneiv_ver.cycloneiv_io_ibuf
 # Loading cycloneiv_ver.cycloneiv_clkctrl
 # Loading cycloneiv_ver.cycloneiv_mux41
 # Loading cycloneiv_ver.cycloneiv_ena_reg
+# Loading cycloneiv_ver.cycloneiv_lcell_comb
+# Loading altera_ver.dffeas
 # Loading work.vending_machine_vlg_sample_tst
 # Loading work.vending_machine_vlg_check_tst
 # Loading altera_ver.PRIM_GDFF_LOW
+# ERROR! Vector Mismatch for output port P[0] :: @time = 1000000.000 ps
+#      Expected value = 00000000
+#      Real value = 00011001
+# ERROR! Vector Mismatch for output port P[3] :: @time = 1000000.000 ps
+#      Expected value = 00000000
+#      Real value = 00011001
+# ERROR! Vector Mismatch for output port P[4] :: @time = 1000000.000 ps
+#      Expected value = 00000000
+#      Real value = 00011001
 # ERROR! Vector Mismatch for output port P[2] :: @time = 1140000.000 ps
 #      Expected value = 00000000
-#      Real value = 01100100
+#      Real value = 01111101
 # ERROR! Vector Mismatch for output port P[5] :: @time = 1140000.000 ps
 #      Expected value = 00000000
-#      Real value = 01100100
+#      Real value = 01111101
 # ERROR! Vector Mismatch for output port P[6] :: @time = 1140000.000 ps
 #      Expected value = 00000000
-#      Real value = 01100100
-# ERROR! Vector Mismatch for output port P[3] :: @time = 1240000.000 ps
-#      Expected value = 00000000
-#      Real value = 11001000
+#      Real value = 01111101
 # ERROR! Vector Mismatch for output port P[7] :: @time = 1240000.000 ps
 #      Expected value = 00000000
-#      Real value = 11001000
-# ERROR! Vector Mismatch for output port E[2] :: @time = 1276000.000 ps
+#      Real value = 11100001
+# ERROR! Vector Mismatch for output port E[0] :: @time = 1276000.000 ps
 #      Expected value = 00000000
-#      Real value = 00010100
-# ERROR! Vector Mismatch for output port E[4] :: @time = 1276000.000 ps
+#      Real value = 01001011
+# ERROR! Vector Mismatch for output port E[1] :: @time = 1276000.000 ps
 #      Expected value = 00000000
-#      Real value = 00010100
+#      Real value = 01001011
+# ERROR! Vector Mismatch for output port E[3] :: @time = 1276000.000 ps
+#      Expected value = 00000000
+#      Real value = 01001011
+# ERROR! Vector Mismatch for output port E[6] :: @time = 1276000.000 ps
+#      Expected value = 00000000
+#      Real value = 01001011
 # ERROR! Vector Mismatch for output port ESTQ[0] :: @time = 1340000.000 ps
 #      Expected value = 00000000
 #      Real value = 00000111
@@ -56,6 +68,15 @@
 # ERROR! Vector Mismatch for output port ESTQ[2] :: @time = 1340000.000 ps
 #      Expected value = 00000000
 #      Real value = 00000111
-#          10 mismatched vectors : Simulation failed !
-# ** Note: $finish    : MaquinaDeSalgadosFinal.vt(684)
+# ERROR! Vector Mismatch for output port E[4] :: @time = 1590000.000 ps
+#      Expected value = 00000000
+#      Real value = 00110010
+# ERROR! Vector Mismatch for output port E[5] :: @time = 1590000.000 ps
+#      Expected value = 00000000
+#      Real value = 00110010
+# ERROR! Vector Mismatch for output port D[1] :: @time = 1640000.000 ps
+#      Expected value = 000
+#      Real value = 010
+#          17 mismatched vectors : Simulation failed !
+# ** Note: $finish    : Waveform.vwf.vt(674)
 #    Time: 10 us  Iteration: 0  Instance: /vending_machine_vlg_vec_tst/tb_out

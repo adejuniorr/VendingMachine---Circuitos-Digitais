@@ -4,54 +4,54 @@ K3
 cModel Technology
 Z0 dC:\Users\adejr\OneDrive\Documents\GitHub\CircuitosDigitais\VendingMachine---Circuitos-Digitais\MaquinaDeSalgadosFinal\simulation\qsim
 vvending_machine
-Z1 !s100 20OiT:=fbIWj:ijNR_^7D2
-Z2 IQeeKJnioRbHY`SmE49[:>0
-Z3 V?[?J[i<JNMBX<>WRU_>6I0
-Z4 dC:\Users\adejr\OneDrive\Documents\GitHub\CircuitosDigitais\VendingMachine---Circuitos-Digitais\MaquinaDeSalgadosFinal\simulation\qsim
-Z5 w1702047200
-Z6 8MaquinaDeSalgadosFinal.vo
-Z7 FMaquinaDeSalgadosFinal.vo
+Z1 IEDW4<]lIeLj[Ue5J__X=D1
+Z2 VDYSY3`X4S_l5n_8j4dLJj3
+Z3 dC:\Users\mmm\OneDrive\Documentos\GitHub\VendingMachine---Circuitos-Digitais\MaquinaDeSalgadosFinal\simulation\qsim
+Z4 w1702156713
+Z5 8MaquinaDeSalgadosFinal.vo
+Z6 FMaquinaDeSalgadosFinal.vo
 L0 31
-Z8 OV;L;10.1d;51
+Z7 OV;L;10.1d;51
 r1
 31
-Z9 !s90 -work|work|MaquinaDeSalgadosFinal.vo|
-Z10 o-work work -O0
+Z8 !s90 -work|work|MaquinaDeSalgadosFinal.vo|
+Z9 o-work work -O0
 !i10b 1
+Z10 !s100 j]U_^i:CYmY=8bNgQ[==_1
 !s85 0
-Z11 !s108 1702047201.087000
+Z11 !s108 1702156715.489000
 Z12 !s107 MaquinaDeSalgadosFinal.vo|
 !s101 -O0
 vvending_machine_vlg_check_tst
 !i10b 1
-Z13 !s100 JdGi_6XWPWlN1Y`H=C09a1
-Z14 IGJWSIJ@>cCY47FM^g9^^b2
+Z13 !s100 =nS`0]N8Q4R65EZXN;z:_2
+Z14 Iz]7_GeCCciYDiafobdkOI0
 Z15 V:m7bfOF_lA>7YB30i2Na<2
-R4
-Z16 w1702047198
-Z17 8MaquinaDeSalgadosFinal.vt
-Z18 FMaquinaDeSalgadosFinal.vt
-L0 75
-R8
+R3
+Z16 w1702156710
+Z17 8Waveform.vwf.vt
+Z18 FWaveform.vwf.vt
+L0 65
+R7
 r1
 !s85 0
 31
-Z19 !s108 1702047201.245000
-Z20 !s107 MaquinaDeSalgadosFinal.vt|
-Z21 !s90 -work|work|MaquinaDeSalgadosFinal.vt|
+Z19 !s108 1702156715.724000
+Z20 !s107 Waveform.vwf.vt|
+Z21 !s90 -work|work|Waveform.vwf.vt|
 !s101 -O0
-R10
+R9
 vvending_machine_vlg_sample_tst
 !i10b 1
-Z22 !s100 DiL1f[cZZB=EJG@Fcjjk50
-Z23 Ia27WK@6S]c7kCY9bB0DjH0
-Z24 VanaVBXb;YAQ[zX_CZXggA1
-R4
+Z22 !s100 dmO@b2UQ4330ZQgng5if42
+Z23 IG@<a:jEDHMMgM]5Pj<f0l1
+Z24 V00[kcl[XRG9H2IM>jLe=z0
+R3
 R16
 R17
 R18
 L0 29
-R8
+R7
 r1
 !s85 0
 31
@@ -59,18 +59,18 @@ R19
 R20
 R21
 !s101 -O0
-R10
+R9
 vvending_machine_vlg_vec_tst
 !i10b 1
-!s100 Gi:W`?Ri<=_0HBej8Iz8k0
-I1EI2T4YGXSCZY^c`]>83b2
-Z25 Vc_h5K@]2PD5]EHm=Kj0_:3
-R4
+Z25 !s100 4d2^8CfnN5cY?b:a<3Yl33
+Z26 Ic4<?CYC^]Q5NlXMAgK^Mj2
+Z27 Vc_h5K@]2PD5]EHm=Kj0_:3
+R3
 R16
 R17
 R18
-Z26 L0 688
-R8
+Z28 L0 678
+R7
 r1
 !s85 0
 31
@@ -78,4 +78,4 @@ R19
 R20
 R21
 !s101 -O0
-R10
+R9

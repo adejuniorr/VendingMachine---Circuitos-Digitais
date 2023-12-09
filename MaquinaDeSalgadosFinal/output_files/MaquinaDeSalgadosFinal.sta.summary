@@ -3,72 +3,72 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -3.142
-TNS   : -129.719
+Slack : -2.777
+TNS   : -115.096
 
 Type  : Slow 1200mV 85C Model Setup 'choice[0]'
-Slack : -0.452
-TNS   : -1.532
-
-Type  : Slow 1200mV 85C Model Hold 'choice[0]'
-Slack : -0.658
-TNS   : -3.487
+Slack : -0.143
+TNS   : -0.143
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : -0.323
-TNS   : -0.323
+Slack : -0.256
+TNS   : -0.256
+
+Type  : Slow 1200mV 85C Model Hold 'choice[0]'
+Slack : -0.218
+TNS   : -0.218
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -60.000
+TNS   : -56.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'choice[0]'
 Slack : -3.000
 TNS   : -3.000
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -2.729
-TNS   : -112.101
+Slack : -2.419
+TNS   : -98.998
 
 Type  : Slow 1200mV 0C Model Setup 'choice[0]'
-Slack : -0.392
-TNS   : -1.399
+Slack : -0.100
+TNS   : -0.100
 
 Type  : Slow 1200mV 0C Model Hold 'choice[0]'
-Slack : -0.552
-TNS   : -2.999
+Slack : -0.196
+TNS   : -0.196
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : -0.269
-TNS   : -0.269
+Slack : -0.192
+TNS   : -0.192
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -60.000
+TNS   : -56.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'choice[0]'
 Slack : -3.000
 TNS   : -3.000
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -1.266
-TNS   : -51.385
+Slack : -1.084
+TNS   : -40.186
 
 Type  : Fast 1200mV 0C Model Setup 'choice[0]'
-Slack : 0.370
+Slack : 0.461
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'choice[0]'
-Slack : -0.525
-TNS   : -2.997
-
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : -0.292
-TNS   : -0.292
+Slack : -0.245
+TNS   : -0.245
+
+Type  : Fast 1200mV 0C Model Hold 'choice[0]'
+Slack : -0.126
+TNS   : -0.126
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -61.846
+TNS   : -57.637
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'choice[0]'
 Slack : -3.000

@@ -9,11 +9,11 @@ entity vending_machine is
 		clk : in std_logic;
 		C : in std_logic; --from coin sensor: becomes 1 when a coin is detected.
 		V : in std_logic_vector(7 downto 0); --received coin's value in cents from coin sensor.
-		S0 : in std_logic_vector(7 downto 0); --price of choice 1, defined by vending machin owner.
-		S1 : in std_logic_vector(7 downto 0); --price of choice 2, defined by vending machin owner.
-		S2 : in std_logic_vector(7 downto 0); --price of choice 3, defined by vending machin owner.
-		S3 : in std_logic_vector(7 downto 0); --price of choice 4, defined by vending machin owner.
-		S4 : in std_logic_vector(7 downto 0); --price of choice 5, defined by vending machin owner.
+		--S0 : in std_logic_vector(7 downto 0); --price of choice 1, defined by vending machin owner.
+		--S1 : in std_logic_vector(7 downto 0); --price of choice 2, defined by vending machin owner.
+		--S2 : in std_logic_vector(7 downto 0); --price of choice 3, defined by vending machin owner.
+		--S3 : in std_logic_vector(7 downto 0); --price of choice 4, defined by vending machin owner.
+		--S4 : in std_logic_vector(7 downto 0); --price of choice 5, defined by vending machin owner.
 		choice : in std_logic_vector(2 downto 0); --choice product
 		P : out std_logic_vector(7 downto 0); --Acumulated coin display
 		E : out std_logic_vector(7 downto 0); --return change
@@ -23,6 +23,12 @@ entity vending_machine is
 end vending_machine;
 
 architecture rtl of vending_machine is
+  constant S0 : std_logic_vector(7 downto 0) := "10010110"; -- Preço da escolha 1 11111010
+  constant S1 : std_logic_vector(7 downto 0) := "10010110"; -- Preço da escolha 2 10010110
+  constant S2 : std_logic_vector(7 downto 0) := "00000000"; -- Exemplo para a escolha 3
+  constant S3 : std_logic_vector(7 downto 0) := "00000000"; -- Exemplo para a escolha 4
+  constant S4 : std_logic_vector(7 downto 0) := "00000000"; -- Exemplo para a escolha 5
+
 component accumulator8 is
 	port(
 		clk: in std_logic;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MaquinaDeSalgadosFinal
-Sat Dec 09 11:24:04 2023
+Sat Dec 09 18:17:10 2023
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -15,14 +15,16 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |vending_machine|CSTATE
   9. User-Specified and Inferred Latches
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Port Connectivity Checks: "subtractor8:subtractor|adder8:subtractor"
- 14. Port Connectivity Checks: "comparator8:comparator"
- 15. Port Connectivity Checks: "accumulator8:accumulator|adder8:adder"
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Port Connectivity Checks: "subtractor8:subtractor|adder8:subtractor"
+ 15. Port Connectivity Checks: "comparator8:comparator"
+ 16. Port Connectivity Checks: "accumulator8:accumulator|adder8:adder"
+ 17. Port Connectivity Checks: "mux21:mux"
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
 
 
 
@@ -48,16 +50,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Dec 09 11:24:04 2023      ;
+; Analysis & Synthesis Status        ; Successful - Sat Dec 09 18:17:10 2023      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; MaquinaDeSalgadosFinal                     ;
 ; Top-level Entity Name              ; vending_machine                            ;
 ; Family                             ; Cyclone IV GX                              ;
-; Total logic elements               ; 155                                        ;
-;     Total combinational functions  ; 152                                        ;
-;     Dedicated logic registers      ; 57                                         ;
-; Total registers                    ; 57                                         ;
-; Total pins                         ; 81                                         ;
+; Total logic elements               ; 108                                        ;
+;     Total combinational functions  ; 102                                        ;
+;     Dedicated logic registers      ; 53                                         ;
+; Total registers                    ; 53                                         ;
+; Total pins                         ; 41                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -155,38 +157,32 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+------------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.0%      ;
-+----------------------------+-------------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                          ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                   ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------+---------+
-; vending_machine.vhd              ; yes             ; User VHDL File  ; C:/Users/south/Documents/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/vending_machine.vhd ;         ;
-; subtractor8.vhd                  ; yes             ; User VHDL File  ; C:/Users/south/Documents/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/subtractor8.vhd     ;         ;
-; mux21.vhd                        ; yes             ; User VHDL File  ; C:/Users/south/Documents/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/mux21.vhd           ;         ;
-; full_adder.vhd                   ; yes             ; User VHDL File  ; C:/Users/south/Documents/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/full_adder.vhd      ;         ;
-; comparator_1bit.vhd              ; yes             ; User VHDL File  ; C:/Users/south/Documents/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/comparator_1bit.vhd ;         ;
-; comparator8.vhd                  ; yes             ; User VHDL File  ; C:/Users/south/Documents/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/comparator8.vhd     ;         ;
-; comparator.vhd                   ; yes             ; User VHDL File  ; C:/Users/south/Documents/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/comparator.vhd      ;         ;
-; adder8.vhd                       ; yes             ; User VHDL File  ; C:/Users/south/Documents/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/adder8.vhd          ;         ;
-; accumulator8.vhd                 ; yes             ; User VHDL File  ; C:/Users/south/Documents/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/accumulator8.vhd    ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                  ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                           ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------------+---------+
+; vending_machine.vhd              ; yes             ; User VHDL File  ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/vending_machine.vhd ;         ;
+; subtractor8.vhd                  ; yes             ; User VHDL File  ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/subtractor8.vhd     ;         ;
+; mux21.vhd                        ; yes             ; User VHDL File  ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/mux21.vhd           ;         ;
+; full_adder.vhd                   ; yes             ; User VHDL File  ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/full_adder.vhd      ;         ;
+; comparator_1bit.vhd              ; yes             ; User VHDL File  ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/comparator_1bit.vhd ;         ;
+; comparator8.vhd                  ; yes             ; User VHDL File  ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/comparator8.vhd     ;         ;
+; comparator.vhd                   ; yes             ; User VHDL File  ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/comparator.vhd      ;         ;
+; adder8.vhd                       ; yes             ; User VHDL File  ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/adder8.vhd          ;         ;
+; accumulator8.vhd                 ; yes             ; User VHDL File  ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/accumulator8.vhd    ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------+
@@ -194,12 +190,12 @@ applicable agreement for further details.
 +--------------------------+------------------+
 ; Resource                 ; Usage            ;
 +--------------------------+------------------+
-; I/O pins                 ; 81               ;
+; I/O pins                 ; 41               ;
 ; DSP block 9-bit elements ; 0                ;
 ; Maximum fan-out node     ; clk~input        ;
-; Maximum fan-out          ; 57               ;
-; Total fan-out            ; 738              ;
-; Average fan-out          ; 1.99             ;
+; Maximum fan-out          ; 53               ;
+; Total fan-out            ; 517              ;
+; Average fan-out          ; 2.18             ;
 +--------------------------+------------------+
 
 
@@ -208,22 +204,20 @@ applicable agreement for further details.
 +-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                       ; Library Name ;
 +-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
-; |vending_machine              ; 152 (84)          ; 57 (49)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 81   ; 0            ; |vending_machine                                                          ; work         ;
-;    |accumulator8:accumulator| ; 22 (12)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator                                 ; work         ;
-;       |adder8:adder|          ; 10 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder                    ; work         ;
+; |vending_machine              ; 102 (76)          ; 53 (45)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 41   ; 0            ; |vending_machine                                                          ; work         ;
+;    |accumulator8:accumulator| ; 19 (12)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator                                 ; work         ;
+;       |adder8:adder|          ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder                    ; work         ;
 ;          |full_adder:bit1|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit1    ; work         ;
 ;          |full_adder:bit2|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit2    ; work         ;
-;          |full_adder:bit3|    ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit3    ; work         ;
-;          |full_adder:bit4|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit4    ; work         ;
+;          |full_adder:bit3|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit3    ; work         ;
+;          |full_adder:bit4|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit4    ; work         ;
 ;          |full_adder:bit5|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit5    ; work         ;
 ;          |full_adder:bit6|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit6    ; work         ;
-;    |mux21:mux|                ; 38 (38)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|mux21:mux                                                ; work         ;
-;    |subtractor8:subtractor|   ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor                                   ; work         ;
-;       |adder8:subtractor|     ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor|adder8:subtractor                 ; work         ;
-;          |full_adder:bit1|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit1 ; work         ;
-;          |full_adder:bit2|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit2 ; work         ;
-;          |full_adder:bit4|    ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit4 ; work         ;
-;          |full_adder:bit5|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit5 ; work         ;
+;    |mux21:mux|                ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|mux21:mux                                                ; work         ;
+;    |subtractor8:subtractor|   ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor                                   ; work         ;
+;       |adder8:subtractor|     ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor|adder8:subtractor                 ; work         ;
+;          |full_adder:bit2|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit2 ; work         ;
+;          |full_adder:bit4|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit4 ; work         ;
 +-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -245,17 +239,23 @@ Encoding Type:  One-Hot
 +----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
 +----------------------------------------------------+---------------------+------------------------+
-; mux21:mux|output[0]                                ; mux21:mux|output[7] ; yes                    ;
 ; mux21:mux|output[1]                                ; mux21:mux|output[7] ; yes                    ;
 ; mux21:mux|output[2]                                ; mux21:mux|output[7] ; yes                    ;
-; mux21:mux|output[3]                                ; mux21:mux|output[7] ; yes                    ;
 ; mux21:mux|output[4]                                ; mux21:mux|output[7] ; yes                    ;
-; mux21:mux|output[5]                                ; mux21:mux|output[7] ; yes                    ;
-; mux21:mux|output[6]                                ; mux21:mux|output[7] ; yes                    ;
 ; mux21:mux|output[7]                                ; mux21:mux|output[7] ; yes                    ;
-; Number of user-specified and inferred latches = 8  ;                     ;                        ;
+; Number of user-specified and inferred latches = 4  ;                     ;                        ;
 +----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; price_reg[0,3,5,6]                    ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 4 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -263,12 +263,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 57    ;
-; Number of registers using Synchronous Clear  ; 1     ;
+; Total registers                              ; 53    ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 53    ;
+; Number of registers using Clock Enable       ; 49    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -288,9 +288,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |vending_machine|accumulator8:accumulator|temp2[2] ;
-; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |vending_machine|D[2]~reg0                         ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |vending_machine|mux21:mux|output[0]               ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |vending_machine|accumulator8:accumulator|temp2[0] ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |vending_machine|D[0]~reg0                         ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |vending_machine|NSTATE                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 
@@ -324,6 +323,29 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++-------------------------------------------+
+; Port Connectivity Checks: "mux21:mux"     ;
++---------+-------+----------+--------------+
+; Port    ; Type  ; Severity ; Details      ;
++---------+-------+----------+--------------+
+; a[2..1] ; Input ; Info     ; Stuck at VCC ;
+; a[6..5] ; Input ; Info     ; Stuck at GND ;
+; a[7]    ; Input ; Info     ; Stuck at VCC ;
+; a[4]    ; Input ; Info     ; Stuck at VCC ;
+; a[3]    ; Input ; Info     ; Stuck at GND ;
+; a[0]    ; Input ; Info     ; Stuck at GND ;
+; b[2..1] ; Input ; Info     ; Stuck at VCC ;
+; b[6..5] ; Input ; Info     ; Stuck at GND ;
+; b[7]    ; Input ; Info     ; Stuck at VCC ;
+; b[4]    ; Input ; Info     ; Stuck at VCC ;
+; b[3]    ; Input ; Info     ; Stuck at GND ;
+; b[0]    ; Input ; Info     ; Stuck at GND ;
+; c       ; Input ; Info     ; Stuck at GND ;
+; d       ; Input ; Info     ; Stuck at GND ;
+; e       ; Input ; Info     ; Stuck at GND ;
++---------+-------+----------+--------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -339,9 +361,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat Dec 09 11:23:59 2023
+    Info: Processing started: Sat Dec 09 18:17:02 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MaquinaDeSalgadosFinal -c MaquinaDeSalgadosFinal
-Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file vending_machine.vhd
     Info (12022): Found design unit 1: vending_machine-rtl
     Info (12023): Found entity 1: vending_machine
@@ -370,13 +392,13 @@ Info (12021): Found 2 design units, including 1 entities, in source file accumul
     Info (12022): Found design unit 1: accumulator8-rtl
     Info (12023): Found entity 1: accumulator8
 Info (12127): Elaborating entity "vending_machine" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at vending_machine.vhd(79): object "balance_lower" assigned a value but never read
-Warning (10540): VHDL Signal Declaration warning at vending_machine.vhd(87): used explicit default value for signal "stock_S1_reg" because signal was never assigned a value
-Warning (10492): VHDL Process Statement warning at vending_machine.vhd(157): signal "choice_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at vending_machine.vhd(159): signal "stock_S0_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at vending_machine.vhd(165): signal "stock_S1_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at vending_machine.vhd(175): signal "stock_S0_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at vending_machine.vhd(175): signal "stock_S1_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10036): Verilog HDL or VHDL warning at vending_machine.vhd(85): object "balance_lower" assigned a value but never read
+Warning (10540): VHDL Signal Declaration warning at vending_machine.vhd(93): used explicit default value for signal "stock_S1_reg" because signal was never assigned a value
+Warning (10492): VHDL Process Statement warning at vending_machine.vhd(163): signal "choice_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vending_machine.vhd(165): signal "stock_S0_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vending_machine.vhd(171): signal "stock_S1_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vending_machine.vhd(181): signal "stock_S0_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vending_machine.vhd(181): signal "stock_S1_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "mux21" for hierarchy "mux21:mux"
 Info (10041): Inferred latch for "output[0]" at mux21.vhd(19)
 Info (10041): Inferred latch for "output[1]" at mux21.vhd(19)
@@ -395,22 +417,12 @@ Info (12128): Elaborating entity "comparator_1bit" for hierarchy "comparator8:co
 Info (12128): Elaborating entity "comparator_CO" for hierarchy "comparator8:comparator|comparator_CO:bit6"
 Info (12128): Elaborating entity "subtractor8" for hierarchy "subtractor8:subtractor"
 Warning (10036): Verilog HDL or VHDL warning at subtractor8.vhd(25): object "c_out" assigned a value but never read
-Warning (13012): Latch mux21:mux|output[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal choice[2]
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "mux21:mux|output[2]" merged with LATCH primitive "mux21:mux|output[1]"
+    Info (13026): Duplicate LATCH primitive "mux21:mux|output[4]" merged with LATCH primitive "mux21:mux|output[1]"
+    Info (13026): Duplicate LATCH primitive "mux21:mux|output[7]" merged with LATCH primitive "mux21:mux|output[1]"
 Warning (13012): Latch mux21:mux|output[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal choice[1]
-Warning (13012): Latch mux21:mux|output[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal choice[2]
-Warning (13012): Latch mux21:mux|output[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal choice[1]
-Warning (13012): Latch mux21:mux|output[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal choice[2]
-Warning (13012): Latch mux21:mux|output[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal choice[1]
-Warning (13012): Latch mux21:mux|output[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal choice[2]
-Warning (13012): Latch mux21:mux|output[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal choice[1]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal choice[0]
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ESTQ[3]" is stuck at GND
     Warning (13410): Pin "ESTQ[4]" is stuck at GND
@@ -420,14 +432,14 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 244 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 54 input pins
+Info (21057): Implemented 150 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
     Info (21059): Implemented 27 output pins
-    Info (21061): Implemented 163 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 31 warnings
-    Info: Peak virtual memory: 4717 megabytes
-    Info: Processing ended: Sat Dec 09 11:24:04 2023
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:03
+    Info (21061): Implemented 109 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 18 warnings
+    Info: Peak virtual memory: 4709 megabytes
+    Info: Processing ended: Sat Dec 09 18:17:11 2023
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:06
 
 

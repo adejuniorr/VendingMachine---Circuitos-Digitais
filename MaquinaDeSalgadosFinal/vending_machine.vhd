@@ -89,7 +89,6 @@ signal nRST_acc : std_logic;
 signal valid_coin : std_logic;
 signal c_out : std_logic;
 signal c_in : std_logic;
-signal E_temp : std_logic_vector(8 downto 0);
 signal stock_S0_reg, stock_S1_reg, stock_S2_reg, stock_S3_reg, stock_S4_reg, stock_S5_reg : integer := 1;
 
 begin
@@ -164,16 +163,16 @@ begin
 
 	next_state : process( CSTATE, balance, C, balance_equal, balance_greater, coins_to_return)
     begin
-        NSTATE <= CSTATE;
+      NSTATE <= CSTATE;
 		nRST_acc <= '1';
-        price_choice_reg_EN <= '0';
+      price_choice_reg_EN <= '0';
 		dispensation_EN <= '0';
 		p <= (others => '0');
 		E <= (others => '0');
 		ESTQ <= (others => '0');
 
-        case( CSTATE ) is
-            when INIT_STATE =>
+      case( CSTATE ) is
+			when INIT_STATE =>
 				nRST_acc <= '0';
 				price_choice_reg_EN <= '1';
 				E <= balance;
@@ -192,27 +191,32 @@ begin
                             ESTQ <= "000000111";
                             NSTATE <= INIT_STATE;
                         end if;
-                    -- Repeat for other choices
+                    when "011" =>
+								if stock_S2_reg <= 0 then
+									-- Out of stock for S2, stay in INIT_STATE
+									ESTQ <= "000000111";
+									NSTATE <= INIT_STATE;
+								end if;
+							when "100" =>
+                        if stock_S3_reg <= 0 then
+                            -- Out of stock for S3, stay in INIT_STATE
+                            ESTQ <= "000000111";
+                            NSTATE <= INIT_STATE;
+                        end if;
+                    when "101" =>
+								if stock_S4_reg <= 0 then
+									-- Out of stock for S4, stay in INIT_STATE
+									ESTQ <= "000000111";
+									NSTATE <= INIT_STATE;
+								end if;
                     when others =>
                         null;
                 end case;
 
-                if C = '1' and (stock_S0_reg > 0 or stock_S1_reg > 0) then
+                if C = '1' and (stock_S0_reg > 0 or stock_S1_reg > 0 or stock_S2_reg > 0 or stock_S3_reg > 0 or stock_S4_reg > 0) then
                     nRST_acc <= '1';
                     NSTATE <= Coin_Reception;
                 end if;
-					 
-					 
-                --if (C = '1') then
-					--nRST_acc <= '1';
-                    --NSTATE <= Coin_Reception;
-                --end if ;
-    
-            when Coin_Reception =>
-				P <= balance;
-                if (balance_equal = '1' or balance_greater = '1') then
-                    NSTATE <= salgado_dispensation ;
-                end if ;
             
             when salgado_dispensation =>
 				dispensation_EN <= '1';

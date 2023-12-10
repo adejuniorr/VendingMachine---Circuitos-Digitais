@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II 64-Bit"
 // VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
-// DATE "12/10/2023 18:27:25"
+// DATE "12/10/2023 18:29:43"
 
 // 
 // Device: Altera EP4CGX22CF19C6 Package FBGA324
@@ -1247,19 +1247,19 @@ wire \display|HEX3[5]~feeder_combout ;
 wire \ESTQ~2_combout ;
 wire \ESTQ~4_combout ;
 wire \ESTQ~3_combout ;
-wire [31:0] stock_S0_reg;
-wire [8:0] price_reg;
-wire [6:0] \display|HEX2 ;
-wire [31:0] stock_S4_reg;
-wire [31:0] stock_S3_reg;
-wire [8:0] \mux|output ;
-wire [6:0] \display|HEX0 ;
-wire [6:0] \display|HEX1 ;
-wire [31:0] stock_S1_reg;
-wire [8:0] \accumulator|temp2 ;
-wire [2:0] choice_reg;
-wire [31:0] stock_S2_reg;
 wire [6:0] \display|HEX3 ;
+wire [8:0] \accumulator|temp2 ;
+wire [8:0] \mux|output ;
+wire [6:0] \display|HEX2 ;
+wire [31:0] stock_S1_reg;
+wire [31:0] stock_S2_reg;
+wire [8:0] price_reg;
+wire [6:0] \display|HEX1 ;
+wire [31:0] stock_S3_reg;
+wire [31:0] stock_S0_reg;
+wire [2:0] choice_reg;
+wire [31:0] stock_S4_reg;
+wire [6:0] \display|HEX0 ;
 
 
 // Location: IOOBUF_X46_Y41_N16

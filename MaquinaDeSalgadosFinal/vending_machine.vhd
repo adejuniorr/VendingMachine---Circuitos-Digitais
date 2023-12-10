@@ -513,7 +513,7 @@ begin
         end case ;
     end process ; -- next_state
 
-	 display : hex_controller port map(clk, nRST_acc, to_integer(unsigned(balance)), display1, display2, display3, display4);
+	 display : hex_controller port map(clk, nRST_acc, to_integer(unsigned(balance)), display4, display3, display2, display1);
 	--seg1 : hex_controller port map(balance(7 downto 6),display1);
 	--seg2 : hex_controller port map(balance(5 downto 3),display2);
 	--seg3 : hex_controller port map(balance(2 downto 1),display3);

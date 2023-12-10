@@ -3,7 +3,7 @@ $comment
 		vcd file MaquinaDeSalgadosFinal.msim.vcd -direction
 $end
 $date
-	Sat Dec 09 23:29:15 2023
+	Sat Dec 09 23:35:11 2023
 $end
 $version
 	ModelSim Version 10.1d

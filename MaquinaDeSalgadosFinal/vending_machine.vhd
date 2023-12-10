@@ -244,7 +244,7 @@ entity vending_machine is
 end vending_machine;
 
 architecture rtl of vending_machine is
-  constant S0 : std_logic_vector(8 downto 0) := "111111111"; -- Preço da escolha 1 11111010 200 001100100
+  constant S0 : std_logic_vector(8 downto 0) := "001100100"; -- Preço da escolha 1 11111010 200 001100100
   constant S1 : std_logic_vector(8 downto 0) := "010010110"; -- Preço da escolha 2 10010110 150
   constant S2 : std_logic_vector(8 downto 0) := "000000000"; -- Exemplo para a escolha 3
   constant S3 : std_logic_vector(8 downto 0) := "000000000"; -- Exemplo para a escolha 4
@@ -327,6 +327,8 @@ signal c_in : std_logic;
 signal E_temp : std_logic_vector(8 downto 0);
 signal stock_S0_reg, stock_S1_reg, stock_S2_reg, stock_S3_reg, stock_S4_reg, stock_S5_reg : integer := 1;
 signal valor_display : integer range 0 to 9999 := 0;  -- Accumulated coin value as integer
+signal temp_D : std_logic_vector(2 downto 0); -- Assuming D is std_logic_vector(2 downto 0)
+
 
 begin
 	price_registration : process( CLK )
@@ -350,57 +352,65 @@ begin
         end if ;
     end process ; -- state_registration
 
-	salgado_dispensation_proc: process(clk)
-	begin
-		if (CLK'event and CLK = '1') then
-			if (cancel_purchase /= '1') then
-				if (dispensation_EN = '1' and cancel_purchase /= '1') then
-					if(choice_reg = "001") then
-						if stock_S0_reg > 0 then	
-							D <= "001";	--S0
-							stock_S0_reg <= stock_S0_reg - 1;
-						--else 
-							--D <= "111"; -- sem estoque
-						end if;	
-					elsif(choice_reg = "010") then 
-						if stock_S1_reg > 0 then
-							D <= "010";	--S1
-							stock_S1_reg <= stock_S1_reg - 1;
-						--else 
-							--D <= "111"; -- sem estoque
-						end if;
-					elsif(choice_reg = "011") then 
-						if stock_S2_reg > 0 then
-							D <= "011";	--S2
-							stock_S2_reg <= stock_S2_reg - 1;
-						--else 
-							--D <= "111"; -- sem estoque
-						end if;
-					elsif(choice_reg = "100") then 
-						if stock_S3_reg > 0 then	
-							D <= "100";	--S3
-							stock_S3_reg <= stock_S3_reg - 1;
-						--else 
-							--D <= "111"; -- sem estoque
-						end if;
-					elsif(choice_reg = "101") then 
-						if stock_S4_reg > 0 then	
-							D <= "101";	--S4
-							stock_S4_reg <= stock_S4_reg - 1;
-						--else 
-							--D <= "111"; -- sem estoque
-						end if;
-					end if;
-				else
-					D <= "000";
-				end if;
-			else
-												  
-									  D <= "111";
-							  --NSTATE <= INIT_STATE;
-			end if;
-		end if;
-	end process; --salgado_dispensation_Proc;
+salgado_dispensation_proc: process(clk)
+    --variable temp_D : std_logic_vector(2 downto 0); -- Assuming D is std_logic_vector(2 downto 0)
+begin
+    if (CLK'event and CLK = '1') then
+        if (cancel_purchase /= '1') then
+            if (dispensation_EN = '1' and cancel_purchase /= '1') then
+                if(choice_reg = "001") then
+                    if stock_S0_reg > 0 then    
+                        temp_D <= "001";   --S0
+								D <= temp_D;
+                        stock_S0_reg <= stock_S0_reg - 1;
+                    --else 
+                        --temp_D := "111"; -- sem estoque
+                    end if; 
+                elsif(choice_reg = "010") then 
+                    if stock_S1_reg > 0 then
+                        temp_D <= "010";   --S1
+								D <= temp_D;
+                        stock_S1_reg <= stock_S1_reg - 1;
+                    --else 
+                        --temp_D := "111"; -- sem estoque
+                    end if;
+                elsif(choice_reg = "011") then 
+                    if stock_S2_reg > 0 then
+                        temp_D <= "011";   --S2
+								D <= temp_D;
+                        stock_S2_reg <= stock_S2_reg - 1;
+                    --else 
+                        --temp_D := "111"; -- sem estoque
+                    end if;
+                elsif(choice_reg = "100") then 
+                    if stock_S3_reg > 0 then    
+                        temp_D <= "100";   --S3
+								D <= temp_D;
+                        stock_S3_reg <= stock_S3_reg - 1;
+                    --else 
+                        --temp_D := "111"; -- sem estoque
+                    end if;
+                elsif(choice_reg = "101") then 
+                    if stock_S4_reg > 0 then    
+                        temp_D <= "101";   --S4
+								D <= temp_D;
+                        stock_S4_reg <= stock_S4_reg - 1;
+                    --else 
+                        --temp_D := "111"; -- sem estoque
+                    end if;
+                end if;
+
+                --D <= temp_D; -- Assign the value to D outside of the if-elsif statements
+
+            else
+                D <= "000";
+            end if;
+        else
+            --D <= "111"; desistiu
+            --NSTATE <= INIT_STATE;
+        end if;
+    end if;
+end process; --salgado_dispensation_Proc;
 
 	next_state : process( CSTATE, balance, C, balance_equal, balance_greater, coins_to_return)
     begin
@@ -513,7 +523,8 @@ begin
         end case ;
     end process ; -- next_state
 
-	 display : hex_controller port map(clk, nRST_acc, to_integer(unsigned(balance)), display4, display3, display2, display1);
+	 display : hex_controller port map(clk, nRST_acc, to_integer(unsigned(balance)), display4, display3, display2, open);
+	 display_unidade : hex_controller port map(clk, nRST_acc, to_integer(unsigned(temp_D)), display1, open, open, open);
 	--seg1 : hex_controller port map(balance(7 downto 6),display1);
 	--seg2 : hex_controller port map(balance(5 downto 3),display2);
 	--seg3 : hex_controller port map(balance(2 downto 1),display3);

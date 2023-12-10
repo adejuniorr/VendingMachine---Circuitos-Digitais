@@ -4,10 +4,10 @@ K3
 cModel Technology
 Z0 dC:\Users\adejr\OneDrive\Documents\GitHub\CircuitosDigitais\VendingMachine---Circuitos-Digitais\MaquinaDeSalgadosFinal\simulation\qsim
 vvending_machine
-Z1 ISI10f4dOYO6bjgjJz`BN03
+Z1 IkT6L8UV>>g]U[U9VGWnkk3
 Z2 VbRHDoWEKa1T9GhOjU:C<@2
 Z3 dC:\Users\mmm\OneDrive\Documentos\GitHub\VendingMachine---Circuitos-Digitais\MaquinaDeSalgadosFinal\simulation\qsim
-Z4 w1702243783
+Z4 w1702247303
 Z5 8MaquinaDeSalgadosFinal.vo
 Z6 FMaquinaDeSalgadosFinal.vo
 L0 31
@@ -17,9 +17,9 @@ r1
 Z8 !s90 -work|work|MaquinaDeSalgadosFinal.vo|
 Z9 o-work work -O0
 !i10b 1
-Z10 !s100 d?0Jk]:C[38lKBFzkLVJA1
+Z10 !s100 T1gY2Xa:DX<@A5aGdnN[?1
 !s85 0
-Z11 !s108 1702243786.874000
+Z11 !s108 1702247305.752000
 Z12 !s107 MaquinaDeSalgadosFinal.vo|
 !s101 -O0
 vvending_machine_vlg_check_tst
@@ -28,7 +28,7 @@ Z13 !s100 4=czefFQlK4:a^1hRS7gE2
 Z14 IBV?<T7=d6zNCQVbGeHGl[1
 Z15 V9Jn0>AJhcnom2a9H_l]Vd1
 R3
-Z16 w1702243779
+Z16 w1702247300
 Z17 8Waveform.vwf.vt
 Z18 FWaveform.vwf.vt
 L0 67
@@ -36,7 +36,7 @@ R7
 r1
 !s85 0
 31
-Z19 !s108 1702243787.378000
+Z19 !s108 1702247306.272000
 Z20 !s107 Waveform.vwf.vt|
 Z21 !s90 -work|work|Waveform.vwf.vt|
 !s101 -O0
@@ -62,8 +62,8 @@ R21
 R9
 vvending_machine_vlg_vec_tst
 !i10b 1
-Z25 !s100 [d@_8@N9Ef[P93`H[Y8o<2
-Z26 ILog_X3`T?=KiaRenEn6zX3
+Z25 !s100 el0S<G:E^>W9EWETQ<leV0
+Z26 I2Uk[;mlLV[dAOgCk7J;F_2
 Z27 Vc_h5K@]2PD5]EHm=Kj0_:3
 R3
 R16

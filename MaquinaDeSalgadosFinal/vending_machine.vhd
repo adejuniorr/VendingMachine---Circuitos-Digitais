@@ -114,7 +114,6 @@ begin
             end if ;
         end if ;
     end process ; -- state_registration
-	 
 
 	soda_dispensation_proc: process(clk)
 	begin
@@ -183,13 +182,17 @@ begin
                 end if;
 					 
 					 
-                --if (C = '1') then
-					--nRST_acc <= '1';
-                    --NSTATE <= Coin_Reception;
-                --end if ;
+					 
+					 
+      
     
             when Coin_Reception =>
 				P <= balance;
+				if V /= "000011001" and V /= "000110010" and V /= "001100100" then
+					E <= V;
+				end if;
+			
+				
                 if (balance_equal = '1' or balance_greater = '1') then
                     NSTATE <= soda_dispensation ;
                 end if ;

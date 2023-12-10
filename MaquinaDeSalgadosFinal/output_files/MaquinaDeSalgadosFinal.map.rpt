@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MaquinaDeSalgadosFinal
-Sat Dec 09 23:28:20 2023
+Sun Dec 10 18:26:12 2023
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -19,12 +19,19 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  11. General Register Statistics
  12. Inverted Register Statistics
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Port Connectivity Checks: "subtractor8:subtractor|adder8:subtractor"
- 15. Port Connectivity Checks: "comparator8:comparator"
- 16. Port Connectivity Checks: "accumulator8:accumulator|adder8:adder"
- 17. Port Connectivity Checks: "mux21:mux"
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+ 14. Parameter Settings for User Entity Instance: hex_controller:display
+ 15. Parameter Settings for Inferred Entity Instance: hex_controller:display|lpm_divide:Mod0
+ 16. Parameter Settings for Inferred Entity Instance: hex_controller:display|lpm_divide:Div0
+ 17. Parameter Settings for Inferred Entity Instance: hex_controller:display|lpm_divide:Mod1
+ 18. Parameter Settings for Inferred Entity Instance: hex_controller:display|lpm_divide:Div1
+ 19. Parameter Settings for Inferred Entity Instance: hex_controller:display|lpm_divide:Mod2
+ 20. Port Connectivity Checks: "subtractor8:subtractor|adder8:subtractor"
+ 21. Port Connectivity Checks: "comparator8:comparator"
+ 22. Port Connectivity Checks: "accumulator8:accumulator|adder8:adder"
+ 23. Port Connectivity Checks: "mux21:mux"
+ 24. Port Connectivity Checks: "hex_controller:display"
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
 
 
 
@@ -50,16 +57,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Dec 09 23:28:20 2023      ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 10 18:26:12 2023      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; MaquinaDeSalgadosFinal                     ;
 ; Top-level Entity Name              ; vending_machine                            ;
 ; Family                             ; Cyclone IV GX                              ;
-; Total logic elements               ; 318                                        ;
-;     Total combinational functions  ; 312                                        ;
-;     Dedicated logic registers      ; 182                                        ;
-; Total registers                    ; 182                                        ;
-; Total pins                         ; 45                                         ;
+; Total logic elements               ; 771                                        ;
+;     Total combinational functions  ; 755                                        ;
+;     Dedicated logic registers      ; 214                                        ;
+; Total registers                    ; 214                                        ;
+; Total pins                         ; 74                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -157,38 +164,48 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+------------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.0%      ;
-+----------------------------+-------------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                          ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                   ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------+---------+
-; vending_machine.vhd              ; yes             ; User VHDL File  ; C:/Users/south/Documents/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/vending_machine.vhd ;         ;
-; subtractor8.vhd                  ; yes             ; User VHDL File  ; C:/Users/south/Documents/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/subtractor8.vhd     ;         ;
-; mux21.vhd                        ; yes             ; User VHDL File  ; C:/Users/south/Documents/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/mux21.vhd           ;         ;
-; full_adder.vhd                   ; yes             ; User VHDL File  ; C:/Users/south/Documents/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/full_adder.vhd      ;         ;
-; comparator_1bit.vhd              ; yes             ; User VHDL File  ; C:/Users/south/Documents/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/comparator_1bit.vhd ;         ;
-; comparator8.vhd                  ; yes             ; User VHDL File  ; C:/Users/south/Documents/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/comparator8.vhd     ;         ;
-; comparator.vhd                   ; yes             ; User VHDL File  ; C:/Users/south/Documents/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/comparator.vhd      ;         ;
-; adder8.vhd                       ; yes             ; User VHDL File  ; C:/Users/south/Documents/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/adder8.vhd          ;         ;
-; accumulator8.vhd                 ; yes             ; User VHDL File  ; C:/Users/south/Documents/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/accumulator8.vhd    ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                      ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                  ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+---------+
+; vending_machine.vhd              ; yes             ; User VHDL File               ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/vending_machine.vhd        ;         ;
+; subtractor8.vhd                  ; yes             ; User VHDL File               ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/subtractor8.vhd            ;         ;
+; mux21.vhd                        ; yes             ; User VHDL File               ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/mux21.vhd                  ;         ;
+; full_adder.vhd                   ; yes             ; User VHDL File               ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/full_adder.vhd             ;         ;
+; comparator_1bit.vhd              ; yes             ; User VHDL File               ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/comparator_1bit.vhd        ;         ;
+; comparator8.vhd                  ; yes             ; User VHDL File               ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/comparator8.vhd            ;         ;
+; comparator.vhd                   ; yes             ; User VHDL File               ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/comparator.vhd             ;         ;
+; adder8.vhd                       ; yes             ; User VHDL File               ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/adder8.vhd                 ;         ;
+; accumulator8.vhd                 ; yes             ; User VHDL File               ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/accumulator8.vhd           ;         ;
+; hex_controller.vhd               ; yes             ; User VHDL File               ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/hex_controller.vhd         ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_divide.tdf                                                                 ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/abs_divider.inc                                                                ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                                            ;         ;
+; aglobal131.inc                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                                                                 ;         ;
+; db/lpm_divide_egm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/db/lpm_divide_egm.tdf      ;         ;
+; db/sign_div_unsign_9nh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/db/sign_div_unsign_9nh.tdf ;         ;
+; db/alt_u_div_0ef.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/db/alt_u_div_0ef.tdf       ;         ;
+; db/add_sub_1tc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/db/add_sub_1tc.tdf         ;         ;
+; db/add_sub_2tc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/db/add_sub_2tc.tdf         ;         ;
+; db/lpm_divide_qmm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/db/lpm_divide_qmm.tdf      ;         ;
+; db/sign_div_unsign_olh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/db/sign_div_unsign_olh.tdf ;         ;
+; db/alt_u_div_uaf.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/db/alt_u_div_uaf.tdf       ;         ;
+; db/lpm_divide_tmm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/db/lpm_divide_tmm.tdf      ;         ;
+; db/sign_div_unsign_rlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/db/sign_div_unsign_rlh.tdf ;         ;
+; db/alt_u_div_4bf.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/db/alt_u_div_4bf.tdf       ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------+
@@ -196,37 +213,63 @@ applicable agreement for further details.
 +--------------------------+------------------+
 ; Resource                 ; Usage            ;
 +--------------------------+------------------+
-; I/O pins                 ; 45               ;
+; I/O pins                 ; 74               ;
 ; DSP block 9-bit elements ; 0                ;
 ; Maximum fan-out node     ; clk~input        ;
-; Maximum fan-out          ; 182              ;
-; Total fan-out            ; 1456             ;
-; Average fan-out          ; 2.49             ;
+; Maximum fan-out          ; 214              ;
+; Total fan-out            ; 2769             ;
+; Average fan-out          ; 2.48             ;
 +--------------------------+------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                              ;
-+-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                       ; Library Name ;
-+-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
-; |vending_machine              ; 312 (283)         ; 182 (173)    ; 0           ; 0            ; 0       ; 0         ; 0         ; 45   ; 0            ; |vending_machine                                                          ; work         ;
-;    |accumulator8:accumulator| ; 21 (10)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator                                 ; work         ;
-;       |adder8:adder|          ; 11 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder                    ; work         ;
-;          |full_adder:bit1|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit1    ; work         ;
-;          |full_adder:bit2|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit2    ; work         ;
-;          |full_adder:bit3|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit3    ; work         ;
-;          |full_adder:bit4|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit4    ; work         ;
-;          |full_adder:bit5|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit5    ; work         ;
-;          |full_adder:bit6|    ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit6    ; work         ;
-;          |full_adder:bit7|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit7    ; work         ;
-;    |mux21:mux|                ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|mux21:mux                                                ; work         ;
-;    |subtractor8:subtractor|   ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor                                   ; work         ;
-;       |adder8:subtractor|     ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor|adder8:subtractor                 ; work         ;
-;          |full_adder:bit2|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit2 ; work         ;
-;          |full_adder:bit4|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit4 ; work         ;
-;          |full_adder:bit8|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit8 ; work         ;
-+-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                        ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                     ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |vending_machine                          ; 755 (295)         ; 214 (178)    ; 0           ; 0            ; 0       ; 0         ; 0         ; 74   ; 0            ; |vending_machine                                                                                                                        ; work         ;
+;    |accumulator8:accumulator|             ; 19 (11)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator                                                                                               ; work         ;
+;       |adder8:adder|                      ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder                                                                                  ; work         ;
+;          |full_adder:bit1|                ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit1                                                                  ; work         ;
+;          |full_adder:bit2|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit2                                                                  ; work         ;
+;          |full_adder:bit3|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit3                                                                  ; work         ;
+;          |full_adder:bit4|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit4                                                                  ; work         ;
+;          |full_adder:bit5|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit5                                                                  ; work         ;
+;          |full_adder:bit6|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit6                                                                  ; work         ;
+;          |full_adder:bit7|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|accumulator8:accumulator|adder8:adder|full_adder:bit7                                                                  ; work         ;
+;    |comparator8:comparator|               ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|comparator8:comparator                                                                                                 ; work         ;
+;       |comparator_CO:bit3|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|comparator8:comparator|comparator_CO:bit3                                                                              ; work         ;
+;       |comparator_CO:bit4|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|comparator8:comparator|comparator_CO:bit4                                                                              ; work         ;
+;       |comparator_CO:bit5|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|comparator8:comparator|comparator_CO:bit5                                                                              ; work         ;
+;       |comparator_CO:bit6|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|comparator8:comparator|comparator_CO:bit6                                                                              ; work         ;
+;    |hex_controller:display|               ; 416 (35)          ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|hex_controller:display                                                                                                 ; work         ;
+;       |lpm_divide:Div0|                   ; 70 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|hex_controller:display|lpm_divide:Div0                                                                                 ; work         ;
+;          |lpm_divide_qmm:auto_generated|  ; 70 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|hex_controller:display|lpm_divide:Div0|lpm_divide_qmm:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_olh:divider| ; 70 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|hex_controller:display|lpm_divide:Div0|lpm_divide_qmm:auto_generated|sign_div_unsign_olh:divider                       ; work         ;
+;                |alt_u_div_uaf:divider|    ; 70 (70)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|hex_controller:display|lpm_divide:Div0|lpm_divide_qmm:auto_generated|sign_div_unsign_olh:divider|alt_u_div_uaf:divider ; work         ;
+;       |lpm_divide:Div1|                   ; 48 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|hex_controller:display|lpm_divide:Div1                                                                                 ; work         ;
+;          |lpm_divide_tmm:auto_generated|  ; 48 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|hex_controller:display|lpm_divide:Div1|lpm_divide_tmm:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_rlh:divider| ; 48 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|hex_controller:display|lpm_divide:Div1|lpm_divide_tmm:auto_generated|sign_div_unsign_rlh:divider                       ; work         ;
+;                |alt_u_div_4bf:divider|    ; 48 (48)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|hex_controller:display|lpm_divide:Div1|lpm_divide_tmm:auto_generated|sign_div_unsign_rlh:divider|alt_u_div_4bf:divider ; work         ;
+;       |lpm_divide:Mod0|                   ; 175 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|hex_controller:display|lpm_divide:Mod0                                                                                 ; work         ;
+;          |lpm_divide_egm:auto_generated|  ; 175 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|hex_controller:display|lpm_divide:Mod0|lpm_divide_egm:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_9nh:divider| ; 175 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|hex_controller:display|lpm_divide:Mod0|lpm_divide_egm:auto_generated|sign_div_unsign_9nh:divider                       ; work         ;
+;                |alt_u_div_0ef:divider|    ; 175 (175)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|hex_controller:display|lpm_divide:Mod0|lpm_divide_egm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_0ef:divider ; work         ;
+;       |lpm_divide:Mod1|                   ; 88 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|hex_controller:display|lpm_divide:Mod1                                                                                 ; work         ;
+;          |lpm_divide_egm:auto_generated|  ; 88 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|hex_controller:display|lpm_divide:Mod1|lpm_divide_egm:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_9nh:divider| ; 88 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|hex_controller:display|lpm_divide:Mod1|lpm_divide_egm:auto_generated|sign_div_unsign_9nh:divider                       ; work         ;
+;                |alt_u_div_0ef:divider|    ; 88 (88)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|hex_controller:display|lpm_divide:Mod1|lpm_divide_egm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_0ef:divider ; work         ;
+;    |mux21:mux|                            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|mux21:mux                                                                                                              ; work         ;
+;    |subtractor8:subtractor|               ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor                                                                                                 ; work         ;
+;       |adder8:subtractor|                 ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor|adder8:subtractor                                                                               ; work         ;
+;          |full_adder:bit1|                ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit1                                                               ; work         ;
+;          |full_adder:bit2|                ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit2                                                               ; work         ;
+;          |full_adder:bit3|                ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit3                                                               ; work         ;
+;          |full_adder:bit4|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit4                                                               ; work         ;
+;          |full_adder:bit5|                ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit5                                                               ; work         ;
+;          |full_adder:bit7|                ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit7                                                               ; work         ;
+;          |full_adder:bit8|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |vending_machine|subtractor8:subtractor|adder8:subtractor|full_adder:bit8                                                               ; work         ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -247,11 +290,16 @@ Encoding Type:  One-Hot
 +----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
 +----------------------------------------------------+---------------------+------------------------+
+; mux21:mux|output[0]                                ; mux21:mux|output[8] ; yes                    ;
 ; mux21:mux|output[1]                                ; mux21:mux|output[8] ; yes                    ;
 ; mux21:mux|output[2]                                ; mux21:mux|output[8] ; yes                    ;
+; mux21:mux|output[3]                                ; mux21:mux|output[8] ; yes                    ;
 ; mux21:mux|output[4]                                ; mux21:mux|output[8] ; yes                    ;
+; mux21:mux|output[5]                                ; mux21:mux|output[8] ; yes                    ;
+; mux21:mux|output[6]                                ; mux21:mux|output[8] ; yes                    ;
 ; mux21:mux|output[7]                                ; mux21:mux|output[8] ; yes                    ;
-; Number of user-specified and inferred latches = 4  ;                     ;                        ;
+; mux21:mux|output[8]                                ; mux21:mux|output[8] ; yes                    ;
+; Number of user-specified and inferred latches = 9  ;                     ;                        ;
 +----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -261,8 +309,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------------+----------------------------------------+
 ; Register name                         ; Reason for Removal                     ;
 +---------------------------------------+----------------------------------------+
-; price_reg[0,3,5,6,8]                  ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 5 ;                                        ;
+; hex_controller:display|HEX3[6]        ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 1 ;                                        ;
 +---------------------------------------+----------------------------------------+
 
 
@@ -271,28 +319,55 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 182   ;
-; Number of registers using Synchronous Clear  ; 1     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Total registers                              ; 214   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 3     ;
+; Number of registers using Asynchronous Clear ; 27    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 174   ;
+; Number of registers using Clock Enable       ; 179   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; stock_S1_reg[0]                        ; 3       ;
-; stock_S0_reg[0]                        ; 3       ;
-; stock_S2_reg[0]                        ; 3       ;
-; stock_S4_reg[0]                        ; 3       ;
-; stock_S3_reg[0]                        ; 3       ;
-; Total number of inverted registers = 5 ;         ;
-+----------------------------------------+---------+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; hex_controller:display|HEX0[0]          ; 1       ;
+; hex_controller:display|HEX0[1]          ; 1       ;
+; hex_controller:display|HEX0[2]          ; 1       ;
+; hex_controller:display|HEX0[3]          ; 1       ;
+; hex_controller:display|HEX0[4]          ; 1       ;
+; hex_controller:display|HEX0[5]          ; 1       ;
+; hex_controller:display|HEX0[6]          ; 1       ;
+; hex_controller:display|HEX1[0]          ; 1       ;
+; hex_controller:display|HEX1[1]          ; 1       ;
+; hex_controller:display|HEX1[2]          ; 1       ;
+; hex_controller:display|HEX1[3]          ; 1       ;
+; hex_controller:display|HEX1[4]          ; 1       ;
+; hex_controller:display|HEX1[5]          ; 1       ;
+; hex_controller:display|HEX1[6]          ; 1       ;
+; hex_controller:display|HEX2[0]          ; 1       ;
+; hex_controller:display|HEX2[1]          ; 1       ;
+; hex_controller:display|HEX2[2]          ; 1       ;
+; hex_controller:display|HEX2[3]          ; 1       ;
+; hex_controller:display|HEX2[4]          ; 1       ;
+; hex_controller:display|HEX2[5]          ; 1       ;
+; hex_controller:display|HEX2[6]          ; 1       ;
+; hex_controller:display|HEX3[0]          ; 1       ;
+; hex_controller:display|HEX3[1]          ; 1       ;
+; hex_controller:display|HEX3[2]          ; 1       ;
+; hex_controller:display|HEX3[3]          ; 1       ;
+; hex_controller:display|HEX3[4]          ; 1       ;
+; hex_controller:display|HEX3[5]          ; 1       ;
+; stock_S0_reg[0]                         ; 3       ;
+; stock_S1_reg[0]                         ; 3       ;
+; stock_S4_reg[0]                         ; 3       ;
+; stock_S2_reg[0]                         ; 3       ;
+; stock_S3_reg[0]                         ; 3       ;
+; Total number of inverted registers = 32 ;         ;
++-----------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -300,10 +375,137 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |vending_machine|accumulator8:accumulator|temp2[7] ;
-; 14:1               ; 3 bits    ; 27 LEs        ; 12 LEs               ; 15 LEs                 ; Yes        ; |vending_machine|D[0]~reg0                         ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |vending_machine|Selector2                         ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |vending_machine|accumulator8:accumulator|temp2[8] ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |vending_machine|D[0]~reg0                         ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |vending_machine|P                                 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |vending_machine|NSTATE                            ;
+; 8:1                ; 9 bits    ; 45 LEs        ; 36 LEs               ; 9 LEs                  ; No         ; |vending_machine|Selector0                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: hex_controller:display ;
++----------------+---------+------------------------------------------+
+; Parameter Name ; Value   ; Type                                     ;
++----------------+---------+------------------------------------------+
+; CLEARED_HEX    ; 1111111 ; Unsigned Binary                          ;
++----------------+---------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: hex_controller:display|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 14             ; Untyped                                       ;
+; LPM_WIDTHD             ; 14             ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_egm ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: hex_controller:display|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 14             ; Untyped                                       ;
+; LPM_WIDTHD             ; 4              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_qmm ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: hex_controller:display|lpm_divide:Mod1 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 14             ; Untyped                                       ;
+; LPM_WIDTHD             ; 14             ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_egm ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: hex_controller:display|lpm_divide:Div1 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 14             ; Untyped                                       ;
+; LPM_WIDTHD             ; 7              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_tmm ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: hex_controller:display|lpm_divide:Mod2 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 14             ; Untyped                                       ;
+; LPM_WIDTHD             ; 14             ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_egm ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------------------------------------+
@@ -340,13 +542,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------+-------+----------+--------------+
 ; Port    ; Type  ; Severity ; Details      ;
 +---------+-------+----------+--------------+
-; a[2..1] ; Input ; Info     ; Stuck at VCC ;
-; a[6..5] ; Input ; Info     ; Stuck at GND ;
-; a[8]    ; Input ; Info     ; Stuck at GND ;
-; a[7]    ; Input ; Info     ; Stuck at VCC ;
-; a[4]    ; Input ; Info     ; Stuck at VCC ;
-; a[3]    ; Input ; Info     ; Stuck at GND ;
-; a[0]    ; Input ; Info     ; Stuck at GND ;
+; a       ; Input ; Info     ; Stuck at VCC ;
 ; b[2..1] ; Input ; Info     ; Stuck at VCC ;
 ; b[6..5] ; Input ; Info     ; Stuck at GND ;
 ; b[8]    ; Input ; Info     ; Stuck at GND ;
@@ -360,12 +556,21 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------+-------+----------+--------------+
 
 
++----------------------------------------------------+
+; Port Connectivity Checks: "hex_controller:display" ;
++----------------+-------+----------+----------------+
+; Port           ; Type  ; Severity ; Details        ;
++----------------+-------+----------+----------------+
+; i_value[13..9] ; Input ; Info     ; Stuck at GND   ;
++----------------+-------+----------+----------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:09     ;
 +----------------+--------------+
 
 
@@ -375,9 +580,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat Dec 09 23:28:17 2023
+    Info: Processing started: Sun Dec 10 18:25:56 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MaquinaDeSalgadosFinal -c MaquinaDeSalgadosFinal
-Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file vending_machine.vhd
     Info (12022): Found design unit 1: vending_machine-rtl
     Info (12023): Found entity 1: vending_machine
@@ -405,17 +610,28 @@ Info (12021): Found 2 design units, including 1 entities, in source file adder8.
 Info (12021): Found 2 design units, including 1 entities, in source file accumulator8.vhd
     Info (12022): Found design unit 1: accumulator8-rtl
     Info (12023): Found entity 1: accumulator8
+Info (12021): Found 2 design units, including 1 entities, in source file hex_controller.vhd
+    Info (12022): Found design unit 1: hex_controller-behav
+    Info (12023): Found entity 1: hex_controller
 Info (12127): Elaborating entity "vending_machine" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at vending_machine.vhd(301): object "balance_lower" assigned a value but never read
-Warning (10492): VHDL Process Statement warning at vending_machine.vhd(395): signal "choice_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at vending_machine.vhd(397): signal "stock_S0_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at vending_machine.vhd(408): signal "stock_S1_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at vending_machine.vhd(423): signal "stock_S0_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at vending_machine.vhd(423): signal "stock_S1_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at vending_machine.vhd(425): signal "stock_S0_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at vending_machine.vhd(425): signal "stock_S1_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at vending_machine.vhd(435): signal "V" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at vending_machine.vhd(436): signal "V" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10036): Verilog HDL or VHDL warning at vending_machine.vhd(320): object "balance_lower" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at vending_machine.vhd(329): object "valor_display" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at vending_machine.vhd(420): signal "cancel_purchase" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vending_machine.vhd(424): signal "V" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vending_machine.vhd(425): signal "V" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vending_machine.vhd(436): signal "choice_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vending_machine.vhd(438): signal "stock_S0_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vending_machine.vhd(449): signal "stock_S1_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vending_machine.vhd(466): signal "choice" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vending_machine.vhd(466): signal "stock_S0_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vending_machine.vhd(475): signal "choice" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vending_machine.vhd(475): signal "stock_S1_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vending_machine.vhd(482): signal "cancel_purchase" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vending_machine.vhd(490): signal "V" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vending_machine.vhd(491): signal "V" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vending_machine.vhd(500): signal "cancel_purchase" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "hex_controller" for hierarchy "hex_controller:display"
+Warning (10492): VHDL Process Statement warning at hex_controller.vhd(68): signal "RESET_N" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "mux21" for hierarchy "mux21:mux"
 Info (10041): Inferred latch for "output[0]" at mux21.vhd(19)
 Info (10041): Inferred latch for "output[1]" at mux21.vhd(19)
@@ -435,13 +651,74 @@ Info (12128): Elaborating entity "comparator_1bit" for hierarchy "comparator8:co
 Info (12128): Elaborating entity "comparator_CO" for hierarchy "comparator8:comparator|comparator_CO:bit7"
 Info (12128): Elaborating entity "subtractor8" for hierarchy "subtractor8:subtractor"
 Warning (10036): Verilog HDL or VHDL warning at subtractor8.vhd(25): object "c_out" assigned a value but never read
+Info (278001): Inferred 5 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_controller:display|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_controller:display|Div0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_controller:display|Mod1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_controller:display|Div1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_controller:display|Mod2"
+Info (12130): Elaborated megafunction instantiation "hex_controller:display|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "hex_controller:display|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "14"
+    Info (12134): Parameter "LPM_WIDTHD" = "14"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_egm.tdf
+    Info (12023): Found entity 1: lpm_divide_egm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9nh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_0ef.tdf
+    Info (12023): Found entity 1: alt_u_div_0ef
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_1tc.tdf
+    Info (12023): Found entity 1: add_sub_1tc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_2tc.tdf
+    Info (12023): Found entity 1: add_sub_2tc
+Info (12130): Elaborated megafunction instantiation "hex_controller:display|lpm_divide:Div0"
+Info (12133): Instantiated megafunction "hex_controller:display|lpm_divide:Div0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "14"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_qmm.tdf
+    Info (12023): Found entity 1: lpm_divide_qmm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_olh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_olh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_uaf.tdf
+    Info (12023): Found entity 1: alt_u_div_uaf
+Info (12130): Elaborated megafunction instantiation "hex_controller:display|lpm_divide:Mod1"
+Info (12133): Instantiated megafunction "hex_controller:display|lpm_divide:Mod1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "14"
+    Info (12134): Parameter "LPM_WIDTHD" = "14"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "hex_controller:display|lpm_divide:Div1"
+Info (12133): Instantiated megafunction "hex_controller:display|lpm_divide:Div1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "14"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_tmm.tdf
+    Info (12023): Found entity 1: lpm_divide_tmm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_rlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_rlh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_4bf.tdf
+    Info (12023): Found entity 1: alt_u_div_4bf
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "mux21:mux|output[3]" merged with LATCH primitive "mux21:mux|output[0]"
+    Info (13026): Duplicate LATCH primitive "mux21:mux|output[5]" merged with LATCH primitive "mux21:mux|output[0]"
+    Info (13026): Duplicate LATCH primitive "mux21:mux|output[6]" merged with LATCH primitive "mux21:mux|output[0]"
+    Info (13026): Duplicate LATCH primitive "mux21:mux|output[8]" merged with LATCH primitive "mux21:mux|output[0]"
     Info (13026): Duplicate LATCH primitive "mux21:mux|output[2]" merged with LATCH primitive "mux21:mux|output[1]"
     Info (13026): Duplicate LATCH primitive "mux21:mux|output[4]" merged with LATCH primitive "mux21:mux|output[1]"
     Info (13026): Duplicate LATCH primitive "mux21:mux|output[7]" merged with LATCH primitive "mux21:mux|output[1]"
+Warning (13012): Latch mux21:mux|output[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal choice[0]
 Warning (13012): Latch mux21:mux|output[1] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal choice[2]
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "display4[6]" is stuck at VCC
     Warning (13410): Pin "ESTQ[3]" is stuck at GND
     Warning (13410): Pin "ESTQ[4]" is stuck at GND
     Warning (13410): Pin "ESTQ[5]" is stuck at GND
@@ -449,16 +726,21 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ESTQ[7]" is stuck at GND
     Warning (13410): Pin "ESTQ[8]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "hex_controller:display|lpm_divide:Mod1|lpm_divide_egm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_0ef:divider|add_sub_13_result_int[0]~0"
+    Info (17048): Logic cell "hex_controller:display|lpm_divide:Mod1|lpm_divide_egm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_0ef:divider|add_sub_11_result_int[0]~24"
+    Info (17048): Logic cell "hex_controller:display|lpm_divide:Mod1|lpm_divide_egm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_0ef:divider|add_sub_12_result_int[0]~26"
+    Info (17048): Logic cell "hex_controller:display|lpm_divide:Div1|lpm_divide_tmm:auto_generated|sign_div_unsign_rlh:divider|alt_u_div_4bf:divider|add_sub_11_result_int[1]~14"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 365 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 15 input pins
-    Info (21059): Implemented 30 output pins
-    Info (21061): Implemented 320 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 4734 megabytes
-    Info: Processing ended: Sat Dec 09 23:28:20 2023
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+Info (21057): Implemented 849 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 16 input pins
+    Info (21059): Implemented 58 output pins
+    Info (21061): Implemented 775 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 32 warnings
+    Info: Peak virtual memory: 4716 megabytes
+    Info: Processing ended: Sun Dec 10 18:26:13 2023
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:11
 
 

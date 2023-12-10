@@ -4,54 +4,54 @@ K3
 cModel Technology
 Z0 dC:\Users\adejr\OneDrive\Documents\GitHub\CircuitosDigitais\VendingMachine---Circuitos-Digitais\MaquinaDeSalgadosFinal\simulation\qsim
 vvending_machine
-Z1 !s100 ]00CVRB@g5FlJSgZGe]mG1
-Z2 IL;m9P@6EJ`Z2T`^97gDz;2
-Z3 VOD7HDcEQlE_;dDUT5To2i0
-Z4 dC:\Users\south\Documents\GitHub\VendingMachine---Circuitos-Digitais\MaquinaDeSalgadosFinal\simulation\qsim
-Z5 w1702175710
-Z6 8MaquinaDeSalgadosFinal.vo
-Z7 FMaquinaDeSalgadosFinal.vo
+Z1 IXG01JQPQk0Q7BUbdz0RnZ1
+Z2 VbRHDoWEKa1T9GhOjU:C<@2
+Z3 dC:\Users\mmm\OneDrive\Documentos\GitHub\VendingMachine---Circuitos-Digitais\MaquinaDeSalgadosFinal\simulation\qsim
+Z4 w1702243086
+Z5 8MaquinaDeSalgadosFinal.vo
+Z6 FMaquinaDeSalgadosFinal.vo
 L0 31
-Z8 OV;L;10.1d;51
+Z7 OV;L;10.1d;51
 r1
 31
-Z9 !s90 -work|work|MaquinaDeSalgadosFinal.vo|
-Z10 o-work work -O0
+Z8 !s90 -work|work|MaquinaDeSalgadosFinal.vo|
+Z9 o-work work -O0
 !i10b 1
+Z10 !s100 Fn<CdBBhZWDa[>68]PFm=2
 !s85 0
-Z11 !s108 1702175710.898000
+Z11 !s108 1702243090.704000
 Z12 !s107 MaquinaDeSalgadosFinal.vo|
 !s101 -O0
 vvending_machine_vlg_check_tst
 !i10b 1
-Z13 !s100 j[e`ZZ`b<Gia7KlB4<ZON2
-Z14 I;0AYjEADC7gV1AlnJ?Gc?2
-Z15 VRd@9OCE1dMXdM7J]bNk0[2
-R4
-Z16 w1702175708
+Z13 !s100 4=czefFQlK4:a^1hRS7gE2
+Z14 IBV?<T7=d6zNCQVbGeHGl[1
+Z15 V9Jn0>AJhcnom2a9H_l]Vd1
+R3
+Z16 w1702243083
 Z17 8Waveform.vwf.vt
 Z18 FWaveform.vwf.vt
-L0 65
-R8
+L0 67
+R7
 r1
 !s85 0
 31
-Z19 !s108 1702175710.991000
+Z19 !s108 1702243091.111000
 Z20 !s107 Waveform.vwf.vt|
 Z21 !s90 -work|work|Waveform.vwf.vt|
 !s101 -O0
-R10
+R9
 vvending_machine_vlg_sample_tst
 !i10b 1
-Z22 !s100 RzN2816ObL42:c67h=D5G3
-Z23 Ia_oazGNLS4;DR5am0mj8I0
-Z24 V?dEc>LWi8ik<2A3e@z9L@3
-R4
+Z22 !s100 n>>?FJ63cG2J?8LanDN:_0
+Z23 IF2oTVVU<=ai1IZKZ`mMLF2
+Z24 VYj30`XEAJP611z?Hk1^8n3
+R3
 R16
 R17
 R18
 L0 29
-R8
+R7
 r1
 !s85 0
 31
@@ -59,18 +59,18 @@ R19
 R20
 R21
 !s101 -O0
-R10
+R9
 vvending_machine_vlg_vec_tst
 !i10b 1
-Z25 !s100 [jBT0iRMSh:L9B?MU2ko52
-Z26 I80G``]Jdig240CBB9dmIi0
+Z25 !s100 [d@_8@N9Ef[P93`H[Y8o<2
+Z26 ILog_X3`T?=KiaRenEn6zX3
 Z27 Vc_h5K@]2PD5]EHm=Kj0_:3
-R4
+R3
 R16
 R17
 R18
-Z28 L0 759
-R8
+Z28 L0 1297
+R7
 r1
 !s85 0
 31
@@ -78,4 +78,4 @@ R19
 R20
 R21
 !s101 -O0
-R10
+R9

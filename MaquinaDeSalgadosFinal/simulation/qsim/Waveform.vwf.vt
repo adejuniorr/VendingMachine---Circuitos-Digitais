@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "12/10/2023 19:28:19"
+// Generated on "12/10/2023 21:22:21"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    vending_machine
 // 
@@ -1451,8 +1451,8 @@ end
 initial
 begin
 	V[4] = 1'b1;
-	V[4] = #80000 1'b0;
-	V[4] = #360000 1'b1;
+	V[4] = #280000 1'b0;
+	V[4] = #160000 1'b1;
 	V[4] = #559000 1'b0;
 end 
 
@@ -1480,8 +1480,8 @@ end
 initial
 begin
 	V[1] = 1'b1;
-	V[1] = #280000 1'b0;
-	V[1] = #420000 1'b1;
+	V[1] = #80000 1'b0;
+	V[1] = #620000 1'b1;
 	V[1] = #299000 1'b0;
 end 
 
@@ -1489,7 +1489,9 @@ end
 initial
 begin
 	V[0] = 1'b0;
-	V[0] = #440000 1'b1;
+	V[0] = #80000 1'b1;
+	V[0] = #200000 1'b0;
+	V[0] = #160000 1'b1;
 	V[0] = #260000 1'b0;
 end 
 

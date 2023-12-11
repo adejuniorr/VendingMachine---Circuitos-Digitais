@@ -1,5 +1,5 @@
 Flow report for MaquinaDeSalgadosFinal
-Sun Dec 10 19:28:23 2023
+Sun Dec 10 21:22:26 2023
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,13 +40,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Sun Dec 10 19:28:23 2023      ;
+; Flow Status                        ; Successful - Sun Dec 10 21:22:26 2023      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; MaquinaDeSalgadosFinal                     ;
 ; Top-level Entity Name              ; vending_machine                            ;
 ; Family                             ; Cyclone IV GX                              ;
-; Total logic elements               ; 766 / 21,280 ( 4 % )                       ;
-;     Total combinational functions  ; 754 / 21,280 ( 4 % )                       ;
+; Total logic elements               ; 779 / 21,280 ( 4 % )                       ;
+;     Total combinational functions  ; 762 / 21,280 ( 4 % )                       ;
 ;     Dedicated logic registers      ; 215 / 21,280 ( 1 % )                       ;
 ; Total registers                    ; 215                                        ;
 ; Total pins                         ; 74 / 167 ( 44 % )                          ;
@@ -68,7 +68,7 @@ applicable agreement for further details.
 +-------------------+------------------------+
 ; Option            ; Setting                ;
 +-------------------+------------------------+
-; Start date & time ; 12/10/2023 19:26:35    ;
+; Start date & time ; 12/10/2023 21:20:23    ;
 ; Main task         ; Compilation            ;
 ; Revision Name     ; MaquinaDeSalgadosFinal ;
 +-------------------+------------------------+
@@ -79,7 +79,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------+------------------------+-----------------+----------------+
 ; Assignment Name                     ; Value                                                                                                               ; Default Value          ; Entity Name     ; Section Id     ;
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------+------------------------+-----------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 31032335310452.170224719506948                                                                                      ; --                     ; --              ; --             ;
+; COMPILER_SIGNATURE_ID               ; 31032335310452.170225402210256                                                                                      ; --                     ; --              ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                                                                                                                  ; --                     ; --              ; eda_simulation ;
 ; EDA_NETLIST_WRITER_OUTPUT_DIR       ; C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/simulation/qsim/ ; --                     ; --              ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                                                                                         ; --                     ; --              ; eda_simulation ;
@@ -97,14 +97,14 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:09     ; 1.0                     ; 4718 MB             ; 00:00:09                           ;
-; Fitter                    ; 00:00:37     ; 1.0                     ; 5057 MB             ; 00:00:33                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 4641 MB             ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:12     ; 1.0                     ; 4661 MB             ; 00:00:09                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4597 MB             ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4593 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4609 MB             ; 00:00:02                           ;
-; Total                     ; 00:01:08     ; --                      ; --                  ; 00:01:00                           ;
+; Analysis & Synthesis      ; 00:00:15     ; 1.0                     ; 4718 MB             ; 00:00:11                           ;
+; Fitter                    ; 00:00:53     ; 1.0                     ; 5063 MB             ; 00:00:41                           ;
+; Assembler                 ; 00:00:06     ; 1.0                     ; 4641 MB             ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:15     ; 1.0                     ; 4665 MB             ; 00:00:11                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4586 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 4593 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 4609 MB             ; 00:00:03                           ;
+; Total                     ; 00:01:37     ; --                      ; --                  ; 00:01:15                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

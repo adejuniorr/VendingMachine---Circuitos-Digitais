@@ -59,9 +59,9 @@
 # ERROR! Vector Mismatch for output port E[5] :: @time = 1276000.000 ps
 #      Expected value = x00000000
 #      Real value = 000110010
-# ERROR! Vector Mismatch for output port D[0] :: @time = 1340000.000 ps
+# ERROR! Vector Mismatch for output port D[1] :: @time = 1340000.000 ps
 #      Expected value = 000
-#      Real value = 001
+#      Real value = 010
 #          12 mismatched vectors : Simulation failed !
 # ** Note: $finish    : Waveform.vwf.vt(1293)
 #    Time: 10 us  Iteration: 0  Instance: /vending_machine_vlg_vec_tst/tb_out

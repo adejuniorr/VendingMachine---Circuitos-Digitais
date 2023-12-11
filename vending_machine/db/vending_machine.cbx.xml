@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="vending_machine">
+		<CBX_INST_ENTRY INSTANCE_NAME="|vending_machine|hex_controller:display|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_hem.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|vending_machine|hex_controller:display|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_28m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|vending_machine|hex_controller:display|lpm_divide:Mod2" CBX_FILE_NAME="lpm_divide_28m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|vending_machine|hex_controller:display|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_eem.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|vending_machine|hex_controller:display|lpm_divide:Mod1" CBX_FILE_NAME="lpm_divide_28m.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

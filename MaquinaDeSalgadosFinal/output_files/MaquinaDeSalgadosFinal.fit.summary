@@ -1,12 +1,12 @@
-Fitter Status : Successful - Mon Dec 11 07:47:44 2023
+Fitter Status : Successful - Mon Dec 11 09:25:26 2023
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : MaquinaDeSalgadosFinal
 Top-level Entity Name : vending_machine
 Family : Cyclone IV GX
 Device : EP4CGX22CF19C6
 Timing Models : Final
-Total logic elements : 772 / 21,280 ( 4 % )
-    Total combinational functions : 751 / 21,280 ( 4 % )
+Total logic elements : 789 / 21,280 ( 4 % )
+    Total combinational functions : 761 / 21,280 ( 4 % )
     Dedicated logic registers : 211 / 21,280 ( < 1 % )
 Total registers : 211
 Total pins : 74 / 167 ( 44 % )

@@ -98,9 +98,9 @@ set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
 set_global_assignment -name VECTOR_WAVEFORM_FILE ../../../../../Imagens/vending_machine/Waveform.vwf
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/Users/adejr/OneDrive/Imagens/vending_machine/Waveform.vwf"
 set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR "C:/Users/mmm/OneDrive/Documentos/GitHub/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/simulation/qsim/" -section_id eda_simulation
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveformcopia.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE WaveformCopiaRework.vwf
 set_global_assignment -name VHDL_FILE hex_controller.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/Users/adejr/OneDrive/Documents/GitHub/CircuitosDigitais/VendingMachine---Circuitos-Digitais/MaquinaDeSalgadosFinal/Waveform.vwf"

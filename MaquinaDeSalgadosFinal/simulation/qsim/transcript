@@ -13,7 +13,7 @@
 # 
 # Top level modules:
 # 	vending_machine_vlg_vec_tst
-# vsim -L cycloneiv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -voptargs=\"+acc\" -t 1ps -novopt work.vending_machine_vlg_vec_tst 
+# vsim -L cycloneiv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.vending_machine_vlg_vec_tst 
 # Loading work.vending_machine_vlg_vec_tst
 # Loading work.vending_machine
 # Loading cycloneiv_ver.cycloneiv_io_obuf
@@ -25,43 +25,22 @@
 # Loading altera_ver.dffeas
 # Loading work.vending_machine_vlg_sample_tst
 # Loading work.vending_machine_vlg_check_tst
-# Loading altera_ver.PRIM_GDFF_LOW
-# ERROR! Vector Mismatch for output port ESTQ[0] :: @time = 1000000.000 ps
-#      Expected value = x00000000
-#      Real value = 000000111
-# ERROR! Vector Mismatch for output port ESTQ[1] :: @time = 1000000.000 ps
-#      Expected value = x00000000
-#      Real value = 000000111
-# ERROR! Vector Mismatch for output port ESTQ[2] :: @time = 1000000.000 ps
-#      Expected value = x00000000
-#      Real value = 000000111
-# ERROR! Vector Mismatch for output port P[2] :: @time = 1140000.000 ps
-#      Expected value = x00000000
-#      Real value = 001100100
-# ERROR! Vector Mismatch for output port P[5] :: @time = 1140000.000 ps
-#      Expected value = x00000000
-#      Real value = 001100100
-# ERROR! Vector Mismatch for output port P[6] :: @time = 1140000.000 ps
-#      Expected value = x00000000
-#      Real value = 001100100
-# ERROR! Vector Mismatch for output port P[3] :: @time = 1240000.000 ps
-#      Expected value = x00000000
-#      Real value = 011001000
-# ERROR! Vector Mismatch for output port P[7] :: @time = 1240000.000 ps
-#      Expected value = x00000000
-#      Real value = 011001000
-# ERROR! Vector Mismatch for output port E[1] :: @time = 1276000.000 ps
-#      Expected value = x00000000
-#      Real value = 000110010
-# ERROR! Vector Mismatch for output port E[4] :: @time = 1276000.000 ps
-#      Expected value = x00000000
-#      Real value = 000110010
-# ERROR! Vector Mismatch for output port E[5] :: @time = 1276000.000 ps
-#      Expected value = x00000000
-#      Real value = 000110010
-# ERROR! Vector Mismatch for output port D[1] :: @time = 1340000.000 ps
-#      Expected value = 000
-#      Real value = 010
-#          12 mismatched vectors : Simulation failed !
-# ** Note: $finish    : Waveform.vwf.vt(1293)
-#    Time: 10 us  Iteration: 0  Instance: /vending_machine_vlg_vec_tst/tb_out
+# ** Error: (vsim-3389) MaquinaDeSalgadosFinal.vt(1335): Port 'cancel_purchase' not found in the connected module (2nd connection).
+# 
+#         Region: /vending_machine_vlg_vec_tst/i1
+# ** Error: (vsim-3389) MaquinaDeSalgadosFinal.vt(1335): Port 'display1' not found in the connected module (6th connection).
+# 
+#         Region: /vending_machine_vlg_vec_tst/i1
+# ** Error: (vsim-3389) MaquinaDeSalgadosFinal.vt(1335): Port 'display2' not found in the connected module (7th connection).
+# 
+#         Region: /vending_machine_vlg_vec_tst/i1
+# ** Error: (vsim-3389) MaquinaDeSalgadosFinal.vt(1335): Port 'display3' not found in the connected module (8th connection).
+# 
+#         Region: /vending_machine_vlg_vec_tst/i1
+# ** Error: (vsim-3389) MaquinaDeSalgadosFinal.vt(1335): Port 'display4' not found in the connected module (9th connection).
+# 
+#         Region: /vending_machine_vlg_vec_tst/i1
+# ** Fatal: (vsim-3365) MaquinaDeSalgadosFinal.vt(1335): Too many port connections. Expected 9, found 14.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_vlg_vec_tst/i1 File: MaquinaDeSalgadosFinal.vo
+# FATAL ERROR while loading design
+# Error loading design

@@ -4,10 +4,10 @@ K3
 cModel Technology
 Z0 dC:\Users\adejr\OneDrive\Documents\GitHub\CircuitosDigitais\VendingMachine---Circuitos-Digitais\MaquinaDeSalgadosFinal\simulation\qsim
 vvending_machine
-Z1 I_hYBG;Fa@<Qz?=^fQJifm2
-Z2 VbRHDoWEKa1T9GhOjU:C<@2
-Z3 dC:\Users\mmm\OneDrive\Documentos\GitHub\VendingMachine---Circuitos-Digitais\MaquinaDeSalgadosFinal\simulation\qsim
-Z4 w1702254146
+Z1 IIN2G`>OQ<SQ:;2>RilMdc1
+Z2 VDYSY3`X4S_l5n_8j4dLJj3
+Z3 dC:\Users\adejr\OneDrive\Documents\GitHub\CircuitosDigitais\VendingMachine---Circuitos-Digitais\MaquinaDeSalgadosFinal\simulation\qsim
+Z4 w1702248407
 Z5 8MaquinaDeSalgadosFinal.vo
 Z6 FMaquinaDeSalgadosFinal.vo
 L0 31
@@ -17,65 +17,65 @@ r1
 Z8 !s90 -work|work|MaquinaDeSalgadosFinal.vo|
 Z9 o-work work -O0
 !i10b 1
-Z10 !s100 V_;[8OCZ3e:GOg:7fXFLL1
+Z10 !s100 C1I8^5`kP8YchPYB<n7c53
 !s85 0
-Z11 !s108 1702254150.114000
+Z11 !s108 1702297570.401000
 Z12 !s107 MaquinaDeSalgadosFinal.vo|
 !s101 -O0
 vvending_machine_vlg_check_tst
 !i10b 1
-Z13 !s100 4=czefFQlK4:a^1hRS7gE2
-Z14 IBV?<T7=d6zNCQVbGeHGl[1
-Z15 V9Jn0>AJhcnom2a9H_l]Vd1
+!s100 MERiC3nj<jjTCDG4g=JVJ2
+IWc^>I6dz^go<ieb4B]oof0
+Z13 V9Jn0>AJhcnom2a9H_l]Vd1
 R3
-Z16 w1702254141
-Z17 8Waveform.vwf.vt
-Z18 FWaveform.vwf.vt
+Z14 w1702297566
+Z15 8MaquinaDeSalgadosFinal.vt
+Z16 FMaquinaDeSalgadosFinal.vt
 L0 67
 R7
 r1
 !s85 0
 31
-Z19 !s108 1702254150.774000
-Z20 !s107 Waveform.vwf.vt|
-Z21 !s90 -work|work|Waveform.vwf.vt|
+Z17 !s108 1702297570.569000
+Z18 !s107 MaquinaDeSalgadosFinal.vt|
+Z19 !s90 -work|work|MaquinaDeSalgadosFinal.vt|
 !s101 -O0
 R9
 vvending_machine_vlg_sample_tst
 !i10b 1
-Z22 !s100 n>>?FJ63cG2J?8LanDN:_0
-Z23 IF2oTVVU<=ai1IZKZ`mMLF2
-Z24 VYj30`XEAJP611z?Hk1^8n3
+!s100 JRfWRe>O@9@X0>7fn]QLX0
+IO^4X@L`9hH<KNZ;;lM[FW3
+Z20 VYj30`XEAJP611z?Hk1^8n3
 R3
+R14
+R15
 R16
-R17
-R18
 L0 29
 R7
 r1
 !s85 0
 31
+R17
+R18
 R19
-R20
-R21
 !s101 -O0
 R9
 vvending_machine_vlg_vec_tst
 !i10b 1
-Z25 !s100 ?>g^M^QkEKH`MJ>NDceX>0
-Z26 Io:XCHX;a^>Jh9TJzWReRd0
-Z27 Vc_h5K@]2PD5]EHm=Kj0_:3
+!s100 ihj74EV:=D;zok`a;1UOS0
+IhB>WY11_PQ=fNZCJhRVK]0
+Z21 Vc_h5K@]2PD5]EHm=Kj0_:3
 R3
+R14
+R15
 R16
-R17
-R18
-Z28 L0 1297
+Z22 L0 1297
 R7
 r1
 !s85 0
 31
+R17
+R18
 R19
-R20
-R21
 !s101 -O0
 R9

@@ -1,5 +1,5 @@
 EDA Netlist Writer report for MaquinaDeSalgadosFinal
-Mon Dec 11 07:47:58 2023
+Mon Dec 11 09:26:07 2023
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -35,7 +35,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Dec 11 07:47:58 2023 ;
+; EDA Netlist Writer Status ; Successful - Mon Dec 11 09:26:07 2023 ;
 ; Revision Name             ; MaquinaDeSalgadosFinal                ;
 ; Top-level Entity Name     ; vending_machine                       ;
 ; Family                    ; Cyclone IV GX                         ;
@@ -70,11 +70,11 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Dec 11 07:47:57 2023
-Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off MaquinaDeSalgadosFinal -c MaquinaDeSalgadosFinal
+    Info: Processing started: Mon Dec 11 09:26:06 2023
+Info: Command: quartus_eda --functional=on --simulation=on --tool=modelsim_oem --format=verilog MaquinaDeSalgadosFinal -c MaquinaDeSalgadosFinal
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4578 megabytes
-    Info: Processing ended: Mon Dec 11 07:47:58 2023
+    Info: Peak virtual memory: 4574 megabytes
+    Info: Processing ended: Mon Dec 11 09:26:07 2023
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

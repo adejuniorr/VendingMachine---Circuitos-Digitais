@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\adejr\OneDrive\Vídeos\vending_machine\simulation\qsim
+vvending_machine
+Z1 I^8O:7T11FGdH6o^@`l`MB3
+Z2 VIP2PZlMAcZALF`JMQCU^g1
+Z3 dC:\Users\adejr\OneDrive\Vídeos\vending_machine\simulation\qsim
+Z4 w1702302933
+Z5 8vending_machine.vo
+Z6 Fvending_machine.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|vending_machine.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 `OQ5[cKaX52U=8jV^TKG`3
+!s85 0
+Z11 !s108 1702302934.150000
+Z12 !s107 vending_machine.vo|
+!s101 -O0
+vvending_machine_vlg_check_tst
+!i10b 1
+Z13 !s100 `AQ<_mJNP9V^b8C04Ck`60
+Z14 Iz0RzN714Ak8;^N:P1jSLb2
+Z15 V9Jn0>AJhcnom2a9H_l]Vd1
+R3
+Z16 w1702302931
+Z17 8vending_machine.vt
+Z18 Fvending_machine.vt
+L0 67
+R7
+r1
+!s85 0
+31
+Z19 !s108 1702302934.450000
+Z20 !s107 vending_machine.vt|
+Z21 !s90 -work|work|vending_machine.vt|
+!s101 -O0
+R9
+vvending_machine_vlg_sample_tst
+!i10b 1
+!s100 ^V`LFmzAn9@:_8F<K^SiI3
+IcFFmGI=j013P<Po`4ljKP0
+VLZocU?2<N::QS9TY8cX7G2
+R3
+R16
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+vvending_machine_vlg_vec_tst
+!i10b 1
+!s100 JaQSWcDh@YT01Xih>XRUd2
+IK^52caXT]nYSfGM:PQQRH2
+Z22 Vc_h5K@]2PD5]EHm=Kj0_:3
+R3
+R16
+R17
+R18
+Z23 L0 1297
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9

@@ -742,6 +742,71 @@ SIGNAL("display4[0]")
 	PARENT = "display4";
 }
 
+GROUP("E")
+{
+	MEMBERS = "E[8]", "E[7]", "E[6]", "E[5]", "E[4]", "E[3]", "E[2]", "E[1]", "E[0]";
+}
+
+GROUP("P")
+{
+	MEMBERS = "P[8]", "P[7]", "P[6]", "P[5]", "P[4]", "P[3]", "P[2]", "P[1]", "P[0]";
+}
+
+GROUP("ESTQ")
+{
+	MEMBERS = "ESTQ[8]", "ESTQ[7]", "ESTQ[6]", "ESTQ[5]", "ESTQ[4]", "ESTQ[3]", "ESTQ[2]", "ESTQ[1]", "ESTQ[0]";
+}
+
+SIGNAL("V_input")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 7;
+	LSB_INDEX = 0;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("V_input[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "V_input";
+}
+
+SIGNAL("V_input[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "V_input";
+}
+
+SIGNAL("V_input[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "V_input";
+}
+
+SIGNAL("V_input[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "V_input";
+}
+
 SIGNAL("V_input[2]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -772,37 +837,18 @@ SIGNAL("V_input[0]")
 	PARENT = "V_input";
 }
 
-GROUP("E")
-{
-	MEMBERS = "E[8]", "E[7]", "E[6]", "E[5]", "E[4]", "E[3]", "E[2]", "E[1]", "E[0]";
-}
-
-GROUP("P")
-{
-	MEMBERS = "P[8]", "P[7]", "P[6]", "P[5]", "P[4]", "P[3]", "P[2]", "P[1]", "P[0]";
-}
-
-GROUP("ESTQ")
-{
-	MEMBERS = "ESTQ[8]", "ESTQ[7]", "ESTQ[6]", "ESTQ[5]", "ESTQ[4]", "ESTQ[3]", "ESTQ[2]", "ESTQ[1]", "ESTQ[0]";
-}
-
-GROUP("V_input")
-{
-	MEMBERS = "V_input[2]", "V_input[1]", "V_input[0]";
-}
-
 TRANSITION_LIST("C")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 520.0;
+		LEVEL 0 FOR 16.0;
+		LEVEL 1 FOR 24.0;
 		LEVEL 0 FOR 56.0;
 		LEVEL 1 FOR 24.0;
 		NODE
 		{
-			REPEAT = 4;
+			REPEAT = 10;
 			LEVEL 0 FOR 56.0;
 			LEVEL 1 FOR 24.0;
 		}
@@ -1445,7 +1491,20 @@ TRANSITION_LIST("display4[0]")
 	}
 }
 
-TRANSITION_LIST("V_input[2]")
+TRANSITION_LIST("V_input[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 280.0;
+		LEVEL 1 FOR 160.0;
+		LEVEL 0 FOR 560.0;
+		LEVEL 1 FOR 920.0;
+		LEVEL 0 FOR 8080.0;
+	}
+}
+
+TRANSITION_LIST("V_input[5]")
 {
 	NODE
 	{
@@ -1459,12 +1518,53 @@ TRANSITION_LIST("V_input[2]")
 	}
 }
 
+TRANSITION_LIST("V_input[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 280.0;
+		LEVEL 0 FOR 160.0;
+		LEVEL 1 FOR 560.0;
+		LEVEL 0 FOR 9000.0;
+	}
+}
+
+TRANSITION_LIST("V_input[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 200.0;
+		LEVEL 0 FOR 160.0;
+		LEVEL 1 FOR 260.0;
+		LEVEL 0 FOR 9300.0;
+	}
+}
+
+TRANSITION_LIST("V_input[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 280.0;
+		LEVEL 1 FOR 160.0;
+		LEVEL 0 FOR 560.0;
+		LEVEL 1 FOR 920.0;
+		LEVEL 0 FOR 8080.0;
+	}
+}
+
 TRANSITION_LIST("V_input[1]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 10000.0;
+		LEVEL 1 FOR 80.0;
+		LEVEL 0 FOR 620.0;
+		LEVEL 1 FOR 300.0;
+		LEVEL 0 FOR 9000.0;
 	}
 }
 
@@ -1476,8 +1576,8 @@ TRANSITION_LIST("V_input[0]")
 		LEVEL 0 FOR 80.0;
 		LEVEL 1 FOR 200.0;
 		LEVEL 0 FOR 160.0;
-		LEVEL 1 FOR 560.0;
-		LEVEL 0 FOR 9000.0;
+		LEVEL 1 FOR 260.0;
+		LEVEL 0 FOR 9300.0;
 	}
 }
 
@@ -2224,12 +2324,12 @@ DISPLAY_LINE
 	RADIX = Unsigned;
 	TREE_INDEX = 74;
 	TREE_LEVEL = 0;
-	CHILDREN = 75, 76, 77;
+	CHILDREN = 75, 76, 77, 78, 79, 80, 81;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "V_input[2]";
+	CHANNEL = "V_input[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 75;
@@ -2239,7 +2339,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "V_input[1]";
+	CHANNEL = "V_input[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 76;
@@ -2249,10 +2349,50 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "V_input[0]";
+	CHANNEL = "V_input[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 77;
+	TREE_LEVEL = 1;
+	PARENT = 74;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "V_input[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 78;
+	TREE_LEVEL = 1;
+	PARENT = 74;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "V_input[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 79;
+	TREE_LEVEL = 1;
+	PARENT = 74;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "V_input[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 80;
+	TREE_LEVEL = 1;
+	PARENT = 74;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "V_input[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 81;
 	TREE_LEVEL = 1;
 	PARENT = 74;
 }

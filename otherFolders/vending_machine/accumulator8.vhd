@@ -1,0 +1,54 @@
+library ieee;
+USE ieee.std_logic_1164.all;
+use IEEE.NUMERIC_STD.ALL;
+use ieee.numeric_std.all;
+
+entity accumulator8 is
+	port(
+		clk : in std_logic;
+		nRST_acc : in std_logic;
+		C : in std_logic;	--becomes 1 when a coin is detected.
+		data_in : in std_logic_vector(8 downto 0);
+		data_out : out std_logic_vector(8 downto 0)
+		);
+end accumulator8;
+
+architecture rtl of accumulator8 is
+component adder8 IS
+  port(
+    a : in std_logic_vector(8 downto 0);
+    b : in std_logic_vector(8 downto 0);
+    c_in: in std_logic;
+    s: out std_logic_vector(8 downto 0);
+	c_out: out std_logic
+	);
+end component;
+
+signal temp1 : std_logic_vector(8 downto 0);
+signal temp2 : std_logic_vector(8 downto 0);
+signal c_in : std_logic;
+signal c_out : std_logic;
+
+begin
+	c_in <= '0';
+	
+	adder : adder8 port map (data_in, temp2, c_in, temp1, c_out);
+
+	reg: process(clk)
+    begin
+        if (clk'event and clk = '1') then
+            if nRST_acc = '0' then
+                -- Reset only when necessary
+                temp2 <= (others => '0');
+            elsif (C = '1') then
+                -- Verifica se a moeda é uma das moedas desejadas
+                if (data_in = "000011001" or data_in = "000110010" or data_in = "001100100") then
+                    -- Accumulate only for valid coins
+                    temp2 <= temp1;
+                end if;
+            end if;
+        end if;
+    end process reg;
+
+    data_out <= temp2;
+end rtl;

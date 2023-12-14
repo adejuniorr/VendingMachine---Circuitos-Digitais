@@ -8,7 +8,7 @@ entity vending_machine is
 		nRST : in std_logic;  --negative reset
 		clk : in std_logic;
 		C : in std_logic; --from coin sensor: becomes 1 when a coin is detected.
-		V_input : in std_logic_vector(2 downto 0); --received coin's value in cents from coin sensor.
+		V_input : in std_logic_vector(6 downto 0); --received coin's value in cents from coin sensor.
 		--S0 : in std_logic_vector(7 downto 0); --price of choice 1, defined by vending machin owner.
 		--S1 : in std_logic_vector(7 downto 0); --price of choice 2, defined by vending machin owner.
 		--S2 : in std_logic_vector(7 downto 0); --price of choice 3, defined by vending machin owner.
@@ -121,7 +121,7 @@ signal unidade_reg : integer range 0 to 9999 := 0;
 
 
 begin
-
+	V <= "00" & V_input;
 	price_registration : process( CLK )
     begin
         if (CLK'event and CLK = '1') then
@@ -160,7 +160,7 @@ begin
                 elsif(choice_reg = "010") then 
                     if stock_S1_reg > 0 then
                         temp_D <= "010";   --S1
-								D <= "001";
+								D <= "010";
                         stock_S1_reg <= stock_S1_reg - 1;
                     else 
                         temp_D <= "000"; -- sem estoque
@@ -168,7 +168,7 @@ begin
                 elsif(choice_reg = "011") then 
                     if stock_S2_reg > 0 then
                         temp_D <= "011";   --S2
-								D <= "001";
+								D <= "011";
                         stock_S2_reg <= stock_S2_reg - 1;
                     else 
                         temp_D <= "000"; -- sem estoque
@@ -176,7 +176,7 @@ begin
                 elsif(choice_reg = "100") then 
                     if stock_S3_reg > 0 then    
                         temp_D <= "100";   --S3
-								D <= "001";
+								D <= "100";
                         stock_S3_reg <= stock_S3_reg - 1;
                     else 
                         temp_D <= "000"; -- sem estoque
@@ -184,7 +184,7 @@ begin
                 elsif(choice_reg = "101") then 
                     if stock_S4_reg > 0 then    
                         temp_D <= "101";   --S4
-								D <= "001";
+								D <= "101";
                         stock_S4_reg <= stock_S4_reg - 1;
                     else 
                         temp_D <= "000"; -- sem estoque
@@ -214,26 +214,10 @@ end process; --salgado_dispensation_Proc;
 		ESTQ <= (others => '0');
 		--valor_display <= to_integer(unsigned(balance));
 		--valor_display <= to_integer(unsigned(balance));
-            case to_integer(unsigned(V_input)) is
-                when 1 =>
-                    V <= "000000101";
-                when 2 =>
-                    V <= "000001010";
-                when 3 =>
-                    V <= "000011001";
-                when 4 =>
-                    V <= "000110010";
-                when 5 =>
-                    V <= "001100100";
-                when others =>
-                    null;
-            end case;
-        
 
 
         case( CSTATE ) is
 			when INIT_STATE =>
-			
 			if cancel_purchase = '1' then
                     -- Cancel the purchase and return all coins
                           --E <= balance;
@@ -265,7 +249,7 @@ end process; --salgado_dispensation_Proc;
                     when "010" =>
                         if stock_S1_reg <= 0  then
                             -- Out of stock for S1, stay in INIT_STATE
-                            ESTQ <= "000000001";
+                            ESTQ <= "000000010";
                             NSTATE <= INIT_STATE;
 								else
 									nRST_acc <= '1';
@@ -276,7 +260,7 @@ end process; --salgado_dispensation_Proc;
                     when "011" =>
                         if stock_S2_reg <= 0  then
                             -- Out of stock for S2, stay in INIT_STATE
-                            ESTQ <= "000000001";
+                            ESTQ <= "000000011";
                             NSTATE <= INIT_STATE;
 								else
 									nRST_acc <= '1';
@@ -287,7 +271,7 @@ end process; --salgado_dispensation_Proc;
                     when "100" =>
                         if stock_S3_reg <= 0  then
                             -- Out of stock for S3, stay in INIT_STATE
-                            ESTQ <= "000000001";
+                            ESTQ <= "000000100";
                             NSTATE <= INIT_STATE;
 								else
 									nRST_acc <= '1';
@@ -298,7 +282,7 @@ end process; --salgado_dispensation_Proc;
                     when "101" =>
                         if stock_S4_reg <= 0  then
                             -- Out of stock for S1, stay in INIT_STATE
-                            ESTQ <= "000000001";
+                            ESTQ <= "000000101";
                             NSTATE <= INIT_STATE;
 								else
 									nRST_acc <= '1';
@@ -332,14 +316,7 @@ end process; --salgado_dispensation_Proc;
 						nRST_acc <= '1';
 						NSTATE <= Coin_Reception;
 					end if; 
-					
-					
-      
-
-
 					end if;
-					
-				
     
             when Coin_Reception =>
 							if cancel_purchase = '1' then

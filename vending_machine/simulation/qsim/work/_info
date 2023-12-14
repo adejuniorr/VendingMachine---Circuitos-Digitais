@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\adejr\OneDrive\Documents\GitHub\CircuitosDigitais\VendingMachine---Circuitos-Digitais\vending_machine\simulation\qsim
+vvending_machine
+Z1 !s100 oaZ83N4QgbHfnbAgDLJES0
+Z2 IY1De5N8>o_6e6G30VI2@L0
+Z3 VR`U=kXBQ4H`U]fXjfJMDP2
+Z4 dC:\Users\adejr\OneDrive\Documents\GitHub\CircuitosDigitais\VendingMachine---Circuitos-Digitais\vending_machine\simulation\qsim
+Z5 w1702585570
+Z6 8vending_machine.vo
+Z7 Fvending_machine.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|vending_machine.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1702585573.055000
+Z12 !s107 vending_machine.vo|
+!s101 -O0
+vvending_machine_vlg_check_tst
+!i10b 1
+Z13 !s100 V1ZZmDN9O0]TZ928NcAZ;0
+Z14 I?dDNL<7BE[ZRebmLUfj>]2
+Z15 V9Jn0>AJhcnom2a9H_l]Vd1
+R4
+Z16 w1702585568
+Z17 8vending_machine.vt
+Z18 Fvending_machine.vt
+L0 69
+R8
+r1
+!s85 0
+31
+Z19 !s108 1702585573.577000
+Z20 !s107 vending_machine.vt|
+Z21 !s90 -work|work|vending_machine.vt|
+!s101 -O0
+R10
+vvending_machine_vlg_sample_tst
+!i10b 1
+Z22 !s100 :_UCRSG^:5_JcTQI[L[zI2
+Z23 I]lIIEII^aI3KHno]CGzfk3
+Z24 VbZ[81H7abg>OZXR44f2o42
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vvending_machine_vlg_vec_tst
+!i10b 1
+Z25 !s100 8aoH5SU11aAkELMzZN@cL0
+Z26 IgzF;9d`Y`M_?RkK0YgcmN0
+Z27 Vc_h5K@]2PD5]EHm=Kj0_:3
+R4
+R16
+R17
+R18
+Z28 L0 1299
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10

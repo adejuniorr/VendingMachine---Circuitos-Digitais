@@ -3,43 +3,44 @@ use ieee.std_logic_1164.all;
 
 entity comparator8 is
     port (
-        a : in std_logic_vector(8 downto 0);
-        b : in std_logic_vector(8 downto 0);
-        g_out : out std_logic;
-        e_out : out std_logic;
-        l_out : out std_logic
+        a 		: in std_logic_vector(8 downto 0); -- 1o input
+        b 		: in std_logic_vector(8 downto 0); -- 2o input
+        g_out 	: out std_logic; -- Saida g
+        e_out 	: out std_logic; -- Saida e
+        l_out 	: out std_logic  -- Saida l
     );
 end comparator8;
 
 architecture structural of comparator8 is
-    signal g : std_logic_vector(8 downto 0);
-    signal e : std_logic_vector(8 downto 0);
-    signal l : std_logic_vector(8 downto 0);
+	-- Sinais para cada valor de saida
+   signal g : std_logic_vector(8 downto 0);
+   signal e : std_logic_vector(8 downto 0);
+   signal l : std_logic_vector(8 downto 0);
 
-    component comparator_1bit
-        port (
-            a : in std_logic;
-            b : in std_logic;
-            g : out std_logic;
-            e : out std_logic;
-            l : out std_logic
-        );
+   component comparator_1bit -- Comparador de 1 bit
+   port (
+		a : in std_logic; -- 1o input
+		b : in std_logic; -- 2o input
+		g : out std_logic; -- Saida g
+		e : out std_logic; -- Saida e
+		l : out std_logic  -- Saida l
+   );
+   end component;
+
+   component comparator_CO -- Comparador (Considera Ordem)
+   port (
+		g_old : in std_logic; -- Valor g (antigo)
+      e_old : in std_logic; -- Valor e (antigo)
+      l_old : in std_logic; -- Valor l (antigo)
+      a : in std_logic;
+      b : in std_logic;
+      g : out std_logic; -- Novo valor de g
+      e : out std_logic; -- Novo valor de e
+      l : out std_logic  -- Novo valor de l
+    );
     end component;
 
-    component comparator_CO
-        port (
-            g_old : in std_logic;
-            e_old : in std_logic;
-            l_old : in std_logic;
-            a : in std_logic;
-            b : in std_logic;
-            g : out std_logic;
-            e : out std_logic;
-            l : out std_logic
-        );
-    end component;
-
-begin
+begin -- Inicio da arquitetura para cada um dos nove bits de entrada dos respectivos valores
     bit8 : comparator_1bit port map(a(8), b(8), g(7), e(7), l(7));
     bit7 : comparator_CO port map(g(7), e(7), l(7), a(7), b(7), g(6), e(6), l(6));
     bit6 : comparator_CO port map(g(6), e(6), l(6), a(6), b(6), g(5), e(5), l(5));

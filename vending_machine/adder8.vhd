@@ -1,28 +1,29 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-ENTITY adder8 IS
-  PORT(
-    a : in std_logic_vector(8 downto 0);
-    b : in std_logic_vector(8 downto 0);
-    c_in: in std_logic;
-    s: out std_logic_vector(8 downto 0);
-    c_out: out std_logic);
+entity adder8 IS
+	port(
+		a 		: in std_logic_vector(8 downto 0); -- Operando 1
+		b 		: in std_logic_vector(8 downto 0); -- Operando 2
+		c_in	: in std_logic; -- Bit para moeda de entrada
+		s		: out std_logic_vector(8 downto 0); -- Soma total
+		c_out	: out std_logic -- Bit para moeda de saida
+	);
 end adder8;
 
 architecture model of adder8 is
-  signal c: std_logic_vector(8 downto 1) := (others => '0');
+	signal c: std_logic_vector(8 downto 1) := (others => '0'); -- Sinal para valor de moeda
 
-  COMPONENT full_adder
-    PORT(
-      a : IN STD_LOGIC;
-      b : IN STD_LOGIC;
-      c_in : IN STD_LOGIC;
-      sum : OUT STD_LOGIC;
-      c_out : OUT STD_LOGIC);
-  END COMPONENT;
+	component full_adder -- Somador completo
+	port(
+		a 		: in STD_LOGIC;
+		b 		: in STD_LOGIC;
+		c_in 	: in STD_LOGIC;
+		sum 	: out STD_LOGIC;
+		c_out : out STD_LOGIC);
+	end component;
 
-BEGIN
+begin -- Inicio da arquitetura para cada um dos nove bits de entrada dos respectivos valores
   bit0 : full_adder PORT MAP (a(0), b(0), c_in, s(0), c(1));
   bit1 : full_adder PORT MAP (a(1), b(1), c(1), s(1), c(2));
   bit2 : full_adder PORT MAP (a(2), b(2), c(2), s(2), c(3));
@@ -32,5 +33,4 @@ BEGIN
   bit6 : full_adder PORT MAP (a(6), b(6), c(6), s(6), c(7));
   bit7 : full_adder PORT MAP (a(7), b(7), c(7), s(7), c(8));
   bit8 : full_adder PORT MAP (a(8), b(8), c(8), s(8), c_out);
-END model;
-
+end model;

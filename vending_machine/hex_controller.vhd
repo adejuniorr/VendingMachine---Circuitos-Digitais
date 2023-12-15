@@ -13,7 +13,7 @@ entity hex_controller is
 	port (
 		CLOCK 		: in std_logic; -- Clock de entrada
 		RESET_N		: in std_logic; -- Reset
-		I_VALUE 		: in integer range 0 to 9999; -- Valor de saida
+		I_VALUE 		: in integer range 0 to 9999; -- Valor a ser expresso nos displays
 		
 		HEX0 : out std_logic_vector(6 downto 0); -- Saida 1
 		HEX1 : out std_logic_vector(6 downto 0); -- Saida 2
@@ -43,7 +43,7 @@ architecture behav of hex_controller is
 		 
 		case I_INPUT is -- Para cada possivel valor do input (inteiro)
 		-- Valor      		  Segmentos
-		--                  "gfedcba"
+		--                  "gfedcba" (0 - ligado | 1 - desligado)
 			when 0 => RES := "1000000";
 			when 1 => RES := "1111001";
 			when 2 => RES := "0100100";

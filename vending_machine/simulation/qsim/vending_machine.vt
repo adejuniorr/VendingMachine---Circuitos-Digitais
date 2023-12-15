@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "12/15/2023 11:26:29"
+// Generated on "12/15/2023 19:53:32"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    vending_machine
 // 
@@ -70,57 +70,53 @@ endmodule
 
 module vending_machine_vlg_check_tst (
 	D,
-	display1,
-	display2,
-	display3,
-	display4,
+	display_dinheiro_centena,
+	display_dinheiro_dezena,
+	display_dinheiro_unidade,
+	display_salgado,
 	E,
 	ESTQ,
 	P,
+	saldo_dinheiro,
 	sampler_rx
 );
 input [2:0] D;
-input [6:0] display1;
-input [6:0] display2;
-input [6:0] display3;
-input [6:0] display4;
+input [6:0] display_dinheiro_centena;
+input [6:0] display_dinheiro_dezena;
+input [6:0] display_dinheiro_unidade;
+input [6:0] display_salgado;
 input [8:0] E;
 input [8:0] ESTQ;
 input [8:0] P;
+input [9:0] saldo_dinheiro;
 input sampler_rx;
 
 reg [2:0] D_expected;
-reg [6:0] display1_expected;
-reg [6:0] display2_expected;
-reg [6:0] display3_expected;
-reg [6:0] display4_expected;
+reg [6:0] display_dinheiro_centena_expected;
+reg [6:0] display_dinheiro_dezena_expected;
+reg [6:0] display_dinheiro_unidade_expected;
+reg [6:0] display_salgado_expected;
 reg [8:0] E_expected;
 reg [8:0] ESTQ_expected;
 reg [8:0] P_expected;
+reg [9:0] saldo_dinheiro_expected;
 
 reg [2:0] D_prev;
-reg [6:0] display1_prev;
-reg [6:0] display2_prev;
-reg [6:0] display3_prev;
-reg [6:0] display4_prev;
+reg [6:0] display_dinheiro_centena_prev;
+reg [6:0] display_dinheiro_dezena_prev;
+reg [6:0] display_dinheiro_unidade_prev;
+reg [6:0] display_salgado_prev;
 reg [8:0] E_prev;
 reg [8:0] ESTQ_prev;
 reg [8:0] P_prev;
+reg [9:0] saldo_dinheiro_prev;
 
 reg [2:0] D_expected_prev;
-reg [6:0] display1_expected_prev;
-reg [6:0] display2_expected_prev;
-reg [6:0] display3_expected_prev;
-reg [6:0] display4_expected_prev;
 reg [8:0] E_expected_prev;
 reg [8:0] ESTQ_expected_prev;
 reg [8:0] P_expected_prev;
 
 reg [2:0] last_D_exp;
-reg [6:0] last_display1_exp;
-reg [6:0] last_display2_exp;
-reg [6:0] last_display3_exp;
-reg [6:0] last_display4_exp;
 reg [8:0] last_E_exp;
 reg [8:0] last_ESTQ_exp;
 reg [8:0] last_P_exp;
@@ -130,7 +126,7 @@ reg trigger;
 integer i;
 integer nummismatches;
 
-reg [1:8] on_first_change ;
+reg [1:9] on_first_change ;
 
 
 initial
@@ -138,7 +134,7 @@ begin
 trigger = 0;
 i = 0;
 nummismatches = 0;
-on_first_change = 8'b1;
+on_first_change = 9'b1;
 end
 
 // update real /o prevs
@@ -146,13 +142,14 @@ end
 always @(trigger)
 begin
 	D_prev = D;
-	display1_prev = display1;
-	display2_prev = display2;
-	display3_prev = display3;
-	display4_prev = display4;
+	display_dinheiro_centena_prev = display_dinheiro_centena;
+	display_dinheiro_dezena_prev = display_dinheiro_dezena;
+	display_dinheiro_unidade_prev = display_dinheiro_unidade;
+	display_salgado_prev = display_salgado;
 	E_prev = E;
 	ESTQ_prev = ESTQ;
 	P_prev = P;
+	saldo_dinheiro_prev = saldo_dinheiro;
 end
 
 // update expected /o prevs
@@ -160,184 +157,12 @@ end
 always @(trigger)
 begin
 	D_expected_prev = D_expected;
-	display1_expected_prev = display1_expected;
-	display2_expected_prev = display2_expected;
-	display3_expected_prev = display3_expected;
-	display4_expected_prev = display4_expected;
 	E_expected_prev = E_expected;
 	ESTQ_expected_prev = ESTQ_expected;
 	P_expected_prev = P_expected;
 end
 
 
-// expected display1[ 6 ]
-initial
-begin
-	display1_expected[6] = 1'bX;
-	display1_expected[6] = #9999000 1'b0;
-end 
-// expected display1[ 5 ]
-initial
-begin
-	display1_expected[5] = 1'bX;
-	display1_expected[5] = #9999000 1'b0;
-end 
-// expected display1[ 4 ]
-initial
-begin
-	display1_expected[4] = 1'bX;
-	display1_expected[4] = #9999000 1'b0;
-end 
-// expected display1[ 3 ]
-initial
-begin
-	display1_expected[3] = 1'bX;
-	display1_expected[3] = #9999000 1'b0;
-end 
-// expected display1[ 2 ]
-initial
-begin
-	display1_expected[2] = 1'bX;
-	display1_expected[2] = #9999000 1'b0;
-end 
-// expected display1[ 1 ]
-initial
-begin
-	display1_expected[1] = 1'bX;
-	display1_expected[1] = #9999000 1'b0;
-end 
-// expected display1[ 0 ]
-initial
-begin
-	display1_expected[0] = 1'bX;
-	display1_expected[0] = #9999000 1'b0;
-end 
-// expected display2[ 6 ]
-initial
-begin
-	display2_expected[6] = 1'bX;
-	display2_expected[6] = #9999000 1'b0;
-end 
-// expected display2[ 5 ]
-initial
-begin
-	display2_expected[5] = 1'bX;
-	display2_expected[5] = #9999000 1'b0;
-end 
-// expected display2[ 4 ]
-initial
-begin
-	display2_expected[4] = 1'bX;
-	display2_expected[4] = #9999000 1'b0;
-end 
-// expected display2[ 3 ]
-initial
-begin
-	display2_expected[3] = 1'bX;
-	display2_expected[3] = #9999000 1'b0;
-end 
-// expected display2[ 2 ]
-initial
-begin
-	display2_expected[2] = 1'bX;
-	display2_expected[2] = #9999000 1'b0;
-end 
-// expected display2[ 1 ]
-initial
-begin
-	display2_expected[1] = 1'bX;
-	display2_expected[1] = #9999000 1'b0;
-end 
-// expected display2[ 0 ]
-initial
-begin
-	display2_expected[0] = 1'bX;
-	display2_expected[0] = #9999000 1'b0;
-end 
-// expected display3[ 6 ]
-initial
-begin
-	display3_expected[6] = 1'bX;
-	display3_expected[6] = #9999000 1'b0;
-end 
-// expected display3[ 5 ]
-initial
-begin
-	display3_expected[5] = 1'bX;
-	display3_expected[5] = #9999000 1'b0;
-end 
-// expected display3[ 4 ]
-initial
-begin
-	display3_expected[4] = 1'bX;
-	display3_expected[4] = #9999000 1'b0;
-end 
-// expected display3[ 3 ]
-initial
-begin
-	display3_expected[3] = 1'bX;
-	display3_expected[3] = #9999000 1'b0;
-end 
-// expected display3[ 2 ]
-initial
-begin
-	display3_expected[2] = 1'bX;
-	display3_expected[2] = #9999000 1'b0;
-end 
-// expected display3[ 1 ]
-initial
-begin
-	display3_expected[1] = 1'bX;
-	display3_expected[1] = #9999000 1'b0;
-end 
-// expected display3[ 0 ]
-initial
-begin
-	display3_expected[0] = 1'bX;
-	display3_expected[0] = #9999000 1'b0;
-end 
-// expected display4[ 6 ]
-initial
-begin
-	display4_expected[6] = 1'bX;
-	display4_expected[6] = #9999000 1'b0;
-end 
-// expected display4[ 5 ]
-initial
-begin
-	display4_expected[5] = 1'bX;
-	display4_expected[5] = #9999000 1'b0;
-end 
-// expected display4[ 4 ]
-initial
-begin
-	display4_expected[4] = 1'bX;
-	display4_expected[4] = #9999000 1'b0;
-end 
-// expected display4[ 3 ]
-initial
-begin
-	display4_expected[3] = 1'bX;
-	display4_expected[3] = #9999000 1'b0;
-end 
-// expected display4[ 2 ]
-initial
-begin
-	display4_expected[2] = 1'bX;
-	display4_expected[2] = #9999000 1'b0;
-end 
-// expected display4[ 1 ]
-initial
-begin
-	display4_expected[1] = 1'bX;
-	display4_expected[1] = #9999000 1'b0;
-end 
-// expected display4[ 0 ]
-initial
-begin
-	display4_expected[0] = 1'bX;
-	display4_expected[0] = #9999000 1'b0;
-end 
 // expected D[ 2 ]
 initial
 begin
@@ -362,6 +187,8 @@ initial
 begin
 	E_expected[8] = 1'bX;
 	E_expected[8] = #9999000 1'b0;
+	E_expected[8] = #4401000 1'bX;
+	E_expected[8] = #10560000 1'b0;
 end 
 
 // expected E[7]
@@ -369,6 +196,8 @@ initial
 begin
 	E_expected[7] = 1'bX;
 	E_expected[7] = #999000 1'b0;
+	E_expected[7] = #13401000 1'bX;
+	E_expected[7] = #10560000 1'b0;
 end 
 
 // expected E[6]
@@ -376,6 +205,8 @@ initial
 begin
 	E_expected[6] = 1'bX;
 	E_expected[6] = #999000 1'b0;
+	E_expected[6] = #13401000 1'bX;
+	E_expected[6] = #10560000 1'b0;
 end 
 
 // expected E[5]
@@ -383,6 +214,8 @@ initial
 begin
 	E_expected[5] = 1'bX;
 	E_expected[5] = #999000 1'b0;
+	E_expected[5] = #13401000 1'bX;
+	E_expected[5] = #10560000 1'b0;
 end 
 
 // expected E[4]
@@ -390,6 +223,8 @@ initial
 begin
 	E_expected[4] = 1'bX;
 	E_expected[4] = #999000 1'b0;
+	E_expected[4] = #13401000 1'bX;
+	E_expected[4] = #10560000 1'b0;
 end 
 
 // expected E[3]
@@ -397,6 +232,8 @@ initial
 begin
 	E_expected[3] = 1'bX;
 	E_expected[3] = #999000 1'b0;
+	E_expected[3] = #13401000 1'bX;
+	E_expected[3] = #10560000 1'b0;
 end 
 
 // expected E[2]
@@ -404,6 +241,8 @@ initial
 begin
 	E_expected[2] = 1'bX;
 	E_expected[2] = #999000 1'b0;
+	E_expected[2] = #13401000 1'bX;
+	E_expected[2] = #10560000 1'b0;
 end 
 
 // expected E[1]
@@ -411,6 +250,8 @@ initial
 begin
 	E_expected[1] = 1'bX;
 	E_expected[1] = #999000 1'b0;
+	E_expected[1] = #13401000 1'bX;
+	E_expected[1] = #10560000 1'b0;
 end 
 
 // expected E[0]
@@ -418,6 +259,8 @@ initial
 begin
 	E_expected[0] = 1'bX;
 	E_expected[0] = #999000 1'b0;
+	E_expected[0] = #13401000 1'bX;
+	E_expected[0] = #10560000 1'b0;
 end 
 
 // expected P[8]
@@ -425,6 +268,8 @@ initial
 begin
 	P_expected[8] = 1'bX;
 	P_expected[8] = #9999000 1'b0;
+	P_expected[8] = #4401000 1'bX;
+	P_expected[8] = #10560000 1'b0;
 end 
 
 // expected P[7]
@@ -432,6 +277,8 @@ initial
 begin
 	P_expected[7] = 1'bX;
 	P_expected[7] = #999000 1'b0;
+	P_expected[7] = #13401000 1'bX;
+	P_expected[7] = #10560000 1'b0;
 end 
 
 // expected P[6]
@@ -439,6 +286,8 @@ initial
 begin
 	P_expected[6] = 1'bX;
 	P_expected[6] = #999000 1'b0;
+	P_expected[6] = #13401000 1'bX;
+	P_expected[6] = #10560000 1'b0;
 end 
 
 // expected P[5]
@@ -446,6 +295,8 @@ initial
 begin
 	P_expected[5] = 1'bX;
 	P_expected[5] = #999000 1'b0;
+	P_expected[5] = #13401000 1'bX;
+	P_expected[5] = #10560000 1'b0;
 end 
 
 // expected P[4]
@@ -453,6 +304,8 @@ initial
 begin
 	P_expected[4] = 1'bX;
 	P_expected[4] = #999000 1'b0;
+	P_expected[4] = #13401000 1'bX;
+	P_expected[4] = #10560000 1'b0;
 end 
 
 // expected P[3]
@@ -460,6 +313,8 @@ initial
 begin
 	P_expected[3] = 1'bX;
 	P_expected[3] = #999000 1'b0;
+	P_expected[3] = #13401000 1'bX;
+	P_expected[3] = #10560000 1'b0;
 end 
 
 // expected P[2]
@@ -467,6 +322,8 @@ initial
 begin
 	P_expected[2] = 1'bX;
 	P_expected[2] = #999000 1'b0;
+	P_expected[2] = #13401000 1'bX;
+	P_expected[2] = #10560000 1'b0;
 end 
 
 // expected P[1]
@@ -474,6 +331,8 @@ initial
 begin
 	P_expected[1] = 1'bX;
 	P_expected[1] = #999000 1'b0;
+	P_expected[1] = #13401000 1'bX;
+	P_expected[1] = #10560000 1'b0;
 end 
 
 // expected P[0]
@@ -481,6 +340,8 @@ initial
 begin
 	P_expected[0] = 1'bX;
 	P_expected[0] = #999000 1'b0;
+	P_expected[0] = #13401000 1'bX;
+	P_expected[0] = #10560000 1'b0;
 end 
 
 // expected ESTQ[8]
@@ -488,6 +349,8 @@ initial
 begin
 	ESTQ_expected[8] = 1'bX;
 	ESTQ_expected[8] = #9999000 1'b0;
+	ESTQ_expected[8] = #4401000 1'bX;
+	ESTQ_expected[8] = #10560000 1'b0;
 end 
 
 // expected ESTQ[7]
@@ -495,6 +358,8 @@ initial
 begin
 	ESTQ_expected[7] = 1'bX;
 	ESTQ_expected[7] = #999000 1'b0;
+	ESTQ_expected[7] = #13401000 1'bX;
+	ESTQ_expected[7] = #10560000 1'b0;
 end 
 
 // expected ESTQ[6]
@@ -502,6 +367,8 @@ initial
 begin
 	ESTQ_expected[6] = 1'bX;
 	ESTQ_expected[6] = #999000 1'b0;
+	ESTQ_expected[6] = #13401000 1'bX;
+	ESTQ_expected[6] = #10560000 1'b0;
 end 
 
 // expected ESTQ[5]
@@ -509,6 +376,8 @@ initial
 begin
 	ESTQ_expected[5] = 1'bX;
 	ESTQ_expected[5] = #999000 1'b0;
+	ESTQ_expected[5] = #13401000 1'bX;
+	ESTQ_expected[5] = #10560000 1'b0;
 end 
 
 // expected ESTQ[4]
@@ -516,6 +385,8 @@ initial
 begin
 	ESTQ_expected[4] = 1'bX;
 	ESTQ_expected[4] = #999000 1'b0;
+	ESTQ_expected[4] = #13401000 1'bX;
+	ESTQ_expected[4] = #10560000 1'b0;
 end 
 
 // expected ESTQ[3]
@@ -523,6 +394,8 @@ initial
 begin
 	ESTQ_expected[3] = 1'bX;
 	ESTQ_expected[3] = #999000 1'b0;
+	ESTQ_expected[3] = #13401000 1'bX;
+	ESTQ_expected[3] = #10560000 1'b0;
 end 
 
 // expected ESTQ[2]
@@ -530,6 +403,8 @@ initial
 begin
 	ESTQ_expected[2] = 1'bX;
 	ESTQ_expected[2] = #999000 1'b0;
+	ESTQ_expected[2] = #13401000 1'bX;
+	ESTQ_expected[2] = #10560000 1'b0;
 end 
 
 // expected ESTQ[1]
@@ -537,6 +412,8 @@ initial
 begin
 	ESTQ_expected[1] = 1'bX;
 	ESTQ_expected[1] = #999000 1'b0;
+	ESTQ_expected[1] = #13401000 1'bX;
+	ESTQ_expected[1] = #10560000 1'b0;
 end 
 
 // expected ESTQ[0]
@@ -544,9 +421,11 @@ initial
 begin
 	ESTQ_expected[0] = 1'bX;
 	ESTQ_expected[0] = #999000 1'b0;
+	ESTQ_expected[0] = #13401000 1'bX;
+	ESTQ_expected[0] = #10560000 1'b0;
 end 
 // generate trigger
-always @(D_expected or D or display1_expected or display1 or display2_expected or display2 or display3_expected or display3 or display4_expected or display4 or E_expected or E or ESTQ_expected or ESTQ or P_expected or P)
+always @(D_expected or D or display_dinheiro_centena_expected or display_dinheiro_centena or display_dinheiro_dezena_expected or display_dinheiro_dezena or display_dinheiro_unidade_expected or display_dinheiro_unidade or display_salgado_expected or display_salgado or E_expected or E or ESTQ_expected or ESTQ or P_expected or P or saldo_dinheiro_expected or saldo_dinheiro)
 begin
 	trigger <= ~trigger;
 end
@@ -556,8 +435,8 @@ begin
 `ifdef debug_tbench
 	$display("Scanning pattern %d @time = %t",i,$realtime );
 	i = i + 1;
-	$display("| expected D = %b | expected display1 = %b | expected display2 = %b | expected display3 = %b | expected display4 = %b | expected E = %b | expected ESTQ = %b | expected P = %b | ",D_expected_prev,display1_expected_prev,display2_expected_prev,display3_expected_prev,display4_expected_prev,E_expected_prev,ESTQ_expected_prev,P_expected_prev);
-	$display("| real D = %b | real display1 = %b | real display2 = %b | real display3 = %b | real display4 = %b | real E = %b | real ESTQ = %b | real P = %b | ",D_prev,display1_prev,display2_prev,display3_prev,display4_prev,E_prev,ESTQ_prev,P_prev);
+	$display("| expected D = %b | expected display_dinheiro_centena = %b | expected display_dinheiro_dezena = %b | expected display_dinheiro_unidade = %b | expected display_salgado = %b | expected E = %b | expected ESTQ = %b | expected P = %b | expected saldo_dinheiro = %b | ",D_expected_prev,display_dinheiro_centena_expected_prev,display_dinheiro_dezena_expected_prev,display_dinheiro_unidade_expected_prev,display_salgado_expected_prev,E_expected_prev,ESTQ_expected_prev,P_expected_prev,saldo_dinheiro_expected_prev);
+	$display("| real D = %b | real display_dinheiro_centena = %b | real display_dinheiro_dezena = %b | real display_dinheiro_unidade = %b | real display_salgado = %b | real E = %b | real ESTQ = %b | real P = %b | real saldo_dinheiro = %b | ",D_prev,display_dinheiro_centena_prev,display_dinheiro_dezena_prev,display_dinheiro_unidade_prev,display_salgado_prev,E_prev,ESTQ_prev,P_prev,saldo_dinheiro_prev);
 `endif
 	if (
 		( D_expected_prev[0] !== 1'bx ) && ( D_prev[0] !== D_expected_prev[0] )
@@ -597,370 +476,6 @@ begin
 		nummismatches = nummismatches + 1;
 		on_first_change[1] = 1'b0;
 		last_D_exp[2] = D_expected_prev[2];
-	end
-	if (
-		( display1_expected_prev[0] !== 1'bx ) && ( display1_prev[0] !== display1_expected_prev[0] )
-		&& ((display1_expected_prev[0] !== last_display1_exp[0]) ||
-			on_first_change[2])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display1[0] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display1_expected_prev);
-		$display ("     Real value = %b", display1_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[2] = 1'b0;
-		last_display1_exp[0] = display1_expected_prev[0];
-	end
-	if (
-		( display1_expected_prev[1] !== 1'bx ) && ( display1_prev[1] !== display1_expected_prev[1] )
-		&& ((display1_expected_prev[1] !== last_display1_exp[1]) ||
-			on_first_change[2])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display1[1] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display1_expected_prev);
-		$display ("     Real value = %b", display1_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[2] = 1'b0;
-		last_display1_exp[1] = display1_expected_prev[1];
-	end
-	if (
-		( display1_expected_prev[2] !== 1'bx ) && ( display1_prev[2] !== display1_expected_prev[2] )
-		&& ((display1_expected_prev[2] !== last_display1_exp[2]) ||
-			on_first_change[2])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display1[2] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display1_expected_prev);
-		$display ("     Real value = %b", display1_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[2] = 1'b0;
-		last_display1_exp[2] = display1_expected_prev[2];
-	end
-	if (
-		( display1_expected_prev[3] !== 1'bx ) && ( display1_prev[3] !== display1_expected_prev[3] )
-		&& ((display1_expected_prev[3] !== last_display1_exp[3]) ||
-			on_first_change[2])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display1[3] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display1_expected_prev);
-		$display ("     Real value = %b", display1_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[2] = 1'b0;
-		last_display1_exp[3] = display1_expected_prev[3];
-	end
-	if (
-		( display1_expected_prev[4] !== 1'bx ) && ( display1_prev[4] !== display1_expected_prev[4] )
-		&& ((display1_expected_prev[4] !== last_display1_exp[4]) ||
-			on_first_change[2])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display1[4] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display1_expected_prev);
-		$display ("     Real value = %b", display1_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[2] = 1'b0;
-		last_display1_exp[4] = display1_expected_prev[4];
-	end
-	if (
-		( display1_expected_prev[5] !== 1'bx ) && ( display1_prev[5] !== display1_expected_prev[5] )
-		&& ((display1_expected_prev[5] !== last_display1_exp[5]) ||
-			on_first_change[2])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display1[5] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display1_expected_prev);
-		$display ("     Real value = %b", display1_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[2] = 1'b0;
-		last_display1_exp[5] = display1_expected_prev[5];
-	end
-	if (
-		( display1_expected_prev[6] !== 1'bx ) && ( display1_prev[6] !== display1_expected_prev[6] )
-		&& ((display1_expected_prev[6] !== last_display1_exp[6]) ||
-			on_first_change[2])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display1[6] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display1_expected_prev);
-		$display ("     Real value = %b", display1_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[2] = 1'b0;
-		last_display1_exp[6] = display1_expected_prev[6];
-	end
-	if (
-		( display2_expected_prev[0] !== 1'bx ) && ( display2_prev[0] !== display2_expected_prev[0] )
-		&& ((display2_expected_prev[0] !== last_display2_exp[0]) ||
-			on_first_change[3])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display2[0] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display2_expected_prev);
-		$display ("     Real value = %b", display2_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[3] = 1'b0;
-		last_display2_exp[0] = display2_expected_prev[0];
-	end
-	if (
-		( display2_expected_prev[1] !== 1'bx ) && ( display2_prev[1] !== display2_expected_prev[1] )
-		&& ((display2_expected_prev[1] !== last_display2_exp[1]) ||
-			on_first_change[3])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display2[1] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display2_expected_prev);
-		$display ("     Real value = %b", display2_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[3] = 1'b0;
-		last_display2_exp[1] = display2_expected_prev[1];
-	end
-	if (
-		( display2_expected_prev[2] !== 1'bx ) && ( display2_prev[2] !== display2_expected_prev[2] )
-		&& ((display2_expected_prev[2] !== last_display2_exp[2]) ||
-			on_first_change[3])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display2[2] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display2_expected_prev);
-		$display ("     Real value = %b", display2_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[3] = 1'b0;
-		last_display2_exp[2] = display2_expected_prev[2];
-	end
-	if (
-		( display2_expected_prev[3] !== 1'bx ) && ( display2_prev[3] !== display2_expected_prev[3] )
-		&& ((display2_expected_prev[3] !== last_display2_exp[3]) ||
-			on_first_change[3])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display2[3] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display2_expected_prev);
-		$display ("     Real value = %b", display2_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[3] = 1'b0;
-		last_display2_exp[3] = display2_expected_prev[3];
-	end
-	if (
-		( display2_expected_prev[4] !== 1'bx ) && ( display2_prev[4] !== display2_expected_prev[4] )
-		&& ((display2_expected_prev[4] !== last_display2_exp[4]) ||
-			on_first_change[3])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display2[4] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display2_expected_prev);
-		$display ("     Real value = %b", display2_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[3] = 1'b0;
-		last_display2_exp[4] = display2_expected_prev[4];
-	end
-	if (
-		( display2_expected_prev[5] !== 1'bx ) && ( display2_prev[5] !== display2_expected_prev[5] )
-		&& ((display2_expected_prev[5] !== last_display2_exp[5]) ||
-			on_first_change[3])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display2[5] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display2_expected_prev);
-		$display ("     Real value = %b", display2_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[3] = 1'b0;
-		last_display2_exp[5] = display2_expected_prev[5];
-	end
-	if (
-		( display2_expected_prev[6] !== 1'bx ) && ( display2_prev[6] !== display2_expected_prev[6] )
-		&& ((display2_expected_prev[6] !== last_display2_exp[6]) ||
-			on_first_change[3])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display2[6] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display2_expected_prev);
-		$display ("     Real value = %b", display2_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[3] = 1'b0;
-		last_display2_exp[6] = display2_expected_prev[6];
-	end
-	if (
-		( display3_expected_prev[0] !== 1'bx ) && ( display3_prev[0] !== display3_expected_prev[0] )
-		&& ((display3_expected_prev[0] !== last_display3_exp[0]) ||
-			on_first_change[4])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display3[0] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display3_expected_prev);
-		$display ("     Real value = %b", display3_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[4] = 1'b0;
-		last_display3_exp[0] = display3_expected_prev[0];
-	end
-	if (
-		( display3_expected_prev[1] !== 1'bx ) && ( display3_prev[1] !== display3_expected_prev[1] )
-		&& ((display3_expected_prev[1] !== last_display3_exp[1]) ||
-			on_first_change[4])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display3[1] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display3_expected_prev);
-		$display ("     Real value = %b", display3_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[4] = 1'b0;
-		last_display3_exp[1] = display3_expected_prev[1];
-	end
-	if (
-		( display3_expected_prev[2] !== 1'bx ) && ( display3_prev[2] !== display3_expected_prev[2] )
-		&& ((display3_expected_prev[2] !== last_display3_exp[2]) ||
-			on_first_change[4])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display3[2] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display3_expected_prev);
-		$display ("     Real value = %b", display3_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[4] = 1'b0;
-		last_display3_exp[2] = display3_expected_prev[2];
-	end
-	if (
-		( display3_expected_prev[3] !== 1'bx ) && ( display3_prev[3] !== display3_expected_prev[3] )
-		&& ((display3_expected_prev[3] !== last_display3_exp[3]) ||
-			on_first_change[4])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display3[3] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display3_expected_prev);
-		$display ("     Real value = %b", display3_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[4] = 1'b0;
-		last_display3_exp[3] = display3_expected_prev[3];
-	end
-	if (
-		( display3_expected_prev[4] !== 1'bx ) && ( display3_prev[4] !== display3_expected_prev[4] )
-		&& ((display3_expected_prev[4] !== last_display3_exp[4]) ||
-			on_first_change[4])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display3[4] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display3_expected_prev);
-		$display ("     Real value = %b", display3_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[4] = 1'b0;
-		last_display3_exp[4] = display3_expected_prev[4];
-	end
-	if (
-		( display3_expected_prev[5] !== 1'bx ) && ( display3_prev[5] !== display3_expected_prev[5] )
-		&& ((display3_expected_prev[5] !== last_display3_exp[5]) ||
-			on_first_change[4])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display3[5] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display3_expected_prev);
-		$display ("     Real value = %b", display3_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[4] = 1'b0;
-		last_display3_exp[5] = display3_expected_prev[5];
-	end
-	if (
-		( display3_expected_prev[6] !== 1'bx ) && ( display3_prev[6] !== display3_expected_prev[6] )
-		&& ((display3_expected_prev[6] !== last_display3_exp[6]) ||
-			on_first_change[4])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display3[6] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display3_expected_prev);
-		$display ("     Real value = %b", display3_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[4] = 1'b0;
-		last_display3_exp[6] = display3_expected_prev[6];
-	end
-	if (
-		( display4_expected_prev[0] !== 1'bx ) && ( display4_prev[0] !== display4_expected_prev[0] )
-		&& ((display4_expected_prev[0] !== last_display4_exp[0]) ||
-			on_first_change[5])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display4[0] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display4_expected_prev);
-		$display ("     Real value = %b", display4_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[5] = 1'b0;
-		last_display4_exp[0] = display4_expected_prev[0];
-	end
-	if (
-		( display4_expected_prev[1] !== 1'bx ) && ( display4_prev[1] !== display4_expected_prev[1] )
-		&& ((display4_expected_prev[1] !== last_display4_exp[1]) ||
-			on_first_change[5])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display4[1] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display4_expected_prev);
-		$display ("     Real value = %b", display4_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[5] = 1'b0;
-		last_display4_exp[1] = display4_expected_prev[1];
-	end
-	if (
-		( display4_expected_prev[2] !== 1'bx ) && ( display4_prev[2] !== display4_expected_prev[2] )
-		&& ((display4_expected_prev[2] !== last_display4_exp[2]) ||
-			on_first_change[5])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display4[2] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display4_expected_prev);
-		$display ("     Real value = %b", display4_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[5] = 1'b0;
-		last_display4_exp[2] = display4_expected_prev[2];
-	end
-	if (
-		( display4_expected_prev[3] !== 1'bx ) && ( display4_prev[3] !== display4_expected_prev[3] )
-		&& ((display4_expected_prev[3] !== last_display4_exp[3]) ||
-			on_first_change[5])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display4[3] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display4_expected_prev);
-		$display ("     Real value = %b", display4_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[5] = 1'b0;
-		last_display4_exp[3] = display4_expected_prev[3];
-	end
-	if (
-		( display4_expected_prev[4] !== 1'bx ) && ( display4_prev[4] !== display4_expected_prev[4] )
-		&& ((display4_expected_prev[4] !== last_display4_exp[4]) ||
-			on_first_change[5])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display4[4] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display4_expected_prev);
-		$display ("     Real value = %b", display4_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[5] = 1'b0;
-		last_display4_exp[4] = display4_expected_prev[4];
-	end
-	if (
-		( display4_expected_prev[5] !== 1'bx ) && ( display4_prev[5] !== display4_expected_prev[5] )
-		&& ((display4_expected_prev[5] !== last_display4_exp[5]) ||
-			on_first_change[5])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display4[5] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display4_expected_prev);
-		$display ("     Real value = %b", display4_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[5] = 1'b0;
-		last_display4_exp[5] = display4_expected_prev[5];
-	end
-	if (
-		( display4_expected_prev[6] !== 1'bx ) && ( display4_prev[6] !== display4_expected_prev[6] )
-		&& ((display4_expected_prev[6] !== last_display4_exp[6]) ||
-			on_first_change[5])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port display4[6] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", display4_expected_prev);
-		$display ("     Real value = %b", display4_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[5] = 1'b0;
-		last_display4_exp[6] = display4_expected_prev[6];
 	end
 	if (
 		( E_expected_prev[0] !== 1'bx ) && ( E_prev[0] !== E_expected_prev[0] )
@@ -1342,13 +857,14 @@ reg nRST;
 reg [2:0] V_input;
 // wires                                               
 wire [2:0] D;
-wire [6:0] display1;
-wire [6:0] display2;
-wire [6:0] display3;
-wire [6:0] display4;
+wire [6:0] display_dinheiro_centena;
+wire [6:0] display_dinheiro_dezena;
+wire [6:0] display_dinheiro_unidade;
+wire [6:0] display_salgado;
 wire [8:0] E;
 wire [8:0] ESTQ;
 wire [8:0] P;
+wire [9:0] saldo_dinheiro;
 
 wire sampler;                             
 
@@ -1362,14 +878,15 @@ vending_machine i1 (
 	.coin_confirm_signal(coin_confirm_signal),
 	.D(D),
 	.dispense_signal(dispense_signal),
-	.display1(display1),
-	.display2(display2),
-	.display3(display3),
-	.display4(display4),
+	.display_dinheiro_centena(display_dinheiro_centena),
+	.display_dinheiro_dezena(display_dinheiro_dezena),
+	.display_dinheiro_unidade(display_dinheiro_unidade),
+	.display_salgado(display_salgado),
 	.E(E),
 	.ESTQ(ESTQ),
 	.nRST(nRST),
 	.P(P),
+	.saldo_dinheiro(saldo_dinheiro),
 	.V_input(V_input)
 );
 
@@ -1411,7 +928,7 @@ begin
 	nRST = 1'b1;
 	nRST = #9999000 1'b0;
 	nRST = #4401000 1'b1;
-	nRST = #15360000 1'b0;
+	nRST = #10560000 1'b0;
 end 
 
 // cancel_purchase
@@ -1432,7 +949,7 @@ initial
 begin
 	V_input[1] = 1'b0;
 	V_input[1] = #14400000 1'b1;
-	V_input[1] = #10240000 1'b0;
+	V_input[1] = #9280000 1'b0;
 end 
 
 // V_input[0]
@@ -1440,7 +957,7 @@ initial
 begin
 	V_input[0] = 1'b0;
 	V_input[0] = #14400000 1'b1;
-	V_input[0] = #10240000 1'b0;
+	V_input[0] = #9280000 1'b0;
 end 
 
 // coin_confirm_signal
@@ -1455,9 +972,21 @@ begin
 	coin_confirm_signal = #80000 1'b1;
 	coin_confirm_signal = #1280000 1'b0;
 	coin_confirm_signal = #80000 1'b1;
-	coin_confirm_signal = #14560000 1'b0;
-	coin_confirm_signal = #560000 1'b1;
-	coin_confirm_signal = #3520000 1'b0;
+	coin_confirm_signal = #2000000 1'b0;
+	coin_confirm_signal = #640000 1'b1;
+	coin_confirm_signal = #9280000 1'b0;
+	coin_confirm_signal = #80000 1'b1;
+	coin_confirm_signal = #240000 1'b0;
+	coin_confirm_signal = #80000 1'b1;
+	coin_confirm_signal = #960000 1'b0;
+	coin_confirm_signal = #80000 1'b1;
+	coin_confirm_signal = #2160000 1'b0;
+	coin_confirm_signal = #80000 1'b1;
+	coin_confirm_signal = #800000 1'b0;
+	coin_confirm_signal = #960000 1'b1;
+	coin_confirm_signal = #320000 1'b0;
+	coin_confirm_signal = #640000 1'b1;
+	coin_confirm_signal = #1920000 1'b0;
 end 
 
 // dispense_signal
@@ -1466,7 +995,9 @@ begin
 	dispense_signal = 1'b1;
 	dispense_signal = #8320000 1'b0;
 	dispense_signal = #80000 1'b1;
-	dispense_signal = #16240000 1'b0;
+	dispense_signal = #14480000 1'b0;
+	dispense_signal = #160000 1'b1;
+	dispense_signal = #3200000 1'b0;
 end 
 
 vending_machine_vlg_sample_tst tb_sample (
@@ -1483,13 +1014,14 @@ vending_machine_vlg_sample_tst tb_sample (
 
 vending_machine_vlg_check_tst tb_out(
 	.D(D),
-	.display1(display1),
-	.display2(display2),
-	.display3(display3),
-	.display4(display4),
+	.display_dinheiro_centena(display_dinheiro_centena),
+	.display_dinheiro_dezena(display_dinheiro_dezena),
+	.display_dinheiro_unidade(display_dinheiro_unidade),
+	.display_salgado(display_salgado),
 	.E(E),
 	.ESTQ(ESTQ),
 	.P(P),
+	.saldo_dinheiro(saldo_dinheiro),
 	.sampler_rx(sampler)
 );
 endmodule

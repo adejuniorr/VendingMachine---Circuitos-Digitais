@@ -9,7 +9,8 @@ entity accumulator8 is
 		nRST_acc	: in std_logic; -- Reset
 		C 			: in std_logic; -- Sensor de moeda
 		data_in 	: in std_logic_vector(8 downto 0); -- Valor de entrada
-		data_out : out std_logic_vector(8 downto 0) -- Valor de saida
+		data_out : out std_logic_vector(8 downto 0); -- Valor de saida
+		conf: in std_logic           --Entrada para confirmar uma moeda adicionada
 		);
 end accumulator8;
 
@@ -41,7 +42,7 @@ begin
             if nRST_acc = '0' then -- Reset (quando necessario)
                 temp2 <= (others => '0');
             elsif (C = '1') then -- Verifica se a moeda eh uma das moedas desejadas
-                if (data_in = "000011001" or data_in = "000110010" or data_in = "001100100") then
+                if ((data_in = "000011001" or data_in = "000110010" or data_in = "001100100") and conf = '0') then
                     temp2 <= temp1; -- Acumulamos a soma apenas para moedas validas
                 end if;
             end if;

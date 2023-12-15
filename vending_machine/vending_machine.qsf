@@ -93,7 +93,6 @@ set_location_assignment PIN_R19 -to ESTQ[0]
 set_location_assignment PIN_L22 -to V_input[0]
 set_location_assignment PIN_L21 -to V_input[1]
 set_location_assignment PIN_M22 -to V_input[2]
-set_location_assignment PIN_R22 -to man_clk
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
 set_global_assignment -name VHDL_FILE vending_machine.vhd
@@ -108,5 +107,7 @@ set_global_assignment -name VHDL_FILE adder8.vhd
 set_global_assignment -name VHDL_FILE accumulator8.vhd
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_T21 -to confirmar_moeda
+set_location_assignment PIN_R22 -to confirmar_salgado
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/Users/adejr/OneDrive/Documents/GitHub/CircuitosDigitais/VendingMachine---Circuitos-Digitais/vending_machine/Waveform2.vwf"
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "D:/Arquivos HD/Documentos/GitHub/VendingMachine---Circuitos-Digitais/vending_machine/Waveform1.vwf"

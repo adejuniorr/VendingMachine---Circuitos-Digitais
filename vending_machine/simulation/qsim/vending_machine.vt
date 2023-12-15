@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "12/14/2023 17:26:08"
+// Generated on "12/15/2023 00:52:04"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    vending_machine
 // 
@@ -31,7 +31,8 @@ module vending_machine_vlg_sample_tst(
 	cancel_purchase,
 	choice,
 	clk,
-	man_clk,
+	confirmar_moeda,
+	confirmar_salgado,
 	nRST,
 	V_input,
 	sampler_tx
@@ -40,14 +41,15 @@ input  C;
 input  cancel_purchase;
 input [2:0] choice;
 input  clk;
-input  man_clk;
+input  confirmar_moeda;
+input  confirmar_salgado;
 input  nRST;
 input [2:0] V_input;
 output sampler_tx;
 
 reg sample;
 time current_time;
-always @(C or cancel_purchase or choice or clk or man_clk or nRST or V_input)
+always @(C or cancel_purchase or choice or clk or confirmar_moeda or confirmar_salgado or nRST or V_input)
                                                                                 
 begin                                                 
  if ($realtime > 0)                                   
@@ -172,141 +174,169 @@ end
 initial
 begin
 	display1_expected[6] = 1'bX;
+	display1_expected[6] = #9999000 1'b0;
 end 
 // expected display1[ 5 ]
 initial
 begin
 	display1_expected[5] = 1'bX;
+	display1_expected[5] = #9999000 1'b0;
 end 
 // expected display1[ 4 ]
 initial
 begin
 	display1_expected[4] = 1'bX;
+	display1_expected[4] = #9999000 1'b0;
 end 
 // expected display1[ 3 ]
 initial
 begin
 	display1_expected[3] = 1'bX;
+	display1_expected[3] = #9999000 1'b0;
 end 
 // expected display1[ 2 ]
 initial
 begin
 	display1_expected[2] = 1'bX;
+	display1_expected[2] = #9999000 1'b0;
 end 
 // expected display1[ 1 ]
 initial
 begin
 	display1_expected[1] = 1'bX;
+	display1_expected[1] = #9999000 1'b0;
 end 
 // expected display1[ 0 ]
 initial
 begin
 	display1_expected[0] = 1'bX;
+	display1_expected[0] = #9999000 1'b0;
 end 
 // expected display2[ 6 ]
 initial
 begin
 	display2_expected[6] = 1'bX;
+	display2_expected[6] = #9999000 1'b0;
 end 
 // expected display2[ 5 ]
 initial
 begin
 	display2_expected[5] = 1'bX;
+	display2_expected[5] = #9999000 1'b0;
 end 
 // expected display2[ 4 ]
 initial
 begin
 	display2_expected[4] = 1'bX;
+	display2_expected[4] = #9999000 1'b0;
 end 
 // expected display2[ 3 ]
 initial
 begin
 	display2_expected[3] = 1'bX;
+	display2_expected[3] = #9999000 1'b0;
 end 
 // expected display2[ 2 ]
 initial
 begin
 	display2_expected[2] = 1'bX;
+	display2_expected[2] = #9999000 1'b0;
 end 
 // expected display2[ 1 ]
 initial
 begin
 	display2_expected[1] = 1'bX;
+	display2_expected[1] = #9999000 1'b0;
 end 
 // expected display2[ 0 ]
 initial
 begin
 	display2_expected[0] = 1'bX;
+	display2_expected[0] = #9999000 1'b0;
 end 
 // expected display3[ 6 ]
 initial
 begin
 	display3_expected[6] = 1'bX;
+	display3_expected[6] = #9999000 1'b0;
 end 
 // expected display3[ 5 ]
 initial
 begin
 	display3_expected[5] = 1'bX;
+	display3_expected[5] = #9999000 1'b0;
 end 
 // expected display3[ 4 ]
 initial
 begin
 	display3_expected[4] = 1'bX;
+	display3_expected[4] = #9999000 1'b0;
 end 
 // expected display3[ 3 ]
 initial
 begin
 	display3_expected[3] = 1'bX;
+	display3_expected[3] = #9999000 1'b0;
 end 
 // expected display3[ 2 ]
 initial
 begin
 	display3_expected[2] = 1'bX;
+	display3_expected[2] = #9999000 1'b0;
 end 
 // expected display3[ 1 ]
 initial
 begin
 	display3_expected[1] = 1'bX;
+	display3_expected[1] = #9999000 1'b0;
 end 
 // expected display3[ 0 ]
 initial
 begin
 	display3_expected[0] = 1'bX;
+	display3_expected[0] = #9999000 1'b0;
 end 
 // expected display4[ 6 ]
 initial
 begin
 	display4_expected[6] = 1'bX;
+	display4_expected[6] = #9999000 1'b0;
 end 
 // expected display4[ 5 ]
 initial
 begin
 	display4_expected[5] = 1'bX;
+	display4_expected[5] = #9999000 1'b0;
 end 
 // expected display4[ 4 ]
 initial
 begin
 	display4_expected[4] = 1'bX;
+	display4_expected[4] = #9999000 1'b0;
 end 
 // expected display4[ 3 ]
 initial
 begin
 	display4_expected[3] = 1'bX;
+	display4_expected[3] = #9999000 1'b0;
 end 
 // expected display4[ 2 ]
 initial
 begin
 	display4_expected[2] = 1'bX;
+	display4_expected[2] = #9999000 1'b0;
 end 
 // expected display4[ 1 ]
 initial
 begin
 	display4_expected[1] = 1'bX;
+	display4_expected[1] = #9999000 1'b0;
 end 
 // expected display4[ 0 ]
 initial
 begin
 	display4_expected[0] = 1'bX;
+	display4_expected[0] = #9999000 1'b0;
 end 
 // expected D[ 2 ]
 initial
@@ -331,6 +361,7 @@ end
 initial
 begin
 	E_expected[8] = 1'bX;
+	E_expected[8] = #9999000 1'b0;
 end 
 
 // expected E[7]
@@ -393,6 +424,7 @@ end
 initial
 begin
 	P_expected[8] = 1'bX;
+	P_expected[8] = #9999000 1'b0;
 end 
 
 // expected P[7]
@@ -455,6 +487,7 @@ end
 initial
 begin
 	ESTQ_expected[8] = 1'bX;
+	ESTQ_expected[8] = #9999000 1'b0;
 end 
 
 // expected ESTQ[7]
@@ -1287,7 +1320,7 @@ initial
 
 begin 
 $timeformat(-12,3," ps",6);
-#10000000;
+#30000000;
 if (nummismatches > 0)
 	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
 else
@@ -1303,7 +1336,8 @@ reg C;
 reg cancel_purchase;
 reg [2:0] choice;
 reg clk;
-reg man_clk;
+reg confirmar_moeda;
+reg confirmar_salgado;
 reg nRST;
 reg [2:0] V_input;
 // wires                                               
@@ -1325,6 +1359,8 @@ vending_machine i1 (
 	.cancel_purchase(cancel_purchase),
 	.choice(choice),
 	.clk(clk),
+	.confirmar_moeda(confirmar_moeda),
+	.confirmar_salgado(confirmar_salgado),
 	.D(D),
 	.display1(display1),
 	.display2(display2),
@@ -1332,7 +1368,6 @@ vending_machine i1 (
 	.display4(display4),
 	.E(E),
 	.ESTQ(ESTQ),
-	.man_clk(man_clk),
 	.nRST(nRST),
 	.P(P),
 	.V_input(V_input)
@@ -1342,35 +1377,14 @@ vending_machine i1 (
 initial
 begin
 	C = 1'b1;
-	C = #520000 1'b0;
-	C = #56000 1'b1;
-	# 24000;
-	repeat(4)
-	begin
-		C = 1'b0;
-		C = #56000 1'b1;
-		# 24000;
-	end
-	C = 1'b0;
-	C = #56000 1'b1;
-	C = #23000 1'b0;
-	C = #41000 1'b1;
-	# 20000;
-	repeat(14)
-	begin
-		C = 1'b0;
-		C = #56000 1'b1;
-		# 24000;
-	end
-	C = 1'b0;
 end 
 
-// man_clk
+// clk
 always
 begin
-	man_clk = 1'b0;
-	man_clk = #25000 1'b1;
-	#25000;
+	clk = 1'b0;
+	clk = #30000 1'b1;
+	#30000;
 end 
 // choice[ 2 ]
 initial
@@ -1381,23 +1395,23 @@ end
 initial
 begin
 	choice[1] = 1'b0;
-	choice[1] = #1000000 1'b1;
-	choice[1] = #1200000 1'b0;
+	choice[1] = #14400000 1'b1;
+	choice[1] = #10560000 1'b0;
 end 
 // choice[ 0 ]
 initial
 begin
 	choice[0] = 1'b1;
-	choice[0] = #999000 1'b0;
+	choice[0] = #9999000 1'b0;
 end 
 
 // nRST
 initial
 begin
 	nRST = 1'b1;
-	nRST = #999000 1'b0;
-	nRST = #41000 1'b1;
-	nRST = #1160000 1'b0;
+	nRST = #9999000 1'b0;
+	nRST = #4401000 1'b1;
+	nRST = #15360000 1'b0;
 end 
 
 // cancel_purchase
@@ -1410,27 +1424,49 @@ end
 initial
 begin
 	V_input[2] = 1'b1;
-	V_input[2] = #80000 1'b0;
-	V_input[2] = #200000 1'b1;
-	V_input[2] = #160000 1'b0;
-	V_input[2] = #260000 1'b1;
-	V_input[2] = #1220000 1'b0;
+	V_input[2] = #8800000 1'b0;
 end 
 
 // V_input[1]
 initial
 begin
 	V_input[1] = 1'b0;
+	V_input[1] = #14400000 1'b1;
+	V_input[1] = #10240000 1'b0;
 end 
 
 // V_input[0]
 initial
 begin
 	V_input[0] = 1'b0;
-	V_input[0] = #80000 1'b1;
-	V_input[0] = #200000 1'b0;
-	V_input[0] = #160000 1'b1;
-	V_input[0] = #560000 1'b0;
+	V_input[0] = #14400000 1'b1;
+	V_input[0] = #10240000 1'b0;
+end 
+
+// confirmar_moeda
+initial
+begin
+	confirmar_moeda = 1'b1;
+	confirmar_moeda = #2800000 1'b0;
+	confirmar_moeda = #80000 1'b1;
+	confirmar_moeda = #480000 1'b0;
+	confirmar_moeda = #80000 1'b1;
+	confirmar_moeda = #1120000 1'b0;
+	confirmar_moeda = #80000 1'b1;
+	confirmar_moeda = #1280000 1'b0;
+	confirmar_moeda = #80000 1'b1;
+	confirmar_moeda = #14480000 1'b0;
+	confirmar_moeda = #640000 1'b1;
+	confirmar_moeda = #3520000 1'b0;
+end 
+
+// confirmar_salgado
+initial
+begin
+	confirmar_salgado = 1'b1;
+	confirmar_salgado = #8320000 1'b0;
+	confirmar_salgado = #80000 1'b1;
+	confirmar_salgado = #16240000 1'b0;
 end 
 
 vending_machine_vlg_sample_tst tb_sample (
@@ -1438,7 +1474,8 @@ vending_machine_vlg_sample_tst tb_sample (
 	.cancel_purchase(cancel_purchase),
 	.choice(choice),
 	.clk(clk),
-	.man_clk(man_clk),
+	.confirmar_moeda(confirmar_moeda),
+	.confirmar_salgado(confirmar_salgado),
 	.nRST(nRST),
 	.V_input(V_input),
 	.sampler_tx(sampler)

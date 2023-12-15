@@ -4,11 +4,12 @@ entity vending_machine is
     port(
         nRST            : in     vl_logic;
         clk             : in     vl_logic;
-        man_clk         : in     vl_logic;
         C               : in     vl_logic;
         V_input         : in     vl_logic_vector(2 downto 0);
         choice          : in     vl_logic_vector(2 downto 0);
         cancel_purchase : in     vl_logic;
+        confirmar_salgado: in     vl_logic;
+        confirmar_moeda : in     vl_logic;
         display1        : out    vl_logic_vector(6 downto 0);
         display2        : out    vl_logic_vector(6 downto 0);
         display3        : out    vl_logic_vector(6 downto 0);

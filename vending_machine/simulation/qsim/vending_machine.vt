@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "12/15/2023 10:08:28"
+// Generated on "12/15/2023 11:26:29"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    vending_machine
 // 
@@ -31,8 +31,8 @@ module vending_machine_vlg_sample_tst(
 	cancel_purchase,
 	choice,
 	clk,
-	confirmar_moeda,
-	confirmar_salgado,
+	coin_confirm_signal,
+	dispense_signal,
 	nRST,
 	V_input,
 	sampler_tx
@@ -41,15 +41,15 @@ input  C;
 input  cancel_purchase;
 input [2:0] choice;
 input  clk;
-input  confirmar_moeda;
-input  confirmar_salgado;
+input  coin_confirm_signal;
+input  dispense_signal;
 input  nRST;
 input [2:0] V_input;
 output sampler_tx;
 
 reg sample;
 time current_time;
-always @(C or cancel_purchase or choice or clk or confirmar_moeda or confirmar_salgado or nRST or V_input)
+always @(C or cancel_purchase or choice or clk or coin_confirm_signal or dispense_signal or nRST or V_input)
                                                                                 
 begin                                                 
  if ($realtime > 0)                                   
@@ -1336,8 +1336,8 @@ reg C;
 reg cancel_purchase;
 reg [2:0] choice;
 reg clk;
-reg confirmar_moeda;
-reg confirmar_salgado;
+reg coin_confirm_signal;
+reg dispense_signal;
 reg nRST;
 reg [2:0] V_input;
 // wires                                               
@@ -1359,9 +1359,9 @@ vending_machine i1 (
 	.cancel_purchase(cancel_purchase),
 	.choice(choice),
 	.clk(clk),
-	.confirmar_moeda(confirmar_moeda),
-	.confirmar_salgado(confirmar_salgado),
+	.coin_confirm_signal(coin_confirm_signal),
 	.D(D),
+	.dispense_signal(dispense_signal),
 	.display1(display1),
 	.display2(display2),
 	.display3(display3),
@@ -1443,30 +1443,30 @@ begin
 	V_input[0] = #10240000 1'b0;
 end 
 
-// confirmar_moeda
+// coin_confirm_signal
 initial
 begin
-	confirmar_moeda = 1'b1;
-	confirmar_moeda = #2800000 1'b0;
-	confirmar_moeda = #80000 1'b1;
-	confirmar_moeda = #480000 1'b0;
-	confirmar_moeda = #80000 1'b1;
-	confirmar_moeda = #1120000 1'b0;
-	confirmar_moeda = #80000 1'b1;
-	confirmar_moeda = #1280000 1'b0;
-	confirmar_moeda = #80000 1'b1;
-	confirmar_moeda = #14480000 1'b0;
-	confirmar_moeda = #640000 1'b1;
-	confirmar_moeda = #3520000 1'b0;
+	coin_confirm_signal = 1'b1;
+	coin_confirm_signal = #2800000 1'b0;
+	coin_confirm_signal = #80000 1'b1;
+	coin_confirm_signal = #480000 1'b0;
+	coin_confirm_signal = #80000 1'b1;
+	coin_confirm_signal = #1120000 1'b0;
+	coin_confirm_signal = #80000 1'b1;
+	coin_confirm_signal = #1280000 1'b0;
+	coin_confirm_signal = #80000 1'b1;
+	coin_confirm_signal = #14560000 1'b0;
+	coin_confirm_signal = #560000 1'b1;
+	coin_confirm_signal = #3520000 1'b0;
 end 
 
-// confirmar_salgado
+// dispense_signal
 initial
 begin
-	confirmar_salgado = 1'b1;
-	confirmar_salgado = #8320000 1'b0;
-	confirmar_salgado = #80000 1'b1;
-	confirmar_salgado = #16240000 1'b0;
+	dispense_signal = 1'b1;
+	dispense_signal = #8320000 1'b0;
+	dispense_signal = #80000 1'b1;
+	dispense_signal = #16240000 1'b0;
 end 
 
 vending_machine_vlg_sample_tst tb_sample (
@@ -1474,8 +1474,8 @@ vending_machine_vlg_sample_tst tb_sample (
 	.cancel_purchase(cancel_purchase),
 	.choice(choice),
 	.clk(clk),
-	.confirmar_moeda(confirmar_moeda),
-	.confirmar_salgado(confirmar_salgado),
+	.coin_confirm_signal(coin_confirm_signal),
+	.dispense_signal(dispense_signal),
 	.nRST(nRST),
 	.V_input(V_input),
 	.sampler_tx(sampler)

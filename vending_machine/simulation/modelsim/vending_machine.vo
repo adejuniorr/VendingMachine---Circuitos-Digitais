@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II 64-Bit"
 // VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
 
-// DATE "12/15/2023 11:18:08"
+// DATE "12/15/2023 11:26:31"
 
 // 
 // Device: Altera EP2C20F484C7 Package FBGA484
@@ -1222,20 +1222,20 @@ wire \ESTQ[0]~1_combout ;
 wire \Selector1~18_combout ;
 wire \ESTQ[0]~2_combout ;
 wire \ESTQ[0]~reg0_regout ;
+wire [2:0] \V_input~combout ;
+wire [2:0] \choice~combout ;
+wire [31:0] stock_S4_reg;
+wire [31:0] stock_S3_reg;
+wire [31:0] stock_S2_reg;
 wire [31:0] stock_S1_reg;
 wire [31:0] stock_S0_reg;
-wire [2:0] \choice~combout ;
-wire [31:0] stock_S3_reg;
 wire [8:0] price_reg;
 wire [2:0] choice_reg;
-wire [6:0] \display|HEX0 ;
-wire [6:0] \display|HEX1 ;
-wire [6:0] \display|HEX2 ;
 wire [6:0] \display|HEX3 ;
-wire [2:0] \V_input~combout ;
-wire [31:0] stock_S2_reg;
+wire [6:0] \display|HEX2 ;
+wire [6:0] \display|HEX1 ;
+wire [6:0] \display|HEX0 ;
 wire [8:0] \mux|output ;
-wire [31:0] stock_S4_reg;
 wire [8:0] \accumulator|temp2 ;
 
 

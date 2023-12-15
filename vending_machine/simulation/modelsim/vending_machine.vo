@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II 64-Bit"
 // VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
 
-// DATE "12/15/2023 00:52:04"
+// DATE "12/15/2023 10:18:07"
 
 // 
 // Device: Altera EP2C20F484C7 Package FBGA484
@@ -35,8 +35,8 @@ module vending_machine (
 	V_input,
 	choice,
 	cancel_purchase,
-	confirmar_salgado,
-	confirmar_moeda,
+	dispense_signal,
+	coin_confirm_signal,
 	display1,
 	display2,
 	display3,
@@ -51,8 +51,8 @@ input 	C;
 input 	[2:0] V_input;
 input 	[2:0] choice;
 input 	cancel_purchase;
-input 	confirmar_salgado;
-input 	confirmar_moeda;
+input 	dispense_signal;
+input 	coin_confirm_signal;
 output 	[6:0] display1;
 output 	[6:0] display2;
 output 	[6:0] display3;
@@ -122,7 +122,7 @@ output 	[8:0] ESTQ;
 // ESTQ[7]	=>  Location: PIN_E20,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 // ESTQ[8]	=>  Location: PIN_V11,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 // clk	=>  Location: PIN_L1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-// confirmar_salgado	=>  Location: PIN_R22,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// dispense_signal	=>  Location: PIN_R22,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 // C	=>  Location: PIN_L2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 // choice[2]	=>  Location: PIN_U11,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 // choice[0]	=>  Location: PIN_W12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
@@ -132,7 +132,7 @@ output 	[8:0] ESTQ;
 // V_input[0]	=>  Location: PIN_L22,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 // V_input[2]	=>  Location: PIN_M22,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 // V_input[1]	=>  Location: PIN_L21,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-// confirmar_moeda	=>  Location: PIN_T21,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// coin_confirm_signal	=>  Location: PIN_T21,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 
 
 wire gnd;
@@ -352,7 +352,7 @@ wire \display|Mod1|auto_generated|divider|divider|StageOut[172]~90_combout ;
 wire \display|Mod1|auto_generated|divider|divider|StageOut[171]~91_combout ;
 wire \display|Mod0|auto_generated|divider|divider|StageOut[129]~209_combout ;
 wire \display|Mod0|auto_generated|divider|divider|StageOut[156]~212_combout ;
-wire \confirmar_moeda~combout ;
+wire \coin_confirm_signal~combout ;
 wire \clk~combout ;
 wire \clk~clkctrl_outclk ;
 wire \display|HEX3[0]~feeder_combout ;
@@ -363,7 +363,7 @@ wire \mux|output[8]~0_combout ;
 wire \mux|output[8]~0clkctrl_outclk ;
 wire \cancel_purchase~combout ;
 wire \Selector1~8_combout ;
-wire \confirmar_salgado~combout ;
+wire \dispense_signal~combout ;
 wire \next_state~1_combout ;
 wire \accumulator|temp2~6_combout ;
 wire \next_state~0_combout ;
@@ -1222,20 +1222,20 @@ wire \ESTQ[0]~1_combout ;
 wire \Selector1~18_combout ;
 wire \ESTQ[0]~2_combout ;
 wire \ESTQ[0]~reg0_regout ;
-wire [2:0] \V_input~combout ;
-wire [2:0] \choice~combout ;
-wire [31:0] stock_S4_reg;
-wire [31:0] stock_S3_reg;
-wire [31:0] stock_S2_reg;
 wire [31:0] stock_S1_reg;
 wire [31:0] stock_S0_reg;
+wire [2:0] \choice~combout ;
+wire [31:0] stock_S3_reg;
 wire [8:0] price_reg;
 wire [2:0] choice_reg;
-wire [6:0] \display|HEX3 ;
-wire [6:0] \display|HEX2 ;
-wire [6:0] \display|HEX1 ;
 wire [6:0] \display|HEX0 ;
+wire [6:0] \display|HEX1 ;
+wire [6:0] \display|HEX2 ;
+wire [6:0] \display|HEX3 ;
+wire [2:0] \V_input~combout ;
+wire [31:0] stock_S2_reg;
 wire [8:0] \mux|output ;
+wire [31:0] stock_S4_reg;
 wire [8:0] \accumulator|temp2 ;
 
 
@@ -4551,11 +4551,11 @@ defparam \stock_S2_reg[0]~43 .sum_lutc_input = "datac";
 // Location: LCCOMB_X21_Y13_N30
 cycloneii_lcell_comb \CSTATE~8 (
 // Equation(s):
-// \CSTATE~8_combout  = ((\cancel_purchase~combout ) # ((\CSTATE.salgado_dispensation~regout  & !\confirmar_salgado~combout ))) # (!\nRST~combout )
+// \CSTATE~8_combout  = ((\cancel_purchase~combout ) # ((\CSTATE.salgado_dispensation~regout  & !\dispense_signal~combout ))) # (!\nRST~combout )
 
 	.dataa(\CSTATE.salgado_dispensation~regout ),
 	.datab(\nRST~combout ),
-	.datac(\confirmar_salgado~combout ),
+	.datac(\dispense_signal~combout ),
 	.datad(\cancel_purchase~combout ),
 	.cin(gnd),
 	.combout(\CSTATE~8_combout ),
@@ -5387,7 +5387,7 @@ defparam \mux|output[2] .sum_lutc_input = "datac";
 // synopsys translate_on
 
 // Location: PIN_T21,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-cycloneii_io \confirmar_moeda~I (
+cycloneii_io \coin_confirm_signal~I (
 	.datain(gnd),
 	.oe(gnd),
 	.outclk(gnd),
@@ -5401,25 +5401,25 @@ cycloneii_io \confirmar_moeda~I (
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.devoe(devoe),
-	.combout(\confirmar_moeda~combout ),
+	.combout(\coin_confirm_signal~combout ),
 	.regout(),
 	.differentialout(),
 	.linkout(),
-	.padio(confirmar_moeda));
+	.padio(coin_confirm_signal));
 // synopsys translate_off
-defparam \confirmar_moeda~I .input_async_reset = "none";
-defparam \confirmar_moeda~I .input_power_up = "low";
-defparam \confirmar_moeda~I .input_register_mode = "none";
-defparam \confirmar_moeda~I .input_sync_reset = "none";
-defparam \confirmar_moeda~I .oe_async_reset = "none";
-defparam \confirmar_moeda~I .oe_power_up = "low";
-defparam \confirmar_moeda~I .oe_register_mode = "none";
-defparam \confirmar_moeda~I .oe_sync_reset = "none";
-defparam \confirmar_moeda~I .operation_mode = "input";
-defparam \confirmar_moeda~I .output_async_reset = "none";
-defparam \confirmar_moeda~I .output_power_up = "low";
-defparam \confirmar_moeda~I .output_register_mode = "none";
-defparam \confirmar_moeda~I .output_sync_reset = "none";
+defparam \coin_confirm_signal~I .input_async_reset = "none";
+defparam \coin_confirm_signal~I .input_power_up = "low";
+defparam \coin_confirm_signal~I .input_register_mode = "none";
+defparam \coin_confirm_signal~I .input_sync_reset = "none";
+defparam \coin_confirm_signal~I .oe_async_reset = "none";
+defparam \coin_confirm_signal~I .oe_power_up = "low";
+defparam \coin_confirm_signal~I .oe_register_mode = "none";
+defparam \coin_confirm_signal~I .oe_sync_reset = "none";
+defparam \coin_confirm_signal~I .operation_mode = "input";
+defparam \coin_confirm_signal~I .output_async_reset = "none";
+defparam \coin_confirm_signal~I .output_power_up = "low";
+defparam \coin_confirm_signal~I .output_register_mode = "none";
+defparam \coin_confirm_signal~I .output_sync_reset = "none";
 // synopsys translate_on
 
 // Location: PIN_L1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
@@ -5762,7 +5762,7 @@ cycloneii_lcell_ff \price_reg[8] (
 	.regout(price_reg[8]));
 
 // Location: PIN_R22,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-cycloneii_io \confirmar_salgado~I (
+cycloneii_io \dispense_signal~I (
 	.datain(gnd),
 	.oe(gnd),
 	.outclk(gnd),
@@ -5776,25 +5776,25 @@ cycloneii_io \confirmar_salgado~I (
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.devoe(devoe),
-	.combout(\confirmar_salgado~combout ),
+	.combout(\dispense_signal~combout ),
 	.regout(),
 	.differentialout(),
 	.linkout(),
-	.padio(confirmar_salgado));
+	.padio(dispense_signal));
 // synopsys translate_off
-defparam \confirmar_salgado~I .input_async_reset = "none";
-defparam \confirmar_salgado~I .input_power_up = "low";
-defparam \confirmar_salgado~I .input_register_mode = "none";
-defparam \confirmar_salgado~I .input_sync_reset = "none";
-defparam \confirmar_salgado~I .oe_async_reset = "none";
-defparam \confirmar_salgado~I .oe_power_up = "low";
-defparam \confirmar_salgado~I .oe_register_mode = "none";
-defparam \confirmar_salgado~I .oe_sync_reset = "none";
-defparam \confirmar_salgado~I .operation_mode = "input";
-defparam \confirmar_salgado~I .output_async_reset = "none";
-defparam \confirmar_salgado~I .output_power_up = "low";
-defparam \confirmar_salgado~I .output_register_mode = "none";
-defparam \confirmar_salgado~I .output_sync_reset = "none";
+defparam \dispense_signal~I .input_async_reset = "none";
+defparam \dispense_signal~I .input_power_up = "low";
+defparam \dispense_signal~I .input_register_mode = "none";
+defparam \dispense_signal~I .input_sync_reset = "none";
+defparam \dispense_signal~I .oe_async_reset = "none";
+defparam \dispense_signal~I .oe_power_up = "low";
+defparam \dispense_signal~I .oe_register_mode = "none";
+defparam \dispense_signal~I .oe_sync_reset = "none";
+defparam \dispense_signal~I .operation_mode = "input";
+defparam \dispense_signal~I .output_async_reset = "none";
+defparam \dispense_signal~I .output_power_up = "low";
+defparam \dispense_signal~I .output_register_mode = "none";
+defparam \dispense_signal~I .output_sync_reset = "none";
 // synopsys translate_on
 
 // Location: PIN_L21,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
@@ -5995,9 +5995,9 @@ defparam \C~I .output_sync_reset = "none";
 // Location: LCCOMB_X21_Y20_N24
 cycloneii_lcell_comb \accumulator|temp2[1]~3 (
 // Equation(s):
-// \accumulator|temp2[1]~3_combout  = (\Selector7~2_combout ) # ((!\confirmar_moeda~combout  & (\next_state~0_combout  & \C~combout )))
+// \accumulator|temp2[1]~3_combout  = (\Selector7~2_combout ) # ((!\coin_confirm_signal~combout  & (\next_state~0_combout  & \C~combout )))
 
-	.dataa(\confirmar_moeda~combout ),
+	.dataa(\coin_confirm_signal~combout ),
 	.datab(\next_state~0_combout ),
 	.datac(\C~combout ),
 	.datad(\Selector7~2_combout ),
@@ -6184,11 +6184,11 @@ cycloneii_lcell_ff \accumulator|temp2[8] (
 // Location: LCCOMB_X23_Y14_N8
 cycloneii_lcell_comb \CSTATE~5 (
 // Equation(s):
-// \CSTATE~5_combout  = (!\confirmar_salgado~combout  & ((\subtractor|subtractor|bit7|c_out~combout  & ((\accumulator|temp2 [8]) # (!price_reg[8]))) # (!\subtractor|subtractor|bit7|c_out~combout  & (!price_reg[8] & \accumulator|temp2 [8]))))
+// \CSTATE~5_combout  = (!\dispense_signal~combout  & ((\subtractor|subtractor|bit7|c_out~combout  & ((\accumulator|temp2 [8]) # (!price_reg[8]))) # (!\subtractor|subtractor|bit7|c_out~combout  & (!price_reg[8] & \accumulator|temp2 [8]))))
 
 	.dataa(\subtractor|subtractor|bit7|c_out~combout ),
 	.datab(price_reg[8]),
-	.datac(\confirmar_salgado~combout ),
+	.datac(\dispense_signal~combout ),
 	.datad(\accumulator|temp2 [8]),
 	.cin(gnd),
 	.combout(\CSTATE~5_combout ),
@@ -17172,10 +17172,10 @@ cycloneii_lcell_ff \display|HEX0[6] (
 // Location: LCCOMB_X1_Y13_N20
 cycloneii_lcell_comb \P[8]~0 (
 // Equation(s):
-// \P[8]~0_combout  = ((\cancel_purchase~combout  $ (\CSTATE.Coin_Reception~regout )) # (!\confirmar_salgado~combout )) # (!\nRST~combout )
+// \P[8]~0_combout  = ((\cancel_purchase~combout  $ (\CSTATE.Coin_Reception~regout )) # (!\dispense_signal~combout )) # (!\nRST~combout )
 
 	.dataa(\nRST~combout ),
-	.datab(\confirmar_salgado~combout ),
+	.datab(\dispense_signal~combout ),
 	.datac(\cancel_purchase~combout ),
 	.datad(\CSTATE.Coin_Reception~regout ),
 	.cin(gnd),
@@ -17525,12 +17525,12 @@ defparam \Selector14~1 .sum_lutc_input = "datac";
 // Location: LCCOMB_X19_Y13_N18
 cycloneii_lcell_comb \CSTATE~7 (
 // Equation(s):
-// \CSTATE~7_combout  = (\CSTATE~6_combout  & ((\D[0]~7_combout ) # ((\CSTATE.salgado_dispensation~regout  & \confirmar_salgado~combout ))))
+// \CSTATE~7_combout  = (\CSTATE~6_combout  & ((\D[0]~7_combout ) # ((\CSTATE.salgado_dispensation~regout  & \dispense_signal~combout ))))
 
 	.dataa(\D[0]~7_combout ),
 	.datab(\CSTATE~6_combout ),
 	.datac(\CSTATE.salgado_dispensation~regout ),
-	.datad(\confirmar_salgado~combout ),
+	.datad(\dispense_signal~combout ),
 	.cin(gnd),
 	.combout(\CSTATE~7_combout ),
 	.cout());
@@ -17636,10 +17636,10 @@ defparam \Selector14~5clkctrl .ena_register_mode = "none";
 // Location: LCCOMB_X16_Y12_N16
 cycloneii_lcell_comb \Selector2~4 (
 // Equation(s):
-// \Selector2~4_combout  = (\cancel_purchase~combout  & (!\CSTATE.Coin_Reception~regout  & ((!\CSTATE.salgado_dispensation~regout )))) # (!\cancel_purchase~combout  & (((!\CSTATE.salgado_dispensation~regout ) # (!\confirmar_salgado~combout ))))
+// \Selector2~4_combout  = (\cancel_purchase~combout  & (!\CSTATE.Coin_Reception~regout  & ((!\CSTATE.salgado_dispensation~regout )))) # (!\cancel_purchase~combout  & (((!\CSTATE.salgado_dispensation~regout ) # (!\dispense_signal~combout ))))
 
 	.dataa(\CSTATE.Coin_Reception~regout ),
-	.datab(\confirmar_salgado~combout ),
+	.datab(\dispense_signal~combout ),
 	.datac(\cancel_purchase~combout ),
 	.datad(\CSTATE.salgado_dispensation~regout ),
 	.cin(gnd),
@@ -18551,9 +18551,9 @@ defparam \subtractor|subtractor|bit6|c_out .sum_lutc_input = "datac";
 // Location: LCCOMB_X19_Y13_N20
 cycloneii_lcell_comb \Selector4~0 (
 // Equation(s):
-// \Selector4~0_combout  = (!\confirmar_salgado~combout  & \CSTATE.salgado_dispensation~regout )
+// \Selector4~0_combout  = (!\dispense_signal~combout  & \CSTATE.salgado_dispensation~regout )
 
-	.dataa(\confirmar_salgado~combout ),
+	.dataa(\dispense_signal~combout ),
 	.datab(vcc),
 	.datac(vcc),
 	.datad(\CSTATE.salgado_dispensation~regout ),

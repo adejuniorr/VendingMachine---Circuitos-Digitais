@@ -12,8 +12,8 @@ entity vending_machine is
 		choice 				: in std_logic_vector(2 downto 0); -- Escolha do salgado
 		cancel_purchase 	: in std_logic;  -- Opcao de cancelamento de compra
 		
-		confirmar_salgado: in std_logic; --Entrada para confirmar o salgado escolhido
-		confirmar_moeda: in std_logic;           --Entrada para confirmar uma moeda adicionada
+		dispense_signal: in std_logic; --Entrada para confirmar o salgado escolhido
+		coin_confirm_signal: in std_logic;           --Entrada para confirmar uma moeda adicionada
 		
 		display1 : out std_logic_vector(6 downto 0); -- Display de saida do salgado 1
 		display2 : out std_logic_vector(6 downto 0); -- Display de saida do salgado 2
@@ -260,7 +260,7 @@ begin
 		nRST_acc <= '1'; -- Reset em 1 (off)
       price_choice_reg_EN <= '0'; -- Bit de controle de preco
 		dispensation_EN <= '0'; -- Bit de controle para salgado liberado ou nao
-		if (confirmar_salgado = '0') then
+		if (dispense_signal = '0') then
 		P <= (others => '0'); -- Acumulo de moedas
 		
 		end if;
@@ -395,7 +395,7 @@ begin
 					-- Cancela a compra e retorna ao estado inicial
 					NSTATE <= INIT_STATE;
 				else -- Caso a compra siga adiante
-					--if (confirmar_moeda = '0') then
+					--if (coin_confirm_signal = '0') then
 						P <= balance; -- Acumulamos os valores de moeda em P
 					--end if;
 				
@@ -404,7 +404,7 @@ begin
 						E <= V;
 					end if;
 			
-				if ((balance_equal = '1' or balance_greater = '1') and confirmar_salgado = '0') then
+				if ((balance_equal = '1' or balance_greater = '1') and dispense_signal = '0') then
 				-- Seguimos para o estado de liberacao do salgado se possivel
 				if cancel_purchase = '0' then
 					dispensation_EN <= '1';
@@ -418,7 +418,7 @@ begin
 			-- Cancela a compra, limpa o acumulado em P e retorna ao estado inicial
 					P <= (others => '0');
 					NSTATE <= INIT_STATE;
-				elsif (confirmar_salgado = '0') then -- Caso a compra siga adiante
+				elsif (dispense_signal = '0') then -- Caso a compra siga adiante
 					--dispensation_EN <= '1'; -- Sinal para liberacao
 					E <= coins_to_return; -- Troco
 					nRST_acc <= '0'; -- Reset da compra
@@ -432,7 +432,7 @@ begin
 	-- Instancias para constroladores de display e manipulacao de valoes inseridos (acumulo, soma, subtracao, etc.)
 	display : hex_controller port map(clk, nRST_acc, to_integer(unsigned(balance)), display4, display3, display2, display1);
 	mux : mux21 port map(S0, S1, s2, s3, s4, choice, price);
-	accumulator : accumulator8 port map (clk, nRST_acc, C, V, balance, confirmar_moeda);
+	accumulator : accumulator8 port map (clk, nRST_acc, C, V, balance, coin_confirm_signal);
 	comparator : comparator8 port map (balance, price_reg, balance_greater, balance_equal, balance_lower);
 	subtractor : subtractor8 port map (balance, price_reg, coins_to_return);
 

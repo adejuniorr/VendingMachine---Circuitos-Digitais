@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for vending_machine
-Fri Dec 15 00:50:38 2023
+Fri Dec 15 10:18:06 2023
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -105,7 +105,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 16     ;
+; Number detected on machine ; 8      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
@@ -1147,82 +1147,82 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+--------------+----------------+------------------+-----------+------------+---------------------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Setup Times                                                                          ;
-+-------------------+-----------------+--------+--------+------------+-----------------+
-; Data Port         ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-------------------+-----------------+--------+--------+------------+-----------------+
-; C                 ; cancel_purchase ; 1.036  ; 1.036  ; Rise       ; cancel_purchase ;
-; V_input[*]        ; cancel_purchase ; 3.720  ; 3.720  ; Rise       ; cancel_purchase ;
-;  V_input[0]       ; cancel_purchase ; 3.568  ; 3.568  ; Rise       ; cancel_purchase ;
-;  V_input[1]       ; cancel_purchase ; 3.720  ; 3.720  ; Rise       ; cancel_purchase ;
-;  V_input[2]       ; cancel_purchase ; 3.620  ; 3.620  ; Rise       ; cancel_purchase ;
-; cancel_purchase   ; cancel_purchase ; 1.065  ; 1.065  ; Rise       ; cancel_purchase ;
-; confirmar_salgado ; cancel_purchase ; 7.448  ; 7.448  ; Rise       ; cancel_purchase ;
-; C                 ; cancel_purchase ; -0.337 ; -0.337 ; Fall       ; cancel_purchase ;
-; V_input[*]        ; cancel_purchase ; 2.347  ; 2.347  ; Fall       ; cancel_purchase ;
-;  V_input[0]       ; cancel_purchase ; 2.195  ; 2.195  ; Fall       ; cancel_purchase ;
-;  V_input[1]       ; cancel_purchase ; 2.347  ; 2.347  ; Fall       ; cancel_purchase ;
-;  V_input[2]       ; cancel_purchase ; 2.247  ; 2.247  ; Fall       ; cancel_purchase ;
-; cancel_purchase   ; cancel_purchase ; 0.122  ; 0.122  ; Fall       ; cancel_purchase ;
-; confirmar_salgado ; cancel_purchase ; 6.075  ; 6.075  ; Fall       ; cancel_purchase ;
-; choice[*]         ; choice[0]       ; 1.863  ; 1.863  ; Fall       ; choice[0]       ;
-;  choice[0]        ; choice[0]       ; 0.714  ; 0.714  ; Fall       ; choice[0]       ;
-;  choice[1]        ; choice[0]       ; 1.249  ; 1.249  ; Fall       ; choice[0]       ;
-;  choice[2]        ; choice[0]       ; 1.863  ; 1.863  ; Fall       ; choice[0]       ;
-; C                 ; clk             ; 4.236  ; 4.236  ; Rise       ; clk             ;
-; V_input[*]        ; clk             ; 7.364  ; 7.364  ; Rise       ; clk             ;
-;  V_input[0]       ; clk             ; 7.310  ; 7.310  ; Rise       ; clk             ;
-;  V_input[1]       ; clk             ; 7.314  ; 7.314  ; Rise       ; clk             ;
-;  V_input[2]       ; clk             ; 7.364  ; 7.364  ; Rise       ; clk             ;
-; cancel_purchase   ; clk             ; 1.983  ; 1.983  ; Rise       ; clk             ;
-; choice[*]         ; clk             ; 6.338  ; 6.338  ; Rise       ; clk             ;
-;  choice[0]        ; clk             ; 5.051  ; 5.051  ; Rise       ; clk             ;
-;  choice[1]        ; clk             ; 5.640  ; 5.640  ; Rise       ; clk             ;
-;  choice[2]        ; clk             ; 6.338  ; 6.338  ; Rise       ; clk             ;
-; confirmar_moeda   ; clk             ; 6.417  ; 6.417  ; Rise       ; clk             ;
-; confirmar_salgado ; clk             ; 9.156  ; 9.156  ; Rise       ; clk             ;
-; nRST              ; clk             ; 1.714  ; 1.714  ; Rise       ; clk             ;
-+-------------------+-----------------+--------+--------+------------+-----------------+
++----------------------------------------------------------------------------------------+
+; Setup Times                                                                            ;
++---------------------+-----------------+--------+--------+------------+-----------------+
+; Data Port           ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------------+-----------------+--------+--------+------------+-----------------+
+; C                   ; cancel_purchase ; 1.036  ; 1.036  ; Rise       ; cancel_purchase ;
+; V_input[*]          ; cancel_purchase ; 3.720  ; 3.720  ; Rise       ; cancel_purchase ;
+;  V_input[0]         ; cancel_purchase ; 3.568  ; 3.568  ; Rise       ; cancel_purchase ;
+;  V_input[1]         ; cancel_purchase ; 3.720  ; 3.720  ; Rise       ; cancel_purchase ;
+;  V_input[2]         ; cancel_purchase ; 3.620  ; 3.620  ; Rise       ; cancel_purchase ;
+; cancel_purchase     ; cancel_purchase ; 1.065  ; 1.065  ; Rise       ; cancel_purchase ;
+; dispense_signal     ; cancel_purchase ; 7.448  ; 7.448  ; Rise       ; cancel_purchase ;
+; C                   ; cancel_purchase ; -0.337 ; -0.337 ; Fall       ; cancel_purchase ;
+; V_input[*]          ; cancel_purchase ; 2.347  ; 2.347  ; Fall       ; cancel_purchase ;
+;  V_input[0]         ; cancel_purchase ; 2.195  ; 2.195  ; Fall       ; cancel_purchase ;
+;  V_input[1]         ; cancel_purchase ; 2.347  ; 2.347  ; Fall       ; cancel_purchase ;
+;  V_input[2]         ; cancel_purchase ; 2.247  ; 2.247  ; Fall       ; cancel_purchase ;
+; cancel_purchase     ; cancel_purchase ; 0.122  ; 0.122  ; Fall       ; cancel_purchase ;
+; dispense_signal     ; cancel_purchase ; 6.075  ; 6.075  ; Fall       ; cancel_purchase ;
+; choice[*]           ; choice[0]       ; 1.863  ; 1.863  ; Fall       ; choice[0]       ;
+;  choice[0]          ; choice[0]       ; 0.714  ; 0.714  ; Fall       ; choice[0]       ;
+;  choice[1]          ; choice[0]       ; 1.249  ; 1.249  ; Fall       ; choice[0]       ;
+;  choice[2]          ; choice[0]       ; 1.863  ; 1.863  ; Fall       ; choice[0]       ;
+; C                   ; clk             ; 4.236  ; 4.236  ; Rise       ; clk             ;
+; V_input[*]          ; clk             ; 7.364  ; 7.364  ; Rise       ; clk             ;
+;  V_input[0]         ; clk             ; 7.310  ; 7.310  ; Rise       ; clk             ;
+;  V_input[1]         ; clk             ; 7.314  ; 7.314  ; Rise       ; clk             ;
+;  V_input[2]         ; clk             ; 7.364  ; 7.364  ; Rise       ; clk             ;
+; cancel_purchase     ; clk             ; 1.983  ; 1.983  ; Rise       ; clk             ;
+; choice[*]           ; clk             ; 6.338  ; 6.338  ; Rise       ; clk             ;
+;  choice[0]          ; clk             ; 5.051  ; 5.051  ; Rise       ; clk             ;
+;  choice[1]          ; clk             ; 5.640  ; 5.640  ; Rise       ; clk             ;
+;  choice[2]          ; clk             ; 6.338  ; 6.338  ; Rise       ; clk             ;
+; coin_confirm_signal ; clk             ; 6.417  ; 6.417  ; Rise       ; clk             ;
+; dispense_signal     ; clk             ; 9.156  ; 9.156  ; Rise       ; clk             ;
+; nRST                ; clk             ; 1.714  ; 1.714  ; Rise       ; clk             ;
++---------------------+-----------------+--------+--------+------------+-----------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Hold Times                                                                           ;
-+-------------------+-----------------+--------+--------+------------+-----------------+
-; Data Port         ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-------------------+-----------------+--------+--------+------------+-----------------+
-; C                 ; cancel_purchase ; 0.221  ; 0.221  ; Rise       ; cancel_purchase ;
-; V_input[*]        ; cancel_purchase ; 1.281  ; 1.281  ; Rise       ; cancel_purchase ;
-;  V_input[0]       ; cancel_purchase ; 0.948  ; 0.948  ; Rise       ; cancel_purchase ;
-;  V_input[1]       ; cancel_purchase ; 1.281  ; 1.281  ; Rise       ; cancel_purchase ;
-;  V_input[2]       ; cancel_purchase ; 0.670  ; 0.670  ; Rise       ; cancel_purchase ;
-; cancel_purchase   ; cancel_purchase ; 0.823  ; 0.823  ; Rise       ; cancel_purchase ;
-; confirmar_salgado ; cancel_purchase ; -3.894 ; -3.894 ; Rise       ; cancel_purchase ;
-; C                 ; cancel_purchase ; 1.594  ; 1.594  ; Fall       ; cancel_purchase ;
-; V_input[*]        ; cancel_purchase ; 2.654  ; 2.654  ; Fall       ; cancel_purchase ;
-;  V_input[0]       ; cancel_purchase ; 2.321  ; 2.321  ; Fall       ; cancel_purchase ;
-;  V_input[1]       ; cancel_purchase ; 2.654  ; 2.654  ; Fall       ; cancel_purchase ;
-;  V_input[2]       ; cancel_purchase ; 2.043  ; 2.043  ; Fall       ; cancel_purchase ;
-; cancel_purchase   ; cancel_purchase ; 2.196  ; 2.196  ; Fall       ; cancel_purchase ;
-; confirmar_salgado ; cancel_purchase ; -2.521 ; -2.521 ; Fall       ; cancel_purchase ;
-; choice[*]         ; choice[0]       ; 0.666  ; 0.666  ; Fall       ; choice[0]       ;
-;  choice[0]        ; choice[0]       ; 0.666  ; 0.666  ; Fall       ; choice[0]       ;
-;  choice[1]        ; choice[0]       ; 0.416  ; 0.416  ; Fall       ; choice[0]       ;
-;  choice[2]        ; choice[0]       ; 0.304  ; 0.304  ; Fall       ; choice[0]       ;
-; C                 ; clk             ; -1.356 ; -1.356 ; Rise       ; clk             ;
-; V_input[*]        ; clk             ; -0.750 ; -0.750 ; Rise       ; clk             ;
-;  V_input[0]       ; clk             ; -0.750 ; -0.750 ; Rise       ; clk             ;
-;  V_input[1]       ; clk             ; -1.393 ; -1.393 ; Rise       ; clk             ;
-;  V_input[2]       ; clk             ; -1.291 ; -1.291 ; Rise       ; clk             ;
-; cancel_purchase   ; clk             ; -0.825 ; -0.825 ; Rise       ; clk             ;
-; choice[*]         ; clk             ; -0.791 ; -0.791 ; Rise       ; clk             ;
-;  choice[0]        ; clk             ; -1.104 ; -1.104 ; Rise       ; clk             ;
-;  choice[1]        ; clk             ; -0.791 ; -0.791 ; Rise       ; clk             ;
-;  choice[2]        ; clk             ; -0.971 ; -0.971 ; Rise       ; clk             ;
-; confirmar_moeda   ; clk             ; -5.939 ; -5.939 ; Rise       ; clk             ;
-; confirmar_salgado ; clk             ; -4.620 ; -4.620 ; Rise       ; clk             ;
-; nRST              ; clk             ; -0.874 ; -0.874 ; Rise       ; clk             ;
-+-------------------+-----------------+--------+--------+------------+-----------------+
++----------------------------------------------------------------------------------------+
+; Hold Times                                                                             ;
++---------------------+-----------------+--------+--------+------------+-----------------+
+; Data Port           ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------------+-----------------+--------+--------+------------+-----------------+
+; C                   ; cancel_purchase ; 0.221  ; 0.221  ; Rise       ; cancel_purchase ;
+; V_input[*]          ; cancel_purchase ; 1.281  ; 1.281  ; Rise       ; cancel_purchase ;
+;  V_input[0]         ; cancel_purchase ; 0.948  ; 0.948  ; Rise       ; cancel_purchase ;
+;  V_input[1]         ; cancel_purchase ; 1.281  ; 1.281  ; Rise       ; cancel_purchase ;
+;  V_input[2]         ; cancel_purchase ; 0.670  ; 0.670  ; Rise       ; cancel_purchase ;
+; cancel_purchase     ; cancel_purchase ; 0.823  ; 0.823  ; Rise       ; cancel_purchase ;
+; dispense_signal     ; cancel_purchase ; -3.894 ; -3.894 ; Rise       ; cancel_purchase ;
+; C                   ; cancel_purchase ; 1.594  ; 1.594  ; Fall       ; cancel_purchase ;
+; V_input[*]          ; cancel_purchase ; 2.654  ; 2.654  ; Fall       ; cancel_purchase ;
+;  V_input[0]         ; cancel_purchase ; 2.321  ; 2.321  ; Fall       ; cancel_purchase ;
+;  V_input[1]         ; cancel_purchase ; 2.654  ; 2.654  ; Fall       ; cancel_purchase ;
+;  V_input[2]         ; cancel_purchase ; 2.043  ; 2.043  ; Fall       ; cancel_purchase ;
+; cancel_purchase     ; cancel_purchase ; 2.196  ; 2.196  ; Fall       ; cancel_purchase ;
+; dispense_signal     ; cancel_purchase ; -2.521 ; -2.521 ; Fall       ; cancel_purchase ;
+; choice[*]           ; choice[0]       ; 0.666  ; 0.666  ; Fall       ; choice[0]       ;
+;  choice[0]          ; choice[0]       ; 0.666  ; 0.666  ; Fall       ; choice[0]       ;
+;  choice[1]          ; choice[0]       ; 0.416  ; 0.416  ; Fall       ; choice[0]       ;
+;  choice[2]          ; choice[0]       ; 0.304  ; 0.304  ; Fall       ; choice[0]       ;
+; C                   ; clk             ; -1.356 ; -1.356 ; Rise       ; clk             ;
+; V_input[*]          ; clk             ; -0.750 ; -0.750 ; Rise       ; clk             ;
+;  V_input[0]         ; clk             ; -0.750 ; -0.750 ; Rise       ; clk             ;
+;  V_input[1]         ; clk             ; -1.393 ; -1.393 ; Rise       ; clk             ;
+;  V_input[2]         ; clk             ; -1.291 ; -1.291 ; Rise       ; clk             ;
+; cancel_purchase     ; clk             ; -0.825 ; -0.825 ; Rise       ; clk             ;
+; choice[*]           ; clk             ; -0.791 ; -0.791 ; Rise       ; clk             ;
+;  choice[0]          ; clk             ; -1.104 ; -1.104 ; Rise       ; clk             ;
+;  choice[1]          ; clk             ; -0.791 ; -0.791 ; Rise       ; clk             ;
+;  choice[2]          ; clk             ; -0.971 ; -0.971 ; Rise       ; clk             ;
+; coin_confirm_signal ; clk             ; -5.939 ; -5.939 ; Rise       ; clk             ;
+; dispense_signal     ; clk             ; -4.620 ; -4.620 ; Rise       ; clk             ;
+; nRST                ; clk             ; -0.874 ; -0.874 ; Rise       ; clk             ;
++---------------------+-----------------+--------+--------+------------+-----------------+
 
 
 +---------------------------------------------------------------------------------+
@@ -2385,82 +2385,82 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+--------------+----------------+------------------+-----------+------------+---------------------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Setup Times                                                                          ;
-+-------------------+-----------------+--------+--------+------------+-----------------+
-; Data Port         ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-------------------+-----------------+--------+--------+------------+-----------------+
-; C                 ; cancel_purchase ; -0.288 ; -0.288 ; Rise       ; cancel_purchase ;
-; V_input[*]        ; cancel_purchase ; 0.833  ; 0.833  ; Rise       ; cancel_purchase ;
-;  V_input[0]       ; cancel_purchase ; 0.797  ; 0.797  ; Rise       ; cancel_purchase ;
-;  V_input[1]       ; cancel_purchase ; 0.833  ; 0.833  ; Rise       ; cancel_purchase ;
-;  V_input[2]       ; cancel_purchase ; 0.809  ; 0.809  ; Rise       ; cancel_purchase ;
-; cancel_purchase   ; cancel_purchase ; -0.276 ; -0.276 ; Rise       ; cancel_purchase ;
-; confirmar_salgado ; cancel_purchase ; 3.125  ; 3.125  ; Rise       ; cancel_purchase ;
-; C                 ; cancel_purchase ; -0.792 ; -0.792 ; Fall       ; cancel_purchase ;
-; V_input[*]        ; cancel_purchase ; 0.329  ; 0.329  ; Fall       ; cancel_purchase ;
-;  V_input[0]       ; cancel_purchase ; 0.293  ; 0.293  ; Fall       ; cancel_purchase ;
-;  V_input[1]       ; cancel_purchase ; 0.329  ; 0.329  ; Fall       ; cancel_purchase ;
-;  V_input[2]       ; cancel_purchase ; 0.305  ; 0.305  ; Fall       ; cancel_purchase ;
-; cancel_purchase   ; cancel_purchase ; -0.547 ; -0.547 ; Fall       ; cancel_purchase ;
-; confirmar_salgado ; cancel_purchase ; 2.621  ; 2.621  ; Fall       ; cancel_purchase ;
-; choice[*]         ; choice[0]       ; 0.395  ; 0.395  ; Fall       ; choice[0]       ;
-;  choice[0]        ; choice[0]       ; -0.189 ; -0.189 ; Fall       ; choice[0]       ;
-;  choice[1]        ; choice[0]       ; 0.024  ; 0.024  ; Fall       ; choice[0]       ;
-;  choice[2]        ; choice[0]       ; 0.395  ; 0.395  ; Fall       ; choice[0]       ;
-; C                 ; clk             ; 1.147  ; 1.147  ; Rise       ; clk             ;
-; V_input[*]        ; clk             ; 2.212  ; 2.212  ; Rise       ; clk             ;
-;  V_input[0]       ; clk             ; 2.212  ; 2.212  ; Rise       ; clk             ;
-;  V_input[1]       ; clk             ; 2.166  ; 2.166  ; Rise       ; clk             ;
-;  V_input[2]       ; clk             ; 2.198  ; 2.198  ; Rise       ; clk             ;
-; cancel_purchase   ; clk             ; 0.634  ; 0.634  ; Rise       ; clk             ;
-; choice[*]         ; clk             ; 2.031  ; 2.031  ; Rise       ; clk             ;
-;  choice[0]        ; clk             ; 1.433  ; 1.433  ; Rise       ; clk             ;
-;  choice[1]        ; clk             ; 1.643  ; 1.643  ; Rise       ; clk             ;
-;  choice[2]        ; clk             ; 2.031  ; 2.031  ; Rise       ; clk             ;
-; confirmar_moeda   ; clk             ; 2.918  ; 2.918  ; Rise       ; clk             ;
-; confirmar_salgado ; clk             ; 3.998  ; 3.998  ; Rise       ; clk             ;
-; nRST              ; clk             ; 0.460  ; 0.460  ; Rise       ; clk             ;
-+-------------------+-----------------+--------+--------+------------+-----------------+
++----------------------------------------------------------------------------------------+
+; Setup Times                                                                            ;
++---------------------+-----------------+--------+--------+------------+-----------------+
+; Data Port           ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------------+-----------------+--------+--------+------------+-----------------+
+; C                   ; cancel_purchase ; -0.288 ; -0.288 ; Rise       ; cancel_purchase ;
+; V_input[*]          ; cancel_purchase ; 0.833  ; 0.833  ; Rise       ; cancel_purchase ;
+;  V_input[0]         ; cancel_purchase ; 0.797  ; 0.797  ; Rise       ; cancel_purchase ;
+;  V_input[1]         ; cancel_purchase ; 0.833  ; 0.833  ; Rise       ; cancel_purchase ;
+;  V_input[2]         ; cancel_purchase ; 0.809  ; 0.809  ; Rise       ; cancel_purchase ;
+; cancel_purchase     ; cancel_purchase ; -0.276 ; -0.276 ; Rise       ; cancel_purchase ;
+; dispense_signal     ; cancel_purchase ; 3.125  ; 3.125  ; Rise       ; cancel_purchase ;
+; C                   ; cancel_purchase ; -0.792 ; -0.792 ; Fall       ; cancel_purchase ;
+; V_input[*]          ; cancel_purchase ; 0.329  ; 0.329  ; Fall       ; cancel_purchase ;
+;  V_input[0]         ; cancel_purchase ; 0.293  ; 0.293  ; Fall       ; cancel_purchase ;
+;  V_input[1]         ; cancel_purchase ; 0.329  ; 0.329  ; Fall       ; cancel_purchase ;
+;  V_input[2]         ; cancel_purchase ; 0.305  ; 0.305  ; Fall       ; cancel_purchase ;
+; cancel_purchase     ; cancel_purchase ; -0.547 ; -0.547 ; Fall       ; cancel_purchase ;
+; dispense_signal     ; cancel_purchase ; 2.621  ; 2.621  ; Fall       ; cancel_purchase ;
+; choice[*]           ; choice[0]       ; 0.395  ; 0.395  ; Fall       ; choice[0]       ;
+;  choice[0]          ; choice[0]       ; -0.189 ; -0.189 ; Fall       ; choice[0]       ;
+;  choice[1]          ; choice[0]       ; 0.024  ; 0.024  ; Fall       ; choice[0]       ;
+;  choice[2]          ; choice[0]       ; 0.395  ; 0.395  ; Fall       ; choice[0]       ;
+; C                   ; clk             ; 1.147  ; 1.147  ; Rise       ; clk             ;
+; V_input[*]          ; clk             ; 2.212  ; 2.212  ; Rise       ; clk             ;
+;  V_input[0]         ; clk             ; 2.212  ; 2.212  ; Rise       ; clk             ;
+;  V_input[1]         ; clk             ; 2.166  ; 2.166  ; Rise       ; clk             ;
+;  V_input[2]         ; clk             ; 2.198  ; 2.198  ; Rise       ; clk             ;
+; cancel_purchase     ; clk             ; 0.634  ; 0.634  ; Rise       ; clk             ;
+; choice[*]           ; clk             ; 2.031  ; 2.031  ; Rise       ; clk             ;
+;  choice[0]          ; clk             ; 1.433  ; 1.433  ; Rise       ; clk             ;
+;  choice[1]          ; clk             ; 1.643  ; 1.643  ; Rise       ; clk             ;
+;  choice[2]          ; clk             ; 2.031  ; 2.031  ; Rise       ; clk             ;
+; coin_confirm_signal ; clk             ; 2.918  ; 2.918  ; Rise       ; clk             ;
+; dispense_signal     ; clk             ; 3.998  ; 3.998  ; Rise       ; clk             ;
+; nRST                ; clk             ; 0.460  ; 0.460  ; Rise       ; clk             ;
++---------------------+-----------------+--------+--------+------------+-----------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Hold Times                                                                           ;
-+-------------------+-----------------+--------+--------+------------+-----------------+
-; Data Port         ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-------------------+-----------------+--------+--------+------------+-----------------+
-; C                 ; cancel_purchase ; 0.699  ; 0.699  ; Rise       ; cancel_purchase ;
-; V_input[*]        ; cancel_purchase ; 1.004  ; 1.004  ; Rise       ; cancel_purchase ;
-;  V_input[0]       ; cancel_purchase ; 0.881  ; 0.881  ; Rise       ; cancel_purchase ;
-;  V_input[1]       ; cancel_purchase ; 1.004  ; 1.004  ; Rise       ; cancel_purchase ;
-;  V_input[2]       ; cancel_purchase ; 0.786  ; 0.786  ; Rise       ; cancel_purchase ;
-; cancel_purchase   ; cancel_purchase ; 0.837  ; 0.837  ; Rise       ; cancel_purchase ;
-; confirmar_salgado ; cancel_purchase ; -1.809 ; -1.809 ; Rise       ; cancel_purchase ;
-; C                 ; cancel_purchase ; 1.203  ; 1.203  ; Fall       ; cancel_purchase ;
-; V_input[*]        ; cancel_purchase ; 1.508  ; 1.508  ; Fall       ; cancel_purchase ;
-;  V_input[0]       ; cancel_purchase ; 1.385  ; 1.385  ; Fall       ; cancel_purchase ;
-;  V_input[1]       ; cancel_purchase ; 1.508  ; 1.508  ; Fall       ; cancel_purchase ;
-;  V_input[2]       ; cancel_purchase ; 1.290  ; 1.290  ; Fall       ; cancel_purchase ;
-; cancel_purchase   ; cancel_purchase ; 1.341  ; 1.341  ; Fall       ; cancel_purchase ;
-; confirmar_salgado ; cancel_purchase ; -1.305 ; -1.305 ; Fall       ; cancel_purchase ;
-; choice[*]         ; choice[0]       ; 0.674  ; 0.674  ; Fall       ; choice[0]       ;
-;  choice[0]        ; choice[0]       ; 0.674  ; 0.674  ; Fall       ; choice[0]       ;
-;  choice[1]        ; choice[0]       ; 0.570  ; 0.570  ; Fall       ; choice[0]       ;
-;  choice[2]        ; choice[0]       ; 0.420  ; 0.420  ; Fall       ; choice[0]       ;
-; C                 ; clk             ; -0.094 ; -0.094 ; Rise       ; clk             ;
-; V_input[*]        ; clk             ; 0.191  ; 0.191  ; Rise       ; clk             ;
-;  V_input[0]       ; clk             ; 0.191  ; 0.191  ; Rise       ; clk             ;
-;  V_input[1]       ; clk             ; -0.045 ; -0.045 ; Rise       ; clk             ;
-;  V_input[2]       ; clk             ; 0.001  ; 0.001  ; Rise       ; clk             ;
-; cancel_purchase   ; clk             ; 0.014  ; 0.014  ; Rise       ; clk             ;
-; choice[*]         ; clk             ; -0.202 ; -0.202 ; Rise       ; clk             ;
-;  choice[0]        ; clk             ; -0.300 ; -0.300 ; Rise       ; clk             ;
-;  choice[1]        ; clk             ; -0.202 ; -0.202 ; Rise       ; clk             ;
-;  choice[2]        ; clk             ; -0.394 ; -0.394 ; Rise       ; clk             ;
-; confirmar_moeda   ; clk             ; -2.718 ; -2.718 ; Rise       ; clk             ;
-; confirmar_salgado ; clk             ; -2.518 ; -2.518 ; Rise       ; clk             ;
-; nRST              ; clk             ; 0.133  ; 0.133  ; Rise       ; clk             ;
-+-------------------+-----------------+--------+--------+------------+-----------------+
++----------------------------------------------------------------------------------------+
+; Hold Times                                                                             ;
++---------------------+-----------------+--------+--------+------------+-----------------+
+; Data Port           ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------------+-----------------+--------+--------+------------+-----------------+
+; C                   ; cancel_purchase ; 0.699  ; 0.699  ; Rise       ; cancel_purchase ;
+; V_input[*]          ; cancel_purchase ; 1.004  ; 1.004  ; Rise       ; cancel_purchase ;
+;  V_input[0]         ; cancel_purchase ; 0.881  ; 0.881  ; Rise       ; cancel_purchase ;
+;  V_input[1]         ; cancel_purchase ; 1.004  ; 1.004  ; Rise       ; cancel_purchase ;
+;  V_input[2]         ; cancel_purchase ; 0.786  ; 0.786  ; Rise       ; cancel_purchase ;
+; cancel_purchase     ; cancel_purchase ; 0.837  ; 0.837  ; Rise       ; cancel_purchase ;
+; dispense_signal     ; cancel_purchase ; -1.809 ; -1.809 ; Rise       ; cancel_purchase ;
+; C                   ; cancel_purchase ; 1.203  ; 1.203  ; Fall       ; cancel_purchase ;
+; V_input[*]          ; cancel_purchase ; 1.508  ; 1.508  ; Fall       ; cancel_purchase ;
+;  V_input[0]         ; cancel_purchase ; 1.385  ; 1.385  ; Fall       ; cancel_purchase ;
+;  V_input[1]         ; cancel_purchase ; 1.508  ; 1.508  ; Fall       ; cancel_purchase ;
+;  V_input[2]         ; cancel_purchase ; 1.290  ; 1.290  ; Fall       ; cancel_purchase ;
+; cancel_purchase     ; cancel_purchase ; 1.341  ; 1.341  ; Fall       ; cancel_purchase ;
+; dispense_signal     ; cancel_purchase ; -1.305 ; -1.305 ; Fall       ; cancel_purchase ;
+; choice[*]           ; choice[0]       ; 0.674  ; 0.674  ; Fall       ; choice[0]       ;
+;  choice[0]          ; choice[0]       ; 0.674  ; 0.674  ; Fall       ; choice[0]       ;
+;  choice[1]          ; choice[0]       ; 0.570  ; 0.570  ; Fall       ; choice[0]       ;
+;  choice[2]          ; choice[0]       ; 0.420  ; 0.420  ; Fall       ; choice[0]       ;
+; C                   ; clk             ; -0.094 ; -0.094 ; Rise       ; clk             ;
+; V_input[*]          ; clk             ; 0.191  ; 0.191  ; Rise       ; clk             ;
+;  V_input[0]         ; clk             ; 0.191  ; 0.191  ; Rise       ; clk             ;
+;  V_input[1]         ; clk             ; -0.045 ; -0.045 ; Rise       ; clk             ;
+;  V_input[2]         ; clk             ; 0.001  ; 0.001  ; Rise       ; clk             ;
+; cancel_purchase     ; clk             ; 0.014  ; 0.014  ; Rise       ; clk             ;
+; choice[*]           ; clk             ; -0.202 ; -0.202 ; Rise       ; clk             ;
+;  choice[0]          ; clk             ; -0.300 ; -0.300 ; Rise       ; clk             ;
+;  choice[1]          ; clk             ; -0.202 ; -0.202 ; Rise       ; clk             ;
+;  choice[2]          ; clk             ; -0.394 ; -0.394 ; Rise       ; clk             ;
+; coin_confirm_signal ; clk             ; -2.718 ; -2.718 ; Rise       ; clk             ;
+; dispense_signal     ; clk             ; -2.518 ; -2.518 ; Rise       ; clk             ;
+; nRST                ; clk             ; 0.133  ; 0.133  ; Rise       ; clk             ;
++---------------------+-----------------+--------+--------+------------+-----------------+
 
 
 +-------------------------------------------------------------------------------+
@@ -2625,82 +2625,82 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------+-----------+---------+----------+---------+---------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Setup Times                                                                          ;
-+-------------------+-----------------+--------+--------+------------+-----------------+
-; Data Port         ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-------------------+-----------------+--------+--------+------------+-----------------+
-; C                 ; cancel_purchase ; 1.036  ; 1.036  ; Rise       ; cancel_purchase ;
-; V_input[*]        ; cancel_purchase ; 3.720  ; 3.720  ; Rise       ; cancel_purchase ;
-;  V_input[0]       ; cancel_purchase ; 3.568  ; 3.568  ; Rise       ; cancel_purchase ;
-;  V_input[1]       ; cancel_purchase ; 3.720  ; 3.720  ; Rise       ; cancel_purchase ;
-;  V_input[2]       ; cancel_purchase ; 3.620  ; 3.620  ; Rise       ; cancel_purchase ;
-; cancel_purchase   ; cancel_purchase ; 1.065  ; 1.065  ; Rise       ; cancel_purchase ;
-; confirmar_salgado ; cancel_purchase ; 7.448  ; 7.448  ; Rise       ; cancel_purchase ;
-; C                 ; cancel_purchase ; -0.337 ; -0.337 ; Fall       ; cancel_purchase ;
-; V_input[*]        ; cancel_purchase ; 2.347  ; 2.347  ; Fall       ; cancel_purchase ;
-;  V_input[0]       ; cancel_purchase ; 2.195  ; 2.195  ; Fall       ; cancel_purchase ;
-;  V_input[1]       ; cancel_purchase ; 2.347  ; 2.347  ; Fall       ; cancel_purchase ;
-;  V_input[2]       ; cancel_purchase ; 2.247  ; 2.247  ; Fall       ; cancel_purchase ;
-; cancel_purchase   ; cancel_purchase ; 0.122  ; 0.122  ; Fall       ; cancel_purchase ;
-; confirmar_salgado ; cancel_purchase ; 6.075  ; 6.075  ; Fall       ; cancel_purchase ;
-; choice[*]         ; choice[0]       ; 1.863  ; 1.863  ; Fall       ; choice[0]       ;
-;  choice[0]        ; choice[0]       ; 0.714  ; 0.714  ; Fall       ; choice[0]       ;
-;  choice[1]        ; choice[0]       ; 1.249  ; 1.249  ; Fall       ; choice[0]       ;
-;  choice[2]        ; choice[0]       ; 1.863  ; 1.863  ; Fall       ; choice[0]       ;
-; C                 ; clk             ; 4.236  ; 4.236  ; Rise       ; clk             ;
-; V_input[*]        ; clk             ; 7.364  ; 7.364  ; Rise       ; clk             ;
-;  V_input[0]       ; clk             ; 7.310  ; 7.310  ; Rise       ; clk             ;
-;  V_input[1]       ; clk             ; 7.314  ; 7.314  ; Rise       ; clk             ;
-;  V_input[2]       ; clk             ; 7.364  ; 7.364  ; Rise       ; clk             ;
-; cancel_purchase   ; clk             ; 1.983  ; 1.983  ; Rise       ; clk             ;
-; choice[*]         ; clk             ; 6.338  ; 6.338  ; Rise       ; clk             ;
-;  choice[0]        ; clk             ; 5.051  ; 5.051  ; Rise       ; clk             ;
-;  choice[1]        ; clk             ; 5.640  ; 5.640  ; Rise       ; clk             ;
-;  choice[2]        ; clk             ; 6.338  ; 6.338  ; Rise       ; clk             ;
-; confirmar_moeda   ; clk             ; 6.417  ; 6.417  ; Rise       ; clk             ;
-; confirmar_salgado ; clk             ; 9.156  ; 9.156  ; Rise       ; clk             ;
-; nRST              ; clk             ; 1.714  ; 1.714  ; Rise       ; clk             ;
-+-------------------+-----------------+--------+--------+------------+-----------------+
++----------------------------------------------------------------------------------------+
+; Setup Times                                                                            ;
++---------------------+-----------------+--------+--------+------------+-----------------+
+; Data Port           ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------------+-----------------+--------+--------+------------+-----------------+
+; C                   ; cancel_purchase ; 1.036  ; 1.036  ; Rise       ; cancel_purchase ;
+; V_input[*]          ; cancel_purchase ; 3.720  ; 3.720  ; Rise       ; cancel_purchase ;
+;  V_input[0]         ; cancel_purchase ; 3.568  ; 3.568  ; Rise       ; cancel_purchase ;
+;  V_input[1]         ; cancel_purchase ; 3.720  ; 3.720  ; Rise       ; cancel_purchase ;
+;  V_input[2]         ; cancel_purchase ; 3.620  ; 3.620  ; Rise       ; cancel_purchase ;
+; cancel_purchase     ; cancel_purchase ; 1.065  ; 1.065  ; Rise       ; cancel_purchase ;
+; dispense_signal     ; cancel_purchase ; 7.448  ; 7.448  ; Rise       ; cancel_purchase ;
+; C                   ; cancel_purchase ; -0.337 ; -0.337 ; Fall       ; cancel_purchase ;
+; V_input[*]          ; cancel_purchase ; 2.347  ; 2.347  ; Fall       ; cancel_purchase ;
+;  V_input[0]         ; cancel_purchase ; 2.195  ; 2.195  ; Fall       ; cancel_purchase ;
+;  V_input[1]         ; cancel_purchase ; 2.347  ; 2.347  ; Fall       ; cancel_purchase ;
+;  V_input[2]         ; cancel_purchase ; 2.247  ; 2.247  ; Fall       ; cancel_purchase ;
+; cancel_purchase     ; cancel_purchase ; 0.122  ; 0.122  ; Fall       ; cancel_purchase ;
+; dispense_signal     ; cancel_purchase ; 6.075  ; 6.075  ; Fall       ; cancel_purchase ;
+; choice[*]           ; choice[0]       ; 1.863  ; 1.863  ; Fall       ; choice[0]       ;
+;  choice[0]          ; choice[0]       ; 0.714  ; 0.714  ; Fall       ; choice[0]       ;
+;  choice[1]          ; choice[0]       ; 1.249  ; 1.249  ; Fall       ; choice[0]       ;
+;  choice[2]          ; choice[0]       ; 1.863  ; 1.863  ; Fall       ; choice[0]       ;
+; C                   ; clk             ; 4.236  ; 4.236  ; Rise       ; clk             ;
+; V_input[*]          ; clk             ; 7.364  ; 7.364  ; Rise       ; clk             ;
+;  V_input[0]         ; clk             ; 7.310  ; 7.310  ; Rise       ; clk             ;
+;  V_input[1]         ; clk             ; 7.314  ; 7.314  ; Rise       ; clk             ;
+;  V_input[2]         ; clk             ; 7.364  ; 7.364  ; Rise       ; clk             ;
+; cancel_purchase     ; clk             ; 1.983  ; 1.983  ; Rise       ; clk             ;
+; choice[*]           ; clk             ; 6.338  ; 6.338  ; Rise       ; clk             ;
+;  choice[0]          ; clk             ; 5.051  ; 5.051  ; Rise       ; clk             ;
+;  choice[1]          ; clk             ; 5.640  ; 5.640  ; Rise       ; clk             ;
+;  choice[2]          ; clk             ; 6.338  ; 6.338  ; Rise       ; clk             ;
+; coin_confirm_signal ; clk             ; 6.417  ; 6.417  ; Rise       ; clk             ;
+; dispense_signal     ; clk             ; 9.156  ; 9.156  ; Rise       ; clk             ;
+; nRST                ; clk             ; 1.714  ; 1.714  ; Rise       ; clk             ;
++---------------------+-----------------+--------+--------+------------+-----------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Hold Times                                                                           ;
-+-------------------+-----------------+--------+--------+------------+-----------------+
-; Data Port         ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-------------------+-----------------+--------+--------+------------+-----------------+
-; C                 ; cancel_purchase ; 0.699  ; 0.699  ; Rise       ; cancel_purchase ;
-; V_input[*]        ; cancel_purchase ; 1.281  ; 1.281  ; Rise       ; cancel_purchase ;
-;  V_input[0]       ; cancel_purchase ; 0.948  ; 0.948  ; Rise       ; cancel_purchase ;
-;  V_input[1]       ; cancel_purchase ; 1.281  ; 1.281  ; Rise       ; cancel_purchase ;
-;  V_input[2]       ; cancel_purchase ; 0.786  ; 0.786  ; Rise       ; cancel_purchase ;
-; cancel_purchase   ; cancel_purchase ; 0.837  ; 0.837  ; Rise       ; cancel_purchase ;
-; confirmar_salgado ; cancel_purchase ; -1.809 ; -1.809 ; Rise       ; cancel_purchase ;
-; C                 ; cancel_purchase ; 1.594  ; 1.594  ; Fall       ; cancel_purchase ;
-; V_input[*]        ; cancel_purchase ; 2.654  ; 2.654  ; Fall       ; cancel_purchase ;
-;  V_input[0]       ; cancel_purchase ; 2.321  ; 2.321  ; Fall       ; cancel_purchase ;
-;  V_input[1]       ; cancel_purchase ; 2.654  ; 2.654  ; Fall       ; cancel_purchase ;
-;  V_input[2]       ; cancel_purchase ; 2.043  ; 2.043  ; Fall       ; cancel_purchase ;
-; cancel_purchase   ; cancel_purchase ; 2.196  ; 2.196  ; Fall       ; cancel_purchase ;
-; confirmar_salgado ; cancel_purchase ; -1.305 ; -1.305 ; Fall       ; cancel_purchase ;
-; choice[*]         ; choice[0]       ; 0.674  ; 0.674  ; Fall       ; choice[0]       ;
-;  choice[0]        ; choice[0]       ; 0.674  ; 0.674  ; Fall       ; choice[0]       ;
-;  choice[1]        ; choice[0]       ; 0.570  ; 0.570  ; Fall       ; choice[0]       ;
-;  choice[2]        ; choice[0]       ; 0.420  ; 0.420  ; Fall       ; choice[0]       ;
-; C                 ; clk             ; -0.094 ; -0.094 ; Rise       ; clk             ;
-; V_input[*]        ; clk             ; 0.191  ; 0.191  ; Rise       ; clk             ;
-;  V_input[0]       ; clk             ; 0.191  ; 0.191  ; Rise       ; clk             ;
-;  V_input[1]       ; clk             ; -0.045 ; -0.045 ; Rise       ; clk             ;
-;  V_input[2]       ; clk             ; 0.001  ; 0.001  ; Rise       ; clk             ;
-; cancel_purchase   ; clk             ; 0.014  ; 0.014  ; Rise       ; clk             ;
-; choice[*]         ; clk             ; -0.202 ; -0.202 ; Rise       ; clk             ;
-;  choice[0]        ; clk             ; -0.300 ; -0.300 ; Rise       ; clk             ;
-;  choice[1]        ; clk             ; -0.202 ; -0.202 ; Rise       ; clk             ;
-;  choice[2]        ; clk             ; -0.394 ; -0.394 ; Rise       ; clk             ;
-; confirmar_moeda   ; clk             ; -2.718 ; -2.718 ; Rise       ; clk             ;
-; confirmar_salgado ; clk             ; -2.518 ; -2.518 ; Rise       ; clk             ;
-; nRST              ; clk             ; 0.133  ; 0.133  ; Rise       ; clk             ;
-+-------------------+-----------------+--------+--------+------------+-----------------+
++----------------------------------------------------------------------------------------+
+; Hold Times                                                                             ;
++---------------------+-----------------+--------+--------+------------+-----------------+
+; Data Port           ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------------+-----------------+--------+--------+------------+-----------------+
+; C                   ; cancel_purchase ; 0.699  ; 0.699  ; Rise       ; cancel_purchase ;
+; V_input[*]          ; cancel_purchase ; 1.281  ; 1.281  ; Rise       ; cancel_purchase ;
+;  V_input[0]         ; cancel_purchase ; 0.948  ; 0.948  ; Rise       ; cancel_purchase ;
+;  V_input[1]         ; cancel_purchase ; 1.281  ; 1.281  ; Rise       ; cancel_purchase ;
+;  V_input[2]         ; cancel_purchase ; 0.786  ; 0.786  ; Rise       ; cancel_purchase ;
+; cancel_purchase     ; cancel_purchase ; 0.837  ; 0.837  ; Rise       ; cancel_purchase ;
+; dispense_signal     ; cancel_purchase ; -1.809 ; -1.809 ; Rise       ; cancel_purchase ;
+; C                   ; cancel_purchase ; 1.594  ; 1.594  ; Fall       ; cancel_purchase ;
+; V_input[*]          ; cancel_purchase ; 2.654  ; 2.654  ; Fall       ; cancel_purchase ;
+;  V_input[0]         ; cancel_purchase ; 2.321  ; 2.321  ; Fall       ; cancel_purchase ;
+;  V_input[1]         ; cancel_purchase ; 2.654  ; 2.654  ; Fall       ; cancel_purchase ;
+;  V_input[2]         ; cancel_purchase ; 2.043  ; 2.043  ; Fall       ; cancel_purchase ;
+; cancel_purchase     ; cancel_purchase ; 2.196  ; 2.196  ; Fall       ; cancel_purchase ;
+; dispense_signal     ; cancel_purchase ; -1.305 ; -1.305 ; Fall       ; cancel_purchase ;
+; choice[*]           ; choice[0]       ; 0.674  ; 0.674  ; Fall       ; choice[0]       ;
+;  choice[0]          ; choice[0]       ; 0.674  ; 0.674  ; Fall       ; choice[0]       ;
+;  choice[1]          ; choice[0]       ; 0.570  ; 0.570  ; Fall       ; choice[0]       ;
+;  choice[2]          ; choice[0]       ; 0.420  ; 0.420  ; Fall       ; choice[0]       ;
+; C                   ; clk             ; -0.094 ; -0.094 ; Rise       ; clk             ;
+; V_input[*]          ; clk             ; 0.191  ; 0.191  ; Rise       ; clk             ;
+;  V_input[0]         ; clk             ; 0.191  ; 0.191  ; Rise       ; clk             ;
+;  V_input[1]         ; clk             ; -0.045 ; -0.045 ; Rise       ; clk             ;
+;  V_input[2]         ; clk             ; 0.001  ; 0.001  ; Rise       ; clk             ;
+; cancel_purchase     ; clk             ; 0.014  ; 0.014  ; Rise       ; clk             ;
+; choice[*]           ; clk             ; -0.202 ; -0.202 ; Rise       ; clk             ;
+;  choice[0]          ; clk             ; -0.300 ; -0.300 ; Rise       ; clk             ;
+;  choice[1]          ; clk             ; -0.202 ; -0.202 ; Rise       ; clk             ;
+;  choice[2]          ; clk             ; -0.394 ; -0.394 ; Rise       ; clk             ;
+; coin_confirm_signal ; clk             ; -2.718 ; -2.718 ; Rise       ; clk             ;
+; dispense_signal     ; clk             ; -2.518 ; -2.518 ; Rise       ; clk             ;
+; nRST                ; clk             ; 0.133  ; 0.133  ; Rise       ; clk             ;
++---------------------+-----------------+--------+--------+------------+-----------------+
 
 
 +---------------------------------------------------------------------------------+
@@ -2935,7 +2935,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Dec 15 00:50:37 2023
+    Info: Processing started: Fri Dec 15 10:18:04 2023
 Info: Command: quartus_sta vending_machine -c vending_machine
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -3014,9 +3014,9 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4560 megabytes
-    Info: Processing ended: Fri Dec 15 00:50:38 2023
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 4559 megabytes
+    Info: Processing ended: Fri Dec 15 10:18:06 2023
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

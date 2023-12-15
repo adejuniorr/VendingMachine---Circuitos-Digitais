@@ -441,7 +441,7 @@ GND*                         : R18       :        :                   :         
 ESTQ[0]                      : R19       : output : 3.3-V LVTTL       :         : 6         : Y              
 GND*                         : R20       :        :                   :         : 6         :                
 GND*                         : R21       :        :                   :         : 6         :                
-confirmar_salgado            : R22       : input  : 3.3-V LVTTL       :         : 6         : Y              
+dispense_signal              : R22       : input  : 3.3-V LVTTL       :         : 6         : Y              
 GND*                         : T1        :        :                   :         : 1         :                
 GND*                         : T2        :        :                   :         : 1         :                
 GND*                         : T3        :        :                   :         : 1         :                
@@ -462,7 +462,7 @@ GND_PLL4                     : T17       : gnd    :                   :         
 GND*                         : T18       :        :                   :         : 6         :                
 VCCIO6                       : T19       : power  :                   : 3.3V    : 6         :                
 GND                          : T20       : gnd    :                   :         :           :                
-confirmar_moeda              : T21       : input  : 3.3-V LVTTL       :         : 6         : Y              
+coin_confirm_signal          : T21       : input  : 3.3-V LVTTL       :         : 6         : Y              
 GND*                         : T22       :        :                   :         : 6         :                
 GND*                         : U1        :        :                   :         : 1         :                
 GND*                         : U2        :        :                   :         : 1         :                

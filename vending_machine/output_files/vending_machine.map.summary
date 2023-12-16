@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Fri Dec 15 19:52:54 2023
+Analysis & Synthesis Status : Successful - Fri Dec 15 23:21:02 2023
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : vending_machine
 Top-level Entity Name : vending_machine
 Family : Cyclone II
-Total logic elements : 424
-    Total combinational functions : 410
-    Dedicated logic registers : 200
-Total registers : 200
-Total pins : 80
+Total logic elements : 434
+    Total combinational functions : 418
+    Dedicated logic registers : 213
+Total registers : 213
+Total pins : 70
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

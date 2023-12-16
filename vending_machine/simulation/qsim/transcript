@@ -22,6 +22,9 @@
 # Loading cycloneii_ver.cycloneii_mux21
 # Loading cycloneii_ver.cycloneii_dffe
 # Loading cycloneii_ver.cycloneii_asynch_io
+# Loading cycloneii_ver.cycloneii_clkctrl
+# Loading cycloneii_ver.cycloneii_mux41
+# Loading cycloneii_ver.cycloneii_ena_reg
 # Loading work.vending_machine_vlg_sample_tst
 # Loading work.vending_machine_vlg_check_tst
 # Loading cycloneii_ver.CYCLONEII_PRIM_DFFE
@@ -76,90 +79,6 @@
 # ERROR! Vector Mismatch for output port ESTQ[0] :: @time = 8460000.000 ps
 #      Expected value = x00000000
 #      Real value = 000000001
-# ERROR! Vector Mismatch for output port display1[6] :: @time = 10020000.000 ps
-#      Expected value = 0000000
-#      Real value = 1000000
-# ERROR! Vector Mismatch for output port display2[2] :: @time = 10020000.000 ps
-#      Expected value = 0000000
-#      Real value = 0100100
-# ERROR! Vector Mismatch for output port display2[5] :: @time = 10020000.000 ps
-#      Expected value = 0000000
-#      Real value = 0100100
-# ERROR! Vector Mismatch for output port display3[4] :: @time = 10020000.000 ps
-#      Expected value = 0000000
-#      Real value = 0110000
-# ERROR! Vector Mismatch for output port display3[5] :: @time = 10020000.000 ps
-#      Expected value = 0000000
-#      Real value = 0110000
-# ERROR! Vector Mismatch for output port display1[0] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display1[1] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display1[2] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display1[3] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display1[4] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display1[5] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display2[0] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display2[1] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display2[3] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display2[4] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display2[6] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display3[0] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display3[1] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display3[2] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display3[3] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display3[6] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display4[0] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display4[1] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display4[2] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display4[3] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display4[4] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display4[5] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-# ERROR! Vector Mismatch for output port display4[6] :: @time = 10080000.000 ps
-#      Expected value = 0000000
-#      Real value = 1111111
-#          45 mismatched vectors : Simulation failed !
-# ** Note: $finish    : vending_machine.vt(1438)
+#          17 mismatched vectors : Simulation failed !
+# ** Note: $finish    : vending_machine.vt(1354)
 #    Time: 30 us  Iteration: 0  Instance: /vending_machine_vlg_vec_tst/tb_out

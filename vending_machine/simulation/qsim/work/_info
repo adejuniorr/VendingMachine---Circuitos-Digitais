@@ -4,10 +4,10 @@ K3
 cModel Technology
 Z0 dC:\Users\adejr\OneDrive\Documents\GitHub\CircuitosDigitais\VendingMachine---Circuitos-Digitais\vending_machine\simulation\qsim
 vvending_machine
-Z1 IN;E>3]_9PY=9l8XE@<oZf0
-Z2 VlzP0JXcTA7GB[Fad4ia<01
+Z1 I^cmTb]jcnTQMaHZXU4`c72
+Z2 VKJ^k3IWhPg4>lL2=MDRo_3
 Z3 dC:\Users\adejr\OneDrive\Documents\GitHub\CircuitosDigitais\VendingMachine---Circuitos-Digitais\vending_machine\simulation\qsim
-Z4 w1702672542
+Z4 w1702693295
 Z5 8vending_machine.vo
 Z6 Fvending_machine.vo
 L0 31
@@ -17,65 +17,65 @@ r1
 Z8 !s90 -work|work|vending_machine.vo|
 Z9 o-work work -O0
 !i10b 1
-Z10 !s100 P`K@>UaScB3`4WZZ0Rl4j1
+Z10 !s100 leAVkCez;`2@=4k0hE[>m1
 !s85 0
-Z11 !s108 1702672544.163000
+Z11 !s108 1702693299.491000
 Z12 !s107 vending_machine.vo|
 !s101 -O0
 vvending_machine_vlg_check_tst
 !i10b 1
-!s100 Kd3c?GUJ^oHcFVU:cnYS81
-I6X^hN@oO7EziUmNR:`9252
-Z13 V9Jn0>AJhcnom2a9H_l]Vd1
+!s100 D`lM;Z8O_AVkMW2Hk0gEm1
+IaafNgXoA=EznRW?>D>9Pc3
+VaefGDDj3=iG7LiPb<mh[21
 R3
-Z14 w1702672541
-Z15 8vending_machine.vt
-Z16 Fvending_machine.vt
+Z13 w1702693294
+Z14 8vending_machine.vt
+Z15 Fvending_machine.vt
 L0 71
 R7
 r1
 !s85 0
 31
-Z17 !s108 1702672544.483000
-Z18 !s107 vending_machine.vt|
-Z19 !s90 -work|work|vending_machine.vt|
+Z16 !s108 1702693299.800000
+Z17 !s107 vending_machine.vt|
+Z18 !s90 -work|work|vending_machine.vt|
 !s101 -O0
 R9
 vvending_machine_vlg_sample_tst
 !i10b 1
-Z20 !s100 ><HC7QBRa_0`ozI5PG9^N2
-Z21 I1B=eg8IW0gedXO:o^IlG?3
-Z22 V3eSQ^EY:W1RbR9?GbNbNi3
+Z19 !s100 ><HC7QBRa_0`ozI5PG9^N2
+Z20 I1B=eg8IW0gedXO:o^IlG?3
+Z21 V3eSQ^EY:W1RbR9?GbNbNi3
 R3
+R13
 R14
 R15
-R16
 L0 29
 R7
 r1
 !s85 0
 31
+R16
 R17
 R18
-R19
 !s101 -O0
 R9
 vvending_machine_vlg_vec_tst
 !i10b 1
-!s100 gOU]^NWV^RC?i^LMW[?P92
-I:bh=zB?Z>kOG`BlgOiA9H3
-Z23 Vc_h5K@]2PD5]EHm=Kj0_:3
+!s100 I43m0K6:hejRLkh^A`KJY3
+IHS[DXn10a9=WIB21`_aI<1
+Z22 Vc_h5K@]2PD5]EHm=Kj0_:3
 R3
+R13
 R14
 R15
-R16
-L0 1442
+L0 1358
 R7
 r1
 !s85 0
 31
+R16
 R17
 R18
-R19
 !s101 -O0
 R9

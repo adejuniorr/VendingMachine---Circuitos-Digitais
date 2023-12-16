@@ -20,8 +20,8 @@ entity vending_machine is
 --		display3 : out std_logic_vector(6 downto 0); -- Display Hexadecimal (0100)
 --		display4 : out std_logic_vector(6 downto 0); -- Display Hexadecimal (1000)
 		
-		saldo_dinheiro: buffer integer range 0 to 999 := 0; --Saldo do dinheiro colocado pelo cliente
-		--Saida do Programa
+		--saldo_dinheiro: buffer integer range 0 to 999 := 0; --Saldo do dinheiro colocado pelo cliente
+		
 		display_salgado: out std_logic_vector(6 downto 0);          --Saida para o Display Opcao Salgado
 		display_dinheiro_centena: out std_logic_vector(6 downto 0); --Saida para o Display Dinheiro Centena
 		display_dinheiro_dezena: out std_logic_vector(6 downto 0);  --Saida para o Display Dinehrio Dezena
@@ -477,17 +477,51 @@ begin
 					display_dinheiro_dezena  <= "1111111"; --Desligando Display
 					display_dinheiro_unidade <= "1111111"; --Desligando Display
 				
-				when Coin_Reception =>
-					unit := (saldo_dinheiro mod 10);
-					ten := (saldo_dinheiro - unit)/10;
-					ten := (ten mod 10);
-					hundred := (saldo_dinheiro - unit)/10;
-					hundred := (hundred - ten)/10;
-				
-					display_dinheiro_centena <= converterDisplay7(hundred); --Display que mostra a Centena
-					display_dinheiro_dezena  <= converterDisplay7(ten);  --Display que mostra a Dezena
-					display_dinheiro_unidade <= converterDisplay7(unit); --Display que mostra a Unidade
+					case choice_reg is
+						when "001" =>
+							display_salgado				<= converterDisplay7(1);
+							display_dinheiro_centena 	<= converterDisplay7(2); --Display que mostra a Centena
+							display_dinheiro_dezena  	<= converterDisplay7(5);  --Display que mostra a Dezena
+							display_dinheiro_unidade 	<= converterDisplay7(0); --Display que mostra a Unidade
+
+					  when "010" =>
+							display_salgado				<= converterDisplay7(2);
+							display_dinheiro_centena 	<= converterDisplay7(1); --Display que mostra a Centena
+							display_dinheiro_dezena  	<= converterDisplay7(5);  --Display que mostra a Dezena
+							display_dinheiro_unidade 	<= converterDisplay7(0); --Display que mostra a Unidade
+							
+					  when "011" =>
+							display_salgado				<= converterDisplay7(3);
+							display_dinheiro_centena 	<= converterDisplay7(0); --Display que mostra a Centena
+							display_dinheiro_dezena  	<= converterDisplay7(7);  --Display que mostra a Dezena
+							display_dinheiro_unidade 	<= converterDisplay7(5); --Display que mostra a Unidade
+							
+					  when "100" =>
+							display_salgado				<= converterDisplay7(4);
+							display_dinheiro_centena 	<= converterDisplay7(3); --Display que mostra a Centena
+							display_dinheiro_dezena  	<= converterDisplay7(5);  --Display que mostra a Dezena
+							display_dinheiro_unidade 	<= converterDisplay7(0); --Display que mostra a Unidade
+							
+					  when "101" =>
+							display_salgado				<= converterDisplay7(5);
+							display_dinheiro_centena 	<= converterDisplay7(2); --Display que mostra a Centena
+							display_dinheiro_dezena  	<= converterDisplay7(0);  --Display que mostra a Dezena
+							display_dinheiro_unidade 	<= converterDisplay7(0); --Display que mostra a Unidade
+							
+					  when others =>
+							null;
+					end case;
 					
+--				when Coin_Reception =>
+--					unit := (saldo_dinheiro mod 10);
+--					ten := (saldo_dinheiro - unit)/10;
+--					ten := (ten mod 10);
+--					hundred := (saldo_dinheiro - unit)/10;
+--					hundred := (hundred - ten)/10;
+--				
+--					display_dinheiro_centena <= converterDisplay7(hundred); --Display que mostra a Centena
+--					display_dinheiro_dezena  <= converterDisplay7(ten);  --Display que mostra a Dezena
+--					display_dinheiro_unidade <= converterDisplay7(unit); --Display que mostra a Unidade
 				when others =>
 			end case;
 		end if;

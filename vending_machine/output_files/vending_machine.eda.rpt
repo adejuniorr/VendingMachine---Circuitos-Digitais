@@ -1,5 +1,5 @@
 EDA Netlist Writer report for vending_machine
-Sun Dec 17 13:01:19 2023
+Sun Dec 17 13:34:29 2023
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Dec 17 13:01:19 2023 ;
+; EDA Netlist Writer Status ; Successful - Sun Dec 17 13:34:29 2023 ;
 ; Revision Name             ; vending_machine                       ;
 ; Top-level Entity Name     ; vending_machine                       ;
 ; Family                    ; Cyclone II                            ;
@@ -65,13 +65,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                                                                            ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                                                                       ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; C:/Users/adejr/OneDrive/Documents/GitHub/CircuitosDigitais/VendingMachine---Circuitos-Digitais/vending_machine/simulation/modelsim/vending_machine.vo ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                                  ;
++-----------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                             ;
++-----------------------------------------------------------------------------------------------------------------------------+
+; D:/Arquivos HD/Documentos/GitHub/VendingMachine---Circuitos-Digitais/vending_machine/simulation/modelsim/vending_machine.vo ;
++-----------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -80,13 +80,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Dec 17 13:01:18 2023
+    Info: Processing started: Sun Dec 17 13:34:29 2023
 Info: Command: quartus_eda --functional=on --simulation=on --tool=modelsim_oem --format=verilog vending_machine -c vending_machine
-Info (204019): Generated file vending_machine.vo in folder "C:/Users/adejr/OneDrive/Documents/GitHub/CircuitosDigitais/VendingMachine---Circuitos-Digitais/vending_machine/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file vending_machine.vo in folder "D:/Arquivos HD/Documentos/GitHub/VendingMachine---Circuitos-Digitais/vending_machine/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4523 megabytes
-    Info: Processing ended: Sun Dec 17 13:01:20 2023
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 4524 megabytes
+    Info: Processing ended: Sun Dec 17 13:34:29 2023
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
 
 

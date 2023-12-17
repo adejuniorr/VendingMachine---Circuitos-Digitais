@@ -31,8 +31,16 @@ entity vending_machine is
 		
 		P 			: out std_logic_vector(8 downto 0); -- Acumulador de moedas
 		E 			: out std_logic_vector(8 downto 0); -- Troco/Retorno de moedas
-		D 			: out std_logic_vector(2 downto 0) := "000"; -- Sinal para salgado liberado
-		ESTQ 		: out std_logic_vector(8 downto 0) := "000000000" -- Aviso de quantidade em estodo
+		D1 			: out std_logic_vector(2 downto 0) := "000"; -- Sinal para salgado liberado
+		D2 			: out std_logic_vector(2 downto 0) := "000"; -- Sinal para salgado liberado
+		D3 			: out std_logic_vector(2 downto 0) := "000"; -- Sinal para salgado liberado
+		D4 			: out std_logic_vector(2 downto 0) := "000"; -- Sinal para salgado liberado
+		D5 			: out std_logic_vector(2 downto 0) := "000"; -- Sinal para salgado liberado
+		ESTQ1 		: out std_logic_vector(8 downto 0) := "000000000" -- Aviso de quantidade em estoque
+		ESTQ2 		: out std_logic_vector(8 downto 0) := "000000000" -- Aviso de quantidade em estoque
+		ESTQ3 		: out std_logic_vector(8 downto 0) := "000000000" -- Aviso de quantidade em estoque
+		ESTQ4		: out std_logic_vector(8 downto 0) := "000000000" -- Aviso de quantidade em estoque
+		ESTQ5 		: out std_logic_vector(8 downto 0) := "000000000" -- Aviso de quantidade em estoque
 		
 	);
 		
@@ -65,7 +73,8 @@ constant S4 : std_logic_vector(8 downto 0) := "011001000"; -- Preço da escolha 
 		C 			: in std_logic; -- Sensor de moeda
 		data_in 	: in std_logic_vector(8 downto 0); -- Valor de entrada
 		data_out : out std_logic_vector(8 downto 0); -- Valor de saida
-		conf: in std_logic --Entrada para confirmar uma moeda adicionada
+		conf: in std_logic; --Entrada para confirmar uma moeda adicionada
+		cancel : in std_logic
 	);
 	end component;
 
@@ -188,9 +197,17 @@ begin
 		if (CLK'event and CLK = '1') then
 			if (nRST = '0') then
 			--P <= (others => '0');
-			D <= (others => '0'); -- Sinal para saida de salgado (incialmente zerado)
+			D1 <= (others => '0'); -- Sinal para saida de salgado (incialmente zerado)
+			D2 <= (others => '0'); -- Sinal para saida de salgado (incialmente zerado)
+			D3 <= (others => '0'); -- Sinal para saida de salgado (incialmente zerado)
+			D4 <= (others => '0'); -- Sinal para saida de salgado (incialmente zerado)
+			D5 <= (others => '0'); -- Sinal para saida de salgado (incialmente zerado)
 			--E <= (others => '0');
-			ESTQ <= (others => '0'); -- Sinal de estoque (inicialmente 0 - tem salgado pra vender)
+			ESTQ1 <= (others => '0'); -- Sinal de estoque (inicialmente 0 - tem salgado pra vender)
+			ESTQ2 <= (others => '0'); -- Sinal de estoque (inicialmente 0 - tem salgado pra vender)
+			ESTQ3 <= (others => '0'); -- Sinal de estoque (inicialmente 0 - tem salgado pra vender)
+			ESTQ4 <= (others => '0'); -- Sinal de estoque (inicialmente 0 - tem salgado pra vender)
+			ESTQ5 <= (others => '0'); -- Sinal de estoque (inicialmente 0 - tem salgado pra vender)
 			end if;
 			if (cancel_purchase = '0') then
 				case choice_reg is
@@ -198,31 +215,31 @@ begin
 						if stock_S0_reg <= 0  then
 							 -- Sem estoque pro produto 1
 							 -- Permanece no estado inicial
-							 ESTQ <= "000000001";
+							 ESTQ1 <= "000000001";
 						end if;
 				  when "010" =>
 						if stock_S1_reg <= 0  then
 							 -- Sem estoque pro produto 2
 							 -- Permanece no estado inicial
-							 ESTQ <= "000000001";
+							 ESTQ2 <= "000000001";
 						end if;
 				  when "011" =>
 						if stock_S2_reg <= 0  then
 							 -- Sem estoque pro produto 3
 							 -- Permanece no estado inicial
-							 ESTQ <= "000000001";
+							 ESTQ3 <= "000000001";
 						end if;
 				  when "100" =>
 						if stock_S3_reg <= 0  then
 							 -- Sem estoque pro produto 4
 							 -- Permanece no estado inicial
-							 ESTQ <= "000000001";
+							 ESTQ4 <= "000000001";
 						end if;
 				  when "101" =>
 						if stock_S4_reg <= 0  then
 							 -- Sem estoque pro produto 5
 							 -- Permanece no estado inicial
-							 ESTQ <= "000000001";
+							 ESTQ5 <= "000000001";
 						end if;
 				  -- Repete para as outras escolhas
 				  when others =>
@@ -233,7 +250,7 @@ begin
 						if stock_S0_reg > 0 then 
 							salgado_selecionado <= 1;
 							temp_D <= "001";
-							D <= "001";
+							D1 <= "001";
 							stock_S0_reg <= stock_S0_reg - 1;
 						else 
 							temp_D <= "000"; -- sem estoque
@@ -242,7 +259,7 @@ begin
 						if stock_S1_reg > 0 then
 							salgado_selecionado <= 2;
 							temp_D <= "010";
-							D <= "001";
+							D2 <= "001";
                      stock_S1_reg <= stock_S1_reg - 1;
 						else 
 							temp_D <= "000"; -- sem estoque
@@ -251,7 +268,7 @@ begin
 						if stock_S2_reg > 0 then
 							salgado_selecionado <= 3;
 							temp_D <= "011";
-							D <= "001";
+							D3 <= "001";
 							stock_S2_reg <= stock_S2_reg - 1;
 						else 
 							temp_D <= "000"; -- sem estoque
@@ -260,7 +277,7 @@ begin
 						  if stock_S3_reg > 0 then    
 							salgado_selecionado <= 4;
 								temp_D <= "100";
-								D <= "001";
+								D4 <= "001";
 								stock_S3_reg <= stock_S3_reg - 1;
 						  else 
 								temp_D <= "000"; -- sem estoque
@@ -269,7 +286,7 @@ begin
 						  if stock_S4_reg > 0 then    
 							salgado_selecionado <= 5;
 								temp_D <= "101";
-								D <= "001";
+								D5 <= "001";
 								stock_S4_reg <= stock_S4_reg - 1;
 						  else 
 								temp_D <= "000"; -- sem estoque
@@ -281,6 +298,7 @@ begin
 			end if;
 		end if;
 	end process; --salgado_dispensation_Proc;
+
 	
 	hex_display_updt : process(clk)
 	variable hundred, ten, unit : integer range 0 to 999; -- Variaveis de calculo para valor no display
@@ -540,7 +558,7 @@ begin
 					E <= balance;
 					--balance <= "000000000";
 					P <= (others => '0');
-					--balance <= reset_balance;
+					--balance <= (others => '0');
 					NSTATE <= INIT_STATE;
 				elsif (dispense_signal = '0') then -- Caso a compra siga adiante
 					--dispensation_EN <= '1'; -- Sinal para liberacao
@@ -562,7 +580,7 @@ begin
 	
 	mux : mux21 port map(S0, S1, s2, s3, s4, choice, price);
 	
-	accumulator : accumulator8 port map (clk, nRST_acc, C, V, balance, coin_confirm_signal);
+	accumulator : accumulator8 port map (clk, nRST_acc, C, V, balance, coin_confirm_signal, cancel_purchase);
 	
 	comparator : comparator8 port map (balance, price_reg, balance_greater, balance_equal, balance_lower);
 	

@@ -1237,7 +1237,9 @@ TRANSITION_LIST("cancel_purchase")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30000.0;
+		LEVEL 0 FOR 5440.0;
+		LEVEL 1 FOR 640.0;
+		LEVEL 0 FOR 23920.0;
 	}
 }
 

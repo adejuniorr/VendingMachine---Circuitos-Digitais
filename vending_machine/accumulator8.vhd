@@ -10,7 +10,8 @@ entity accumulator8 is
 		C 			: in std_logic; -- Sensor de moeda
 		data_in 	: in std_logic_vector(8 downto 0); -- Valor de entrada
 		data_out : out std_logic_vector(8 downto 0); -- Valor de saida
-		conf: in std_logic           --Entrada para confirmar compra e calculo do valor total
+		conf: in std_logic;           --Entrada para confirmar compra e calculo do valor total
+		cancel 	: in std_logic
 		);
 end accumulator8;
 
@@ -39,15 +40,21 @@ begin
 	reg: process(clk)
     begin
         if (clk'event and clk = '1') then
-            if nRST_acc = '0' then -- Reset (quando necessario)
+            if nRST_acc = '0' or cancel = '1' then -- Reset (quando necessario)
                 temp2 <= (others => '0');
             elsif (C = '1') then -- Verifica se uma moeda foi inserida
                 if ((data_in = "000011001" or data_in = "000110010" or data_in = "001100100") and conf = '0') then
+						if(cancel = '0') then
                     temp2 <= temp1; -- Acumulamos a soma apenas para moedas validas
+						else 
+						  temp2 <= "000000000";
+						end if;
                 end if;
             end if;
         end if;
     end process reg;
 
+
     data_out <= temp2; -- Saida do valor total acumulado
+
 end rtl;

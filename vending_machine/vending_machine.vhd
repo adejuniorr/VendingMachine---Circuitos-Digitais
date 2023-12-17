@@ -115,6 +115,7 @@ type FSMTYPE is (INIT_STATE, Coin_Reception, salgado_dispensation); -- Estados d
 signal CSTATE, NSTATE : FSMTYPE; -- Sinais para estado de moeda (CoinState) e proximo estado (NextState)
 
 signal balance, price, price_reg, coins_to_return : std_logic_vector(8 downto 0); -- Sinais para valores de preco, troco, retorno de moeda, etc.
+--signal reset_balance : std_logic_vector(8 downto 0);
 
 signal price_choice_reg_EN, balance_greater, balance_equal, balance_lower: std_logic; -- Bits de controle para valores
 
@@ -284,17 +285,15 @@ begin
 	hex_display_updt : process(clk)
 	variable hundred, ten, unit : integer range 0 to 999; -- Variaveis de calculo para valor no display
 	begin
-		if (clk'event and clk = '1') then
+		if (clk'event and clk = '1') then			
 			case (CSTATE) is
-				when INIT_STATE =>		
-	
+				when INIT_STATE =>			
 --					case choice is
 --						when "001" =>
 --							display_salgado				<= "0110000" --> _ B C _ _ _ _ = 1
 --							display_dinheiro_centena 	<= "1101101" --> A B _ D E _ G = 2
 --							display_dinheiro_dezena  	<= "1011011" --> A _ C D _ F G = 5
 --							display_dinheiro_unidade 	<= "0000000" --> _ _ _ _ _ _ _ 0
-
 					
 					case choice is
 						when "001" =>
@@ -335,18 +334,28 @@ begin
 					end case;
 					
 				when Coin_Reception =>
-					if (coin_confirm_signal = '0') then
-						 display_salgado				<= converterDisplay7(0);
+					display_salgado				 <= converterDisplay7(0);
 						
-						 -- Obtendo a Centena
-						 display_dinheiro_centena   <= converterDisplay7(to_integer(unsigned(balance)) / 100);
+					 -- Obtendo a Centena
+					 display_dinheiro_centena   <= converterDisplay7(to_integer(unsigned(balance)) / 100);
 
-						 -- Obtendo a Dezena
-						 display_dinheiro_dezena    <= converterDisplay7((to_integer(unsigned(balance)) / 10) mod 10);
+					 -- Obtendo a Dezena
+					 display_dinheiro_dezena    <= converterDisplay7((to_integer(unsigned(balance)) / 10) mod 10);
 
-						 -- Obtendo a Unidade
-						 display_dinheiro_unidade   <= converterDisplay7(to_integer(unsigned(balance)) mod 10);
-					end if;
+					 -- Obtendo a Unidade
+					 display_dinheiro_unidade   <= converterDisplay7(to_integer(unsigned(balance)) mod 10);
+--					if (coin_confirm_signal = '0') then
+--						 display_salgado				 <= converterDisplay7(0);
+--						
+--						 -- Obtendo a Centena
+--						 display_dinheiro_centena   <= converterDisplay7(to_integer(unsigned(balance)) / 100);
+--
+--						 -- Obtendo a Dezena
+--						 display_dinheiro_dezena    <= converterDisplay7((to_integer(unsigned(balance)) / 10) mod 10);
+--
+--						 -- Obtendo a Unidade
+--						 display_dinheiro_unidade   <= converterDisplay7(to_integer(unsigned(balance)) mod 10);
+--					end if;
 				
 				when others =>
 			end case;
@@ -391,6 +400,7 @@ begin
 					E <= balance;
 					--balance <= "000000000";
 					P <= (others => '0');
+					--balance <= reset_balance;
 				
 					if V /= "000011001" and V /= "000110010" and V /= "001100100" and C = '1' then
 						E <= V; -- Retorna qualquer moeda invalida que fora inserida
@@ -499,6 +509,7 @@ begin
 					E <= balance;
 					--balance <= "000000000";
 					P <= (others => '0');
+					--balance <= reset_balance;
 					NSTATE <= INIT_STATE;
 				else -- Caso a compra siga adiante
 					--if (coin_confirm_signal = '0') then
@@ -510,9 +521,9 @@ begin
 						E <= V;
 					end if;
 					
-					if (balance_lower = '1') then
-						-- ...
-					end if;
+--					if (balance_lower = '1') then
+--						-- ...
+--					end if;
 			
 					if ((balance_equal = '1' or balance_greater = '1') and dispense_signal = '0') then
 				-- Seguimos para o estado de liberacao do salgado se possivel
@@ -529,6 +540,7 @@ begin
 					E <= balance;
 					--balance <= "000000000";
 					P <= (others => '0');
+					--balance <= reset_balance;
 					NSTATE <= INIT_STATE;
 				elsif (dispense_signal = '0') then -- Caso a compra siga adiante
 					--dispensation_EN <= '1'; -- Sinal para liberacao

@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "12/16/2023 21:28:57"
+// Generated on "12/17/2023 13:01:18"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    vending_machine
 // 
@@ -1406,11 +1406,15 @@ begin
 end 
 
 // clk
-always
+initial
 begin
+	repeat(588)
+	begin
+		clk = 1'b0;
+		clk = #25500 1'b1;
+		# 25500;
+	end
 	clk = 1'b0;
-	clk = #30000 1'b1;
-	#30000;
 end 
 // choice[ 2 ]
 initial
@@ -1473,17 +1477,17 @@ end
 initial
 begin
 	coin_confirm_signal = 1'b1;
-	coin_confirm_signal = #2800000 1'b0;
-	coin_confirm_signal = #80000 1'b1;
-	coin_confirm_signal = #800000 1'b0;
-	coin_confirm_signal = #80000 1'b1;
-	coin_confirm_signal = #800000 1'b0;
-	coin_confirm_signal = #80000 1'b1;
-	coin_confirm_signal = #1280000 1'b0;
+	coin_confirm_signal = #3040000 1'b0;
 	coin_confirm_signal = #80000 1'b1;
 	coin_confirm_signal = #1040000 1'b0;
 	coin_confirm_signal = #80000 1'b1;
-	coin_confirm_signal = #9040000 1'b0;
+	coin_confirm_signal = #1040000 1'b0;
+	coin_confirm_signal = #80000 1'b1;
+	coin_confirm_signal = #1040000 1'b0;
+	coin_confirm_signal = #80000 1'b1;
+	coin_confirm_signal = #800000 1'b0;
+	coin_confirm_signal = #80000 1'b1;
+	coin_confirm_signal = #8800000 1'b0;
 	coin_confirm_signal = #80000 1'b1;
 	coin_confirm_signal = #800000 1'b0;
 	coin_confirm_signal = #80000 1'b1;

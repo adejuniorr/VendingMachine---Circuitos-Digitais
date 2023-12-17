@@ -56,7 +56,7 @@ set_location_assignment PIN_L2 -to C
 set_location_assignment PIN_M2 -to cancel_purchase
 set_location_assignment PIN_M1 -to nRST
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
-set_location_assignment PIN_L1 -to clk
+set_location_assignment PIN_D12 -to clk
 set_location_assignment PIN_W12 -to choice[0]
 set_location_assignment PIN_U12 -to choice[1]
 set_location_assignment PIN_U11 -to choice[2]

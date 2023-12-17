@@ -1,0 +1,70 @@
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+# Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+# File: C:\Users\south\Documents\GitHub\VendingMachine---Circuitos-Digitais\vending_machine\OutPut\vending_machine_assignments.csv
+# Generated on: Sun Dec 17 19:41:42 2023
+
+Status,From,To,Assignment Name,Value,Enabled,Entity,Comment,Tag
+Ok,,C,Location,PIN_L2,Yes,,,
+Ok,,cancel_purchase,Location,PIN_M2,Yes,,,
+Ok,,nRST,Location,PIN_M1,Yes,,,
+Ok,,clk,Location,PIN_D12,Yes,,,
+Ok,,choice[0],Location,PIN_W12,Yes,,,
+Ok,,choice[1],Location,PIN_U12,Yes,,,
+Ok,,choice[2],Location,PIN_U11,Yes,,,
+Ok,,V_input[0],Location,PIN_L22,Yes,,,
+Ok,,V_input[1],Location,PIN_L21,Yes,,,
+Ok,,V_input[2],Location,PIN_M22,Yes,,,
+Ok,,dispense_signal,Location,PIN_R22,Yes,,,
+Ok,,coin_confirm_signal,Location,PIN_T21,Yes,,,
+Ok,,hexDisplay_centena[1],Location,PIN_G6,Yes,,,
+Ok,,hexDisplay_centena[2],Location,PIN_C2,Yes,,,
+Ok,,hexDisplay_centena[3],Location,PIN_C1,Yes,,,
+Ok,,hexDisplay_centena[4],Location,PIN_E3,Yes,,,
+Ok,,hexDisplay_centena[5],Location,PIN_E4,Yes,,,
+Ok,,hexDisplay_centena[6],Location,PIN_D3,Yes,,,
+Ok,,hexDisplay_dezena[0],Location,PIN_E1,Yes,,,
+Ok,,hexDisplay_dezena[1],Location,PIN_H6,Yes,,,
+Ok,,hexDisplay_dezena[2],Location,PIN_H5,Yes,,,
+Ok,,hexDisplay_dezena[3],Location,PIN_H4,Yes,,,
+Ok,,hexDisplay_dezena[4],Location,PIN_G3,Yes,,,
+Ok,,hexDisplay_dezena[5],Location,PIN_D2,Yes,,,
+Ok,,hexDisplay_dezena[6],Location,PIN_D1,Yes,,,
+Ok,,hexDisplay_unidade[0],Location,PIN_J2,Yes,,,
+Ok,,hexDisplay_unidade[1],Location,PIN_J1,Yes,,,
+Ok,,hexDisplay_unidade[2],Location,PIN_H2,Yes,,,
+Ok,,hexDisplay_unidade[3],Location,PIN_H1,Yes,,,
+Ok,,hexDisplay_unidade[4],Location,PIN_F2,Yes,,,
+Ok,,hexDisplay_unidade[5],Location,PIN_F1,Yes,,,
+Ok,,hexDisplay_unidade[6],Location,PIN_E2,Yes,,,
+Ok,,hexDisplay_choice[0],Location,PIN_F4,Yes,,,
+Ok,,hexDisplay_choice[1],Location,PIN_D5,Yes,,,
+Ok,,hexDisplay_choice[2],Location,PIN_D6,Yes,,,
+Ok,,hexDisplay_choice[3],Location,PIN_J4,Yes,,,
+Ok,,hexDisplay_choice[4],Location,PIN_L8,Yes,,,
+Ok,,hexDisplay_choice[5],Location,PIN_F3,Yes,,,
+Ok,,hexDisplay_choice[6],Location,PIN_D4,Yes,,,
+Ok,,hexDisplay_centena[0],Location,PIN_G5,Yes,,,
+Ok,,D1[0],Location,PIN_Y21,Yes,,,
+Ok,,D2[0],Location,PIN_Y22,Yes,,,
+Ok,,D3[0],Location,PIN_W21,Yes,,,
+Ok,,D4[0],Location,PIN_W22,Yes,,,
+Ok,,D5[0],Location,PIN_V21,Yes,,,
+Ok,,ESTQ1[0],Location,PIN_T18,Yes,,,
+Ok,,ESTQ2[0],Location,PIN_Y19,Yes,,,
+Ok,,ESTQ3[0],Location,PIN_U19,Yes,,,
+Ok,,ESTQ4[0],Location,PIN_R19,Yes,,,
+Ok,,ESTQ5[0],Location,PIN_R20,Yes,,,
+,<<new>>,<<new>>,<<new>>,,,,,

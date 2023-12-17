@@ -5,33 +5,33 @@ use ieee.numeric_std.all;
 
 entity vending_machine is
 	port(
-		nRST 					: in std_logic; -- Reset (para nova compra)
-		clk 					: in std_logic; -- Clock padrao 
-		C 						: in std_logic; -- Sensor de moedas ('1' para quando uma moeda eh inserida)
-		V_input 				: in std_logic_vector(2 downto 0); -- Entra de valores de moeda
-		choice 				: in std_logic_vector(2 downto 0); -- Escolha do salgado
-		cancel_purchase 	: in std_logic;  -- Opcao de cancelamento de compra
+		nRST : in std_logic; -- Reset (para nova compra)
+		clk : in std_logic; -- Clock padrao 
+		C : in std_logic; -- Sensor de moedas ('1' para quando uma moeda eh inserida)
+		V_input : in std_logic_vector(2 downto 0); -- Entra de valores de moeda
+		choice : in std_logic_vector(2 downto 0); -- Escolha do salgado
+		cancel_purchase : in std_logic;  -- Opcao de cancelamento de compra
 		
-		dispense_signal: in std_logic; --Entrada para confirmar o salgado escolhido
-		coin_confirm_signal: in std_logic; --Entrada para confirmar uma moeda adicionada
+		dispense_signal : in std_logic; --Entrada para confirmar o salgado escolhido
+		coin_confirm_signal : in std_logic; --Entrada para confirmar uma moeda adicionada
 		
-		hexDisplay_choice: out std_logic_vector(6 downto 0);          --Saida para o Display Opcao Salgado
-		hexDisplay_centena: out std_logic_vector(6 downto 0); --Saida para o Display Dinheiro Centena
-		hexDisplay_dezena: out std_logic_vector(6 downto 0);  --Saida para o Display Dinehrio Dezena
-		hexDisplay_unidade: out std_logic_vector(6 downto 0); --Saida para o Display Dinheiro Unidade
+		hexDisplay_choice : out std_logic_vector(6 downto 0); --Saida para o Display Opcao Salgado
+		hexDisplay_centena : out std_logic_vector(6 downto 0); --Saida para o Display Dinheiro Centena
+		hexDisplay_dezena : out std_logic_vector(6 downto 0);  --Saida para o Display Dinehrio Dezena
+		hexDisplay_unidade : out std_logic_vector(6 downto 0); --Saida para o Display Dinheiro Unidade
 		
-		P 			: out std_logic_vector(8 downto 0); -- Acumulador de moedas
-		E 			: out std_logic_vector(8 downto 0); -- Troco/Retorno de moedas
-		D1 			: out std_logic_vector(2 downto 0) := "000"; -- Sinal para salgado liberado
-		D2 			: out std_logic_vector(2 downto 0) := "000"; -- Sinal para salgado liberado
-		D3 			: out std_logic_vector(2 downto 0) := "000"; -- Sinal para salgado liberado
-		D4 			: out std_logic_vector(2 downto 0) := "000"; -- Sinal para salgado liberado
-		D5 			: out std_logic_vector(2 downto 0) := "000"; -- Sinal para salgado liberado
-		ESTQ1 		: out std_logic_vector(8 downto 0) := "000000000"; -- Aviso de quantidade em estoque
-		ESTQ2 		: out std_logic_vector(8 downto 0) := "000000000"; -- Aviso de quantidade em estoque
-		ESTQ3 		: out std_logic_vector(8 downto 0) := "000000000"; -- Aviso de quantidade em estoque
-		ESTQ4		: out std_logic_vector(8 downto 0) := "000000000"; -- Aviso de quantidade em estoque
-		ESTQ5 		: out std_logic_vector(8 downto 0) := "000000000" -- Aviso de quantidade em estoque
+		P : out std_logic_vector(8 downto 0); -- Acumulador de moedas
+		E : out std_logic_vector(8 downto 0); -- Troco/Retorno de moedas
+		D1 : out std_logic_vector(2 downto 0) := "000"; -- Sinal para salgado liberado
+		D2 : out std_logic_vector(2 downto 0) := "000"; -- Sinal para salgado liberado
+		D3 : out std_logic_vector(2 downto 0) := "000"; -- Sinal para salgado liberado
+		D4 : out std_logic_vector(2 downto 0) := "000"; -- Sinal para salgado liberado
+		D5 : out std_logic_vector(2 downto 0) := "000"; -- Sinal para salgado liberado
+		ESTQ1 : out std_logic_vector(8 downto 0) := "000000000"; -- Aviso de quantidade em estoque
+		ESTQ2 : out std_logic_vector(8 downto 0) := "000000000"; -- Aviso de quantidade em estoque
+		ESTQ3 : out std_logic_vector(8 downto 0) := "000000000"; -- Aviso de quantidade em estoque
+		ESTQ4	: out std_logic_vector(8 downto 0) := "000000000"; -- Aviso de quantidade em estoque
+		ESTQ5	: out std_logic_vector(8 downto 0) := "000000000" -- Aviso de quantidade em estoque
 	);
 end vending_machine;
 

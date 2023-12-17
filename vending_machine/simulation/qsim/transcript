@@ -16,8 +16,8 @@
 # vsim -L cycloneii_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.vending_machine_vlg_vec_tst 
 # Loading work.vending_machine_vlg_vec_tst
 # Loading work.vending_machine
-# Loading cycloneii_ver.cycloneii_lcell_ff
 # Loading cycloneii_ver.cycloneii_lcell_comb
+# Loading cycloneii_ver.cycloneii_lcell_ff
 # Loading cycloneii_ver.cycloneii_io
 # Loading cycloneii_ver.cycloneii_mux21
 # Loading cycloneii_ver.cycloneii_dffe
@@ -61,22 +61,22 @@
 # ERROR! Vector Mismatch for output port P[5] :: @time = 2880000.000 ps
 #      Expected value = x00000000
 #      Real value = 000110010
-# ERROR! Vector Mismatch for output port P[2] :: @time = 3420000.000 ps
+# ERROR! Vector Mismatch for output port P[2] :: @time = 3720000.000 ps
 #      Expected value = x00000000
 #      Real value = 001100100
-# ERROR! Vector Mismatch for output port P[6] :: @time = 3420000.000 ps
+# ERROR! Vector Mismatch for output port P[6] :: @time = 3720000.000 ps
 #      Expected value = x00000000
 #      Real value = 001100100
-# ERROR! Vector Mismatch for output port P[7] :: @time = 4620000.000 ps
+# ERROR! Vector Mismatch for output port P[7] :: @time = 3760000.000 ps
 #      Expected value = x00000000
 #      Real value = 010010110
-# ERROR! Vector Mismatch for output port P[3] :: @time = 6000000.000 ps
+# ERROR! Vector Mismatch for output port P[3] :: @time = 4620000.000 ps
 #      Expected value = x00000000
 #      Real value = 011001000
-# ERROR! Vector Mismatch for output port D[0] :: @time = 8400000.000 ps
+# ERROR! Vector Mismatch for output port D[0] :: @time = 8640000.000 ps
 #      Expected value = 000
 #      Real value = 001
-# ERROR! Vector Mismatch for output port ESTQ[0] :: @time = 8460000.000 ps
+# ERROR! Vector Mismatch for output port ESTQ[0] :: @time = 8700000.000 ps
 #      Expected value = x00000000
 #      Real value = 000000001
 #          17 mismatched vectors : Simulation failed !

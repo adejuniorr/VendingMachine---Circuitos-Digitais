@@ -34,7 +34,7 @@ entity vending_machine is
 		D 			: out std_logic_vector(2 downto 0) := "000"; -- Sinal para salgado liberado
 		ESTQ 		: out std_logic_vector(8 downto 0) := "000000000" -- Aviso de quantidade em estodo
 		
-		);
+	);
 		
 end vending_machine;
 
@@ -256,49 +256,119 @@ begin
 							temp_D <= "000"; -- sem estoque
 						end if;
 					elsif(choice_reg = "100") then -- Para o produto 4
-                    if stock_S3_reg > 0 then    
+						  if stock_S3_reg > 0 then    
 							salgado_selecionado <= 4;
-                        temp_D <= "100";
+								temp_D <= "100";
 								D <= "001";
-                        stock_S3_reg <= stock_S3_reg - 1;
-                    else 
-                        temp_D <= "000"; -- sem estoque
-                    end if;
-               elsif(choice_reg = "101") then -- Para o produto 5
-                    if stock_S4_reg > 0 then    
+								stock_S3_reg <= stock_S3_reg - 1;
+						  else 
+								temp_D <= "000"; -- sem estoque
+						  end if;
+					elsif(choice_reg = "101") then -- Para o produto 5
+						  if stock_S4_reg > 0 then    
 							salgado_selecionado <= 5;
-                        temp_D <= "101";
+								temp_D <= "101";
 								D <= "001";
-                        stock_S4_reg <= stock_S4_reg - 1;
-                    else 
-                        temp_D <= "000"; -- sem estoque
-                    end if;
-                end if;
-            else
-                --D <= "000";
-            end if;
+								stock_S4_reg <= stock_S4_reg - 1;
+						  else 
+								temp_D <= "000"; -- sem estoque
+						  end if;
+					end if;
+				else
+					 --D <= "000";
+				end if;
 			end if;
 		end if;
 	end process; --salgado_dispensation_Proc;
+	
+	hex_display_updt : process(clk)
+	variable hundred, ten, unit : integer range 0 to 999; -- Variaveis de calculo para valor no display
+	begin
+		if (clk'event and clk = '1') then
+			case (CSTATE) is
+				when INIT_STATE =>		
+	
+--					case choice is
+--						when "001" =>
+--							display_salgado				<= "0110000" --> _ B C _ _ _ _ = 1
+--							display_dinheiro_centena 	<= "1101101" --> A B _ D E _ G = 2
+--							display_dinheiro_dezena  	<= "1011011" --> A _ C D _ F G = 5
+--							display_dinheiro_unidade 	<= "0000000" --> _ _ _ _ _ _ _ 0
+
+					
+					case choice is
+						when "001" =>
+							display_salgado				<= converterDisplay7(1);
+							display_dinheiro_centena 	<= converterDisplay7(2); --Display que mostra a Centena
+							display_dinheiro_dezena  	<= converterDisplay7(5);  --Display que mostra a Dezena
+							display_dinheiro_unidade 	<= converterDisplay7(0); --Display que mostra a Unidade
+
+					  when "010" =>
+							display_salgado				<= converterDisplay7(2);
+							display_dinheiro_centena 	<= converterDisplay7(1); --Display que mostra a Centena
+							display_dinheiro_dezena  	<= converterDisplay7(5);  --Display que mostra a Dezena
+							display_dinheiro_unidade 	<= converterDisplay7(0); --Display que mostra a Unidade
+							
+					  when "011" =>
+							display_salgado				<= converterDisplay7(3);
+							display_dinheiro_centena 	<= converterDisplay7(0); --Display que mostra a Centena
+							display_dinheiro_dezena  	<= converterDisplay7(7);  --Display que mostra a Dezena
+							display_dinheiro_unidade 	<= converterDisplay7(5); --Display que mostra a Unidade
+							
+					  when "100" =>
+							display_salgado				<= converterDisplay7(4);
+							display_dinheiro_centena 	<= converterDisplay7(3); --Display que mostra a Centena
+							display_dinheiro_dezena  	<= converterDisplay7(5);  --Display que mostra a Dezena
+							display_dinheiro_unidade 	<= converterDisplay7(0); --Display que mostra a Unidade
+							
+					  when "101" =>
+							display_salgado				<= converterDisplay7(5);
+							display_dinheiro_centena 	<= converterDisplay7(2); --Display que mostra a Centena
+							display_dinheiro_dezena  	<= converterDisplay7(0);  --Display que mostra a Dezena
+							display_dinheiro_unidade 	<= converterDisplay7(0); --Display que mostra a Unidade
+							
+					  when others =>
+							display_salgado          <= "1111111"; --Desligando Display
+							display_dinheiro_centena <= "1111111"; --Desligando Display
+							display_dinheiro_dezena  <= "1111111"; --Desligando Display
+							display_dinheiro_unidade <= "1111111"; --Desligando Display
+					end case;
+					
+				when Coin_Reception =>
+					if (coin_confirm_signal = '0') then
+						 display_salgado				<= converterDisplay7(0);
+						
+						 -- Obtendo a Centena
+						 display_dinheiro_centena   <= converterDisplay7(to_integer(unsigned(balance)) / 100);
+
+						 -- Obtendo a Dezena
+						 display_dinheiro_dezena    <= converterDisplay7((to_integer(unsigned(balance)) / 10) mod 10);
+
+						 -- Obtendo a Unidade
+						 display_dinheiro_unidade   <= converterDisplay7(to_integer(unsigned(balance)) mod 10);
+					end if;
+				
+				when others =>
+			end case;
+		end if;
+	end process;
 
 	next_state : process( CSTATE, balance, C, balance_equal, balance_greater, coins_to_return)
    begin
-				if (nRST = '0') then
+		if (nRST = '0') then
 			P <= (others => '0');
-			--D <= (others => '0');
 			E <= (others => '0');
-			--ESTQ <= (others => '0');
-			end if;
-		NSTATE <= CSTATE; -- A maquina inicia com o estado de moeda (CoinState)
-		nRST_acc <= '1'; -- Reset em 1 (off)
-      price_choice_reg_EN <= '0'; -- Bit de controle de preco
-		dispensation_EN <= '0'; -- Bit de controle para salgado liberado ou nao
-		if (dispense_signal = '0') then
-		P <= (others => '0'); -- Acumulo de moedas
-		
 		end if;
-		--E <= (others => '0'); -- Retorno do troco ou de moedas invalidas
-		--ESTQ <= (others => '0'); -- Retorno de estoque de salgado
+		
+		NSTATE 		<= CSTATE;	-- Configura a alteracao do NSTATE (NextSTATE) para o estado atual CSTATE (CurrentSTATE)
+		nRST_acc 	<= '1'; 		-- Reset em 1 (off)
+      price_choice_reg_EN 	<= '0'; -- Bit de controle de preco
+		dispensation_EN 		<= '0'; -- Bit de controle para salgado liberado ou nao
+		
+		if (dispense_signal = '0') then
+			P <= (others => '0'); -- Acumulo de moedas
+		end if;
+		
 		case to_integer(unsigned(V_input)) is -- Valores-teste de entrada de V
 			 when 1 =>
 				  V <= "000000101";
@@ -318,18 +388,19 @@ begin
 		case( CSTATE ) is
 			when INIT_STATE => -- Quando no estado inicial
 				if cancel_purchase = '1' then -- Cancela a compra e retorna todas as moedas
+					E <= balance;
+					--balance <= "000000000";
 					P <= (others => '0');
 				
 					if V /= "000011001" and V /= "000110010" and V /= "001100100" and C = '1' then
 						E <= V; -- Retorna qualquer moeda invalida que fora inserida
 					end if;
 				
-					NSTATE <= INIT_STATE; -- Segue para o estado inicial
+					NSTATE <= INIT_STATE; -- Retorna para o estado inicial
 				else -- Caso a compra siga adiante
 							  
 					nRST_acc <= '0';
 					price_choice_reg_EN <= '1';
-					--E <= balance;
 					
 				case choice_reg is
 					when "001" =>
@@ -425,6 +496,9 @@ begin
 			when Coin_Reception => -- Quando no estado de recepcao de moedas
 				if cancel_purchase = '1' then -- Caso o cliente cancele
 					-- Cancela a compra e retorna ao estado inicial
+					E <= balance;
+					--balance <= "000000000";
+					P <= (others => '0');
 					NSTATE <= INIT_STATE;
 				else -- Caso a compra siga adiante
 					--if (coin_confirm_signal = '0') then
@@ -452,6 +526,8 @@ begin
 			when salgado_dispensation => -- Quando no estado de liberacao do salgado
 				if cancel_purchase = '1' then-- Caso o cliente cancele
 			-- Cancela a compra, limpa o acumulado em P e retorna ao estado inicial
+					E <= balance;
+					--balance <= "000000000";
 					P <= (others => '0');
 					NSTATE <= INIT_STATE;
 				elsif (dispense_signal = '0') then -- Caso a compra siga adiante
@@ -466,66 +542,6 @@ begin
 		end case ;
 	end process ; -- Fim do processo NSTATE (NextState)
 	
-	hex_display_updt : process(clk)
-	variable hundred, ten, unit : integer range 0 to 999; -- Variaveis de calculo para valor no display
-	begin
-		if (clk'event and clk = '1') then
-			case (CSTATE) is
-				when INIT_STATE =>
-					display_salgado          <= "1111111"; --Desligando Display
-					display_dinheiro_centena <= "1111111"; --Desligando Display
-					display_dinheiro_dezena  <= "1111111"; --Desligando Display
-					display_dinheiro_unidade <= "1111111"; --Desligando Display
-				
-					case choice_reg is
-						when "001" =>
-							display_salgado				<= converterDisplay7(1);
-							display_dinheiro_centena 	<= converterDisplay7(2); --Display que mostra a Centena
-							display_dinheiro_dezena  	<= converterDisplay7(5);  --Display que mostra a Dezena
-							display_dinheiro_unidade 	<= converterDisplay7(0); --Display que mostra a Unidade
-
-					  when "010" =>
-							display_salgado				<= converterDisplay7(2);
-							display_dinheiro_centena 	<= converterDisplay7(1); --Display que mostra a Centena
-							display_dinheiro_dezena  	<= converterDisplay7(5);  --Display que mostra a Dezena
-							display_dinheiro_unidade 	<= converterDisplay7(0); --Display que mostra a Unidade
-							
-					  when "011" =>
-							display_salgado				<= converterDisplay7(3);
-							display_dinheiro_centena 	<= converterDisplay7(0); --Display que mostra a Centena
-							display_dinheiro_dezena  	<= converterDisplay7(7);  --Display que mostra a Dezena
-							display_dinheiro_unidade 	<= converterDisplay7(5); --Display que mostra a Unidade
-							
-					  when "100" =>
-							display_salgado				<= converterDisplay7(4);
-							display_dinheiro_centena 	<= converterDisplay7(3); --Display que mostra a Centena
-							display_dinheiro_dezena  	<= converterDisplay7(5);  --Display que mostra a Dezena
-							display_dinheiro_unidade 	<= converterDisplay7(0); --Display que mostra a Unidade
-							
-					  when "101" =>
-							display_salgado				<= converterDisplay7(5);
-							display_dinheiro_centena 	<= converterDisplay7(2); --Display que mostra a Centena
-							display_dinheiro_dezena  	<= converterDisplay7(0);  --Display que mostra a Dezena
-							display_dinheiro_unidade 	<= converterDisplay7(0); --Display que mostra a Unidade
-							
-					  when others =>
-							null;
-					end case;
-					
---				when Coin_Reception =>
---					unit := (saldo_dinheiro mod 10);
---					ten := (saldo_dinheiro - unit)/10;
---					ten := (ten mod 10);
---					hundred := (saldo_dinheiro - unit)/10;
---					hundred := (hundred - ten)/10;
---				
---					display_dinheiro_centena <= converterDisplay7(hundred); --Display que mostra a Centena
---					display_dinheiro_dezena  <= converterDisplay7(ten);  --Display que mostra a Dezena
---					display_dinheiro_unidade <= converterDisplay7(unit); --Display que mostra a Unidade
-				when others =>
-			end case;
-		end if;
-	end process;
 	
 	-- Instancias para constroladores de display e manipulacao de valoes inseridos (acumulo, soma, subtracao, etc.)
 	--display : hex_controller port map(clk, nRST_acc, to_integer(unsigned(balance)), display4, display3, display2, display1);

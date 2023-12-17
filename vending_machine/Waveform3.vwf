@@ -472,26 +472,6 @@ SIGNAL("coin_confirm_signal")
 	PARENT = "";
 }
 
-GROUP("E")
-{
-	MEMBERS = "E[8]", "E[7]", "E[6]", "E[5]", "E[4]", "E[3]", "E[2]", "E[1]", "E[0]";
-}
-
-GROUP("P")
-{
-	MEMBERS = "P[8]", "P[7]", "P[6]", "P[5]", "P[4]", "P[3]", "P[2]", "P[1]", "P[0]";
-}
-
-GROUP("ESTQ")
-{
-	MEMBERS = "ESTQ[8]", "ESTQ[7]", "ESTQ[6]", "ESTQ[5]", "ESTQ[4]", "ESTQ[3]", "ESTQ[2]", "ESTQ[1]", "ESTQ[0]";
-}
-
-GROUP("V_input")
-{
-	MEMBERS = "V_input[2]", "V_input[1]", "V_input[0]";
-}
-
 SIGNAL("display_dinheiro_centena")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -810,6 +790,26 @@ SIGNAL("display_salgado[0]")
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
 	PARENT = "display_salgado";
+}
+
+GROUP("E")
+{
+	MEMBERS = "E[8]", "E[7]", "E[6]", "E[5]", "E[4]", "E[3]", "E[2]", "E[1]", "E[0]";
+}
+
+GROUP("P")
+{
+	MEMBERS = "P[8]", "P[7]", "P[6]", "P[5]", "P[4]", "P[3]", "P[2]", "P[1]", "P[0]";
+}
+
+GROUP("ESTQ")
+{
+	MEMBERS = "ESTQ[8]", "ESTQ[7]", "ESTQ[6]", "ESTQ[5]", "ESTQ[4]", "ESTQ[3]", "ESTQ[2]", "ESTQ[1]", "ESTQ[0]";
+}
+
+GROUP("V_input")
+{
+	MEMBERS = "V_input[2]", "V_input[1]", "V_input[0]";
 }
 
 TRANSITION_LIST("C")
@@ -1277,12 +1277,12 @@ TRANSITION_LIST("dispense_signal")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 8320.0;
+		LEVEL 1 FOR 8560.0;
 		LEVEL 0 FOR 80.0;
-		LEVEL 1 FOR 14480.0;
-		LEVEL 0 FOR 160.0;
-		LEVEL 1 FOR 3200.0;
-		LEVEL 0 FOR 3760.0;
+		LEVEL 1 FOR 14800.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 2400.0;
+		LEVEL 0 FOR 4080.0;
 	}
 }
 
@@ -1293,28 +1293,28 @@ TRANSITION_LIST("coin_confirm_signal")
 		REPEAT = 1;
 		LEVEL 1 FOR 2800.0;
 		LEVEL 0 FOR 80.0;
-		LEVEL 1 FOR 480.0;
+		LEVEL 1 FOR 800.0;
 		LEVEL 0 FOR 80.0;
-		LEVEL 1 FOR 1120.0;
+		LEVEL 1 FOR 800.0;
 		LEVEL 0 FOR 80.0;
 		LEVEL 1 FOR 1280.0;
 		LEVEL 0 FOR 80.0;
-		LEVEL 1 FOR 2000.0;
-		LEVEL 0 FOR 640.0;
-		LEVEL 1 FOR 9280.0;
+		LEVEL 1 FOR 1040.0;
 		LEVEL 0 FOR 80.0;
-		LEVEL 1 FOR 240.0;
+		LEVEL 1 FOR 9040.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 800.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 1120.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 1360.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 720.0;
 		LEVEL 0 FOR 80.0;
 		LEVEL 1 FOR 960.0;
 		LEVEL 0 FOR 80.0;
-		LEVEL 1 FOR 2160.0;
-		LEVEL 0 FOR 80.0;
-		LEVEL 1 FOR 800.0;
-		LEVEL 0 FOR 960.0;
-		LEVEL 1 FOR 320.0;
-		LEVEL 0 FOR 640.0;
-		LEVEL 1 FOR 1920.0;
-		LEVEL 0 FOR 3760.0;
+		LEVEL 1 FOR 4320.0;
+		LEVEL 0 FOR 4080.0;
 	}
 }
 

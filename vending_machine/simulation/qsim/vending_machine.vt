@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "12/15/2023 23:21:33"
+// Generated on "12/16/2023 21:28:57"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    vending_machine
 // 
@@ -1475,38 +1475,38 @@ begin
 	coin_confirm_signal = 1'b1;
 	coin_confirm_signal = #2800000 1'b0;
 	coin_confirm_signal = #80000 1'b1;
-	coin_confirm_signal = #480000 1'b0;
+	coin_confirm_signal = #800000 1'b0;
 	coin_confirm_signal = #80000 1'b1;
-	coin_confirm_signal = #1120000 1'b0;
+	coin_confirm_signal = #800000 1'b0;
 	coin_confirm_signal = #80000 1'b1;
 	coin_confirm_signal = #1280000 1'b0;
 	coin_confirm_signal = #80000 1'b1;
-	coin_confirm_signal = #2000000 1'b0;
-	coin_confirm_signal = #640000 1'b1;
-	coin_confirm_signal = #9280000 1'b0;
+	coin_confirm_signal = #1040000 1'b0;
 	coin_confirm_signal = #80000 1'b1;
-	coin_confirm_signal = #240000 1'b0;
+	coin_confirm_signal = #9040000 1'b0;
+	coin_confirm_signal = #80000 1'b1;
+	coin_confirm_signal = #800000 1'b0;
+	coin_confirm_signal = #80000 1'b1;
+	coin_confirm_signal = #1120000 1'b0;
+	coin_confirm_signal = #80000 1'b1;
+	coin_confirm_signal = #1360000 1'b0;
+	coin_confirm_signal = #80000 1'b1;
+	coin_confirm_signal = #720000 1'b0;
 	coin_confirm_signal = #80000 1'b1;
 	coin_confirm_signal = #960000 1'b0;
 	coin_confirm_signal = #80000 1'b1;
-	coin_confirm_signal = #2160000 1'b0;
-	coin_confirm_signal = #80000 1'b1;
-	coin_confirm_signal = #800000 1'b0;
-	coin_confirm_signal = #960000 1'b1;
-	coin_confirm_signal = #320000 1'b0;
-	coin_confirm_signal = #640000 1'b1;
-	coin_confirm_signal = #1920000 1'b0;
+	coin_confirm_signal = #4320000 1'b0;
 end 
 
 // dispense_signal
 initial
 begin
 	dispense_signal = 1'b1;
-	dispense_signal = #8320000 1'b0;
+	dispense_signal = #8560000 1'b0;
 	dispense_signal = #80000 1'b1;
-	dispense_signal = #14480000 1'b0;
-	dispense_signal = #160000 1'b1;
-	dispense_signal = #3200000 1'b0;
+	dispense_signal = #14800000 1'b0;
+	dispense_signal = #80000 1'b1;
+	dispense_signal = #2400000 1'b0;
 end 
 
 vending_machine_vlg_sample_tst tb_sample (

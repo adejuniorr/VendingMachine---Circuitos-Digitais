@@ -13,21 +13,12 @@ entity vending_machine is
 		cancel_purchase 	: in std_logic;  -- Opcao de cancelamento de compra
 		
 		dispense_signal: in std_logic; --Entrada para confirmar o salgado escolhido
-		coin_confirm_signal: in std_logic;           --Entrada para confirmar uma moeda adicionada
+		coin_confirm_signal: in std_logic; --Entrada para confirmar uma moeda adicionada
 		
---		display1 : out std_logic_vector(6 downto 0); -- Display Hexadecimal (0001)
---		display2 : out std_logic_vector(6 downto 0); -- Display Hexadecimal (0010)
---		display3 : out std_logic_vector(6 downto 0); -- Display Hexadecimal (0100)
---		display4 : out std_logic_vector(6 downto 0); -- Display Hexadecimal (1000)
-		
-		--saldo_dinheiro: buffer integer range 0 to 999 := 0; --Saldo do dinheiro colocado pelo cliente
-		
-		display_salgado: out std_logic_vector(6 downto 0);          --Saida para o Display Opcao Salgado
-		display_dinheiro_centena: out std_logic_vector(6 downto 0); --Saida para o Display Dinheiro Centena
-		display_dinheiro_dezena: out std_logic_vector(6 downto 0);  --Saida para o Display Dinehrio Dezena
-		display_dinheiro_unidade: out std_logic_vector(6 downto 0); --Saida para o Display Dinheiro Unidade
-
-		--acumulo_display: buffer integer range 0 to 999 := 0; --Dinheiro colocado pelo cliente
+		hexDisplay_choice: out std_logic_vector(6 downto 0);          --Saida para o Display Opcao Salgado
+		hexDisplay_centena: out std_logic_vector(6 downto 0); --Saida para o Display Dinheiro Centena
+		hexDisplay_dezena: out std_logic_vector(6 downto 0);  --Saida para o Display Dinehrio Dezena
+		hexDisplay_unidade: out std_logic_vector(6 downto 0); --Saida para o Display Dinheiro Unidade
 		
 		P 			: out std_logic_vector(8 downto 0); -- Acumulador de moedas
 		E 			: out std_logic_vector(8 downto 0); -- Troco/Retorno de moedas
@@ -36,35 +27,20 @@ entity vending_machine is
 		D3 			: out std_logic_vector(2 downto 0) := "000"; -- Sinal para salgado liberado
 		D4 			: out std_logic_vector(2 downto 0) := "000"; -- Sinal para salgado liberado
 		D5 			: out std_logic_vector(2 downto 0) := "000"; -- Sinal para salgado liberado
-		ESTQ1 		: out std_logic_vector(8 downto 0) := "000000000" -- Aviso de quantidade em estoque
-		ESTQ2 		: out std_logic_vector(8 downto 0) := "000000000" -- Aviso de quantidade em estoque
-		ESTQ3 		: out std_logic_vector(8 downto 0) := "000000000" -- Aviso de quantidade em estoque
-		ESTQ4		: out std_logic_vector(8 downto 0) := "000000000" -- Aviso de quantidade em estoque
+		ESTQ1 		: out std_logic_vector(8 downto 0) := "000000000"; -- Aviso de quantidade em estoque
+		ESTQ2 		: out std_logic_vector(8 downto 0) := "000000000"; -- Aviso de quantidade em estoque
+		ESTQ3 		: out std_logic_vector(8 downto 0) := "000000000"; -- Aviso de quantidade em estoque
+		ESTQ4		: out std_logic_vector(8 downto 0) := "000000000"; -- Aviso de quantidade em estoque
 		ESTQ5 		: out std_logic_vector(8 downto 0) := "000000000" -- Aviso de quantidade em estoque
-		
 	);
-		
 end vending_machine;
 
 architecture rtl of vending_machine is
-constant S0 : std_logic_vector(8 downto 0) := "011111010"; -- Preço da escolha 1 (250)
-constant S1 : std_logic_vector(8 downto 0) := "010010110"; -- Preço da escolha 2 (150)
-constant S2 : std_logic_vector(8 downto 0) := "001001011"; -- Preço da escolha 3 (75)
-constant S3 : std_logic_vector(8 downto 0) := "101011110"; -- Preço da escolha 4 (350)
-constant S4 : std_logic_vector(8 downto 0) := "011001000"; -- Preço da escolha 5 (200)
-  
---	component hex_controller is -- Controlador para saida de display
---	port (
---		CLOCK 	: in std_logic; -- Clock de entrada
---		RESET_N	: in std_logic; -- Reset
---		I_VALUE 	: in integer range 0 to 9999; -- Valor de saida
---		
---		HEX0 : out std_logic_vector(6 downto 0); -- Saida 1
---		HEX1 : out std_logic_vector(6 downto 0); -- Saida 2
---		HEX2 : out std_logic_vector(6 downto 0); -- Saida 3
---		HEX3 : out std_logic_vector(6 downto 0)  -- Saida 4
---	);
---	end component;
+	constant S0 : std_logic_vector(8 downto 0) := "011111010"; -- Preço da escolha 1 (250)
+	constant S1 : std_logic_vector(8 downto 0) := "010010110"; -- Preço da escolha 2 (150)
+	constant S2 : std_logic_vector(8 downto 0) := "001001011"; -- Preço da escolha 3 (75)
+	constant S3 : std_logic_vector(8 downto 0) := "101011110"; -- Preço da escolha 4 (350)
+	constant S4 : std_logic_vector(8 downto 0) := "011001000"; -- Preço da escolha 5 (200)
 
 	component accumulator8 is -- Acumulador de 8 bits
 	port(
@@ -93,7 +69,6 @@ constant S4 : std_logic_vector(8 downto 0) := "011001000"; -- Preço da escolha 
 		a 		: in std_logic_vector(8 downto 0); -- Operando 1
 		b 		: in std_logic_vector(8 downto 0); -- Operando 2
 		result: out std_logic_vector(8 downto 0) -- Resultado final
-
 	);
 	end component;
 
@@ -119,51 +94,47 @@ constant S4 : std_logic_vector(8 downto 0) := "011001000"; -- Preço da escolha 
 	);
 	end component;
 
-type FSMTYPE is (INIT_STATE, Coin_Reception, salgado_dispensation); -- Estados da Maquina
+	type FSMTYPE is (INIT_STATE, Coin_Reception, salgado_dispensation); -- Estados da Maquina
 
-signal CSTATE, NSTATE : FSMTYPE; -- Sinais para estado de moeda (CoinState) e proximo estado (NextState)
+	signal CSTATE, NSTATE : FSMTYPE; -- Sinais para estado de moeda (CoinState) e proximo estado (NextState)
 
-signal balance, price, price_reg, coins_to_return : std_logic_vector(8 downto 0); -- Sinais para valores de preco, troco, retorno de moeda, etc.
---signal reset_balance : std_logic_vector(8 downto 0);
+	signal balance, price, price_reg, coins_to_return : std_logic_vector(8 downto 0); -- Sinais para valores de preco, troco, retorno de moeda, etc.
 
-signal price_choice_reg_EN, balance_greater, balance_equal, balance_lower: std_logic; -- Bits de controle para valores
+	signal price_choice_reg_EN, balance_greater, balance_equal, balance_lower: std_logic; -- Bits de controle para valores
 
-signal nRST_acc : std_logic; -- Reset
-signal choice_reg : std_logic_vector(2 downto 0); -- Escolha do salgado
-signal unidade_reg : integer range 0 to 9999 := 0; -- Unidades de salgado
-signal stock_S0_reg, stock_S1_reg, stock_S2_reg, stock_S3_reg, stock_S4_reg, stock_S5_reg : integer := 1; -- Estoque total de cada salgado na maquina (definido pelo desenvolvedor)
+	signal nRST_acc : std_logic; -- Reset
+	signal choice_reg : std_logic_vector(2 downto 0); -- Escolha do salgado
+	signal unidade_reg : integer range 0 to 9999 := 0; -- Unidades de salgado
+	signal stock_S0_reg, stock_S1_reg, stock_S2_reg, stock_S3_reg, stock_S4_reg, stock_S5_reg : integer := 1; -- Estoque total de cada salgado na maquina (definido pelo desenvolvedor)
 
-signal V : STD_LOGIC_VECTOR (8 downto 0); -- Entrada de valor de moeda
-signal c_out : std_logic; -- Bit de controle para saida de moeda
-signal c_in : std_logic; -- Bit de controle para entrada de moeda
+	signal V : STD_LOGIC_VECTOR (8 downto 0); -- Entrada de valor de moeda
+	signal c_out : std_logic; -- Bit de controle para saida de moeda
+	signal c_in : std_logic; -- Bit de controle para entrada de moeda
 
-signal dispensation_EN : std_logic; -- Bit de controle para liberacao de salgado
-signal temp_D : std_logic_vector(2 downto 0); -- Saida de determinado produto (controlador 1)
-signal temp_D2 : std_logic_vector(2 downto 0); -- Saida de determinado produto (controlador 2)
-signal E_temp : std_logic_vector(8 downto 0); -- Troco temporario (Exchange)
+	signal dispensation_EN : std_logic; -- Bit de controle para liberacao de salgado
+	
+	signal salgado_selecionado: integer range 1 to 6 := 1; --Salgado selecionado pelo cliente
 
-signal salgado_selecionado: integer range 1 to 6 := 1; --Salgado selecionado pelo cliente
-
---Funcao para converter Numero Inteiro para Vetor de Saida do Display de 7 seg
-	function converterDisplay7 (numero: integer) return std_logic_vector is --Funcao recebe um numero inteiro
-		variable saida: std_logic_vector(6 downto 0); --Vetor de 7 bits para saida do Display
+	--Funcao para converter Numero Inteiro para Vetor de Saida do Display de 7 seg
+	function intToSevenSeg (numero: integer) return std_logic_vector is --Funcao recebe um numero inteiro
+		variable bin_output: std_logic_vector(6 downto 0); --Vetor de 7 bits para saida do Display
+		
 	begin --Inicio da Funcao
 		case (numero) is
-			when 0 => saida := "1000000"; --Saida recebe o numero 0 na Cod. do Display de 7 Seg
-			when 1 => saida := "1111001"; --Saida recebe o numero 1 na Cod. do Display de 7 Seg
-			when 2 => saida := "0100100"; --Saida recebe o numero 2 na Cod. do Display de 7 Seg
-			when 3 => saida := "0110000"; --Saida recebe o numero 3 na Cod. do Display de 7 Seg
-			when 4 => saida := "0011001"; --Saida recebe o numero 4 na Cod. do Display de 7 Seg
-			when 5 => saida := "0010010"; --Saida recebe o numero 5 na Cod. do Display de 7 Seg
-			when 6 => saida := "0000010"; --Saida recebe o numero 6 na Cod. do Display de 7 Seg
-			when 7 => saida := "1111000"; --Saida recebe o numero 7 na Cod. do Display de 7 Seg
-			when 8 => saida := "0000000"; --Saida recebe o numero 8 na Cod. do Display de 7 Seg		   
-			when 9 => saida := "0010000"; --Saida recebe o numero 9 na Cod. do Display de 7 Seg       
+			when 0 => bin_output := "1000000"; --Saida recebe o numero 0 na Cod. do Display de 7 Seg
+			when 1 => bin_output := "1111001"; --Saida recebe o numero 1 na Cod. do Display de 7 Seg
+			when 2 => bin_output := "0100100"; --Saida recebe o numero 2 na Cod. do Display de 7 Seg
+			when 3 => bin_output := "0110000"; --Saida recebe o numero 3 na Cod. do Display de 7 Seg
+			when 4 => bin_output := "0011001"; --Saida recebe o numero 4 na Cod. do Display de 7 Seg
+			when 5 => bin_output := "0010010"; --Saida recebe o numero 5 na Cod. do Display de 7 Seg
+			when 6 => bin_output := "0000010"; --Saida recebe o numero 6 na Cod. do Display de 7 Seg
+			when 7 => bin_output := "1111000"; --Saida recebe o numero 7 na Cod. do Display de 7 Seg
+			when 8 => bin_output := "0000000"; --Saida recebe o numero 8 na Cod. do Display de 7 Seg		   
+			when 9 => bin_output := "0010000"; --Saida recebe o numero 9 na Cod. do Display de 7 Seg       
 			when others =>
 		end case;
-	return saida; --Retornando o vetor de Saida
-	end converterDisplay7; --Fim da funcao
-
+	return bin_output; --Retornando o vetor de Saida
+	end intToSevenSeg; --Fim da funcao
 
 begin
 
@@ -181,10 +152,6 @@ begin
 	begin
 		if (CLK'event and CLK = '1') then
 			if (nRST = '0') then
-			--P <= (others => '0');
-			--D <= (others => '0');
-			--E <= (others => '0');
-			--ESTQ <= (others => '0');
 				CSTATE <= INIT_STATE;
 			else
 				CSTATE <= NSTATE;
@@ -196,13 +163,12 @@ begin
 	begin
 		if (CLK'event and CLK = '1') then
 			if (nRST = '0') then
-			--P <= (others => '0');
 			D1 <= (others => '0'); -- Sinal para saida de salgado (incialmente zerado)
 			D2 <= (others => '0'); -- Sinal para saida de salgado (incialmente zerado)
 			D3 <= (others => '0'); -- Sinal para saida de salgado (incialmente zerado)
 			D4 <= (others => '0'); -- Sinal para saida de salgado (incialmente zerado)
 			D5 <= (others => '0'); -- Sinal para saida de salgado (incialmente zerado)
-			--E <= (others => '0');
+			
 			ESTQ1 <= (others => '0'); -- Sinal de estoque (inicialmente 0 - tem salgado pra vender)
 			ESTQ2 <= (others => '0'); -- Sinal de estoque (inicialmente 0 - tem salgado pra vender)
 			ESTQ3 <= (others => '0'); -- Sinal de estoque (inicialmente 0 - tem salgado pra vender)
@@ -241,140 +207,100 @@ begin
 							 -- Permanece no estado inicial
 							 ESTQ5 <= "000000001";
 						end if;
-				  -- Repete para as outras escolhas
 				  when others =>
 						null;
 				end case;
+				
 				if (dispensation_EN = '1') then
 					if(choice_reg = "001") then -- Para o produto 1
 						if stock_S0_reg > 0 then 
 							salgado_selecionado <= 1;
-							temp_D <= "001";
 							D1 <= "001";
 							stock_S0_reg <= stock_S0_reg - 1;
-						else 
-							temp_D <= "000"; -- sem estoque
                   end if; 
 					elsif(choice_reg = "010") then -- Para o produto 2
 						if stock_S1_reg > 0 then
 							salgado_selecionado <= 2;
-							temp_D <= "010";
 							D2 <= "001";
                      stock_S1_reg <= stock_S1_reg - 1;
-						else 
-							temp_D <= "000"; -- sem estoque
 						end if;
 					elsif(choice_reg = "011") then -- Para o produto 3
 						if stock_S2_reg > 0 then
 							salgado_selecionado <= 3;
-							temp_D <= "011";
 							D3 <= "001";
 							stock_S2_reg <= stock_S2_reg - 1;
-						else 
-							temp_D <= "000"; -- sem estoque
 						end if;
 					elsif(choice_reg = "100") then -- Para o produto 4
-						  if stock_S3_reg > 0 then    
+						if stock_S3_reg > 0 then    
 							salgado_selecionado <= 4;
-								temp_D <= "100";
-								D4 <= "001";
-								stock_S3_reg <= stock_S3_reg - 1;
-						  else 
-								temp_D <= "000"; -- sem estoque
+							D4 <= "001";
+							stock_S3_reg <= stock_S3_reg - 1;
 						  end if;
 					elsif(choice_reg = "101") then -- Para o produto 5
-						  if stock_S4_reg > 0 then    
+						if stock_S4_reg > 0 then    
 							salgado_selecionado <= 5;
-								temp_D <= "101";
-								D5 <= "001";
-								stock_S4_reg <= stock_S4_reg - 1;
-						  else 
-								temp_D <= "000"; -- sem estoque
-						  end if;
+							D5 <= "001";
+							stock_S4_reg <= stock_S4_reg - 1;
+						end if;
 					end if;
-				else
-					 --D <= "000";
 				end if;
 			end if;
 		end if;
 	end process; --salgado_dispensation_Proc;
-
 	
 	hex_display_updt : process(clk)
 	variable hundred, ten, unit : integer range 0 to 999; -- Variaveis de calculo para valor no display
 	begin
 		if (clk'event and clk = '1') then			
 			case (CSTATE) is
-				when INIT_STATE =>			
---					case choice is
---						when "001" =>
---							display_salgado				<= "0110000" --> _ B C _ _ _ _ = 1
---							display_dinheiro_centena 	<= "1101101" --> A B _ D E _ G = 2
---							display_dinheiro_dezena  	<= "1011011" --> A _ C D _ F G = 5
---							display_dinheiro_unidade 	<= "0000000" --> _ _ _ _ _ _ _ 0
-					
+				when INIT_STATE =>					
 					case choice is
 						when "001" =>
-							display_salgado				<= converterDisplay7(1);
-							display_dinheiro_centena 	<= converterDisplay7(2); --Display que mostra a Centena
-							display_dinheiro_dezena  	<= converterDisplay7(5);  --Display que mostra a Dezena
-							display_dinheiro_unidade 	<= converterDisplay7(0); --Display que mostra a Unidade
+							hexDisplay_choice		<= intToSevenSeg(1);
+							hexDisplay_centena 	<= intToSevenSeg(2); --Display que mostra a Centena
+							hexDisplay_dezena  	<= intToSevenSeg(5);  --Display que mostra a Dezena
+							hexDisplay_unidade 	<= intToSevenSeg(0); --Display que mostra a Unidade
 
 					  when "010" =>
-							display_salgado				<= converterDisplay7(2);
-							display_dinheiro_centena 	<= converterDisplay7(1); --Display que mostra a Centena
-							display_dinheiro_dezena  	<= converterDisplay7(5);  --Display que mostra a Dezena
-							display_dinheiro_unidade 	<= converterDisplay7(0); --Display que mostra a Unidade
+							hexDisplay_choice		<= intToSevenSeg(2);
+							hexDisplay_centena 	<= intToSevenSeg(1); --Display que mostra a Centena
+							hexDisplay_dezena  	<= intToSevenSeg(5);  --Display que mostra a Dezena
+							hexDisplay_unidade 	<= intToSevenSeg(0); --Display que mostra a Unidade
 							
 					  when "011" =>
-							display_salgado				<= converterDisplay7(3);
-							display_dinheiro_centena 	<= converterDisplay7(0); --Display que mostra a Centena
-							display_dinheiro_dezena  	<= converterDisplay7(7);  --Display que mostra a Dezena
-							display_dinheiro_unidade 	<= converterDisplay7(5); --Display que mostra a Unidade
+							hexDisplay_choice		<= intToSevenSeg(3);
+							hexDisplay_centena 	<= intToSevenSeg(0); --Display que mostra a Centena
+							hexDisplay_dezena  	<= intToSevenSeg(7);  --Display que mostra a Dezena
+							hexDisplay_unidade 	<= intToSevenSeg(5); --Display que mostra a Unidade
 							
 					  when "100" =>
-							display_salgado				<= converterDisplay7(4);
-							display_dinheiro_centena 	<= converterDisplay7(3); --Display que mostra a Centena
-							display_dinheiro_dezena  	<= converterDisplay7(5);  --Display que mostra a Dezena
-							display_dinheiro_unidade 	<= converterDisplay7(0); --Display que mostra a Unidade
+							hexDisplay_choice		<= intToSevenSeg(4);
+							hexDisplay_centena 	<= intToSevenSeg(3); --Display que mostra a Centena
+							hexDisplay_dezena  	<= intToSevenSeg(5);  --Display que mostra a Dezena
+							hexDisplay_unidade 	<= intToSevenSeg(0); --Display que mostra a Unidade
 							
 					  when "101" =>
-							display_salgado				<= converterDisplay7(5);
-							display_dinheiro_centena 	<= converterDisplay7(2); --Display que mostra a Centena
-							display_dinheiro_dezena  	<= converterDisplay7(0);  --Display que mostra a Dezena
-							display_dinheiro_unidade 	<= converterDisplay7(0); --Display que mostra a Unidade
+							hexDisplay_choice		<= intToSevenSeg(5);
+							hexDisplay_centena 	<= intToSevenSeg(2); --Display que mostra a Centena
+							hexDisplay_dezena  	<= intToSevenSeg(0);  --Display que mostra a Dezena
+							hexDisplay_unidade 	<= intToSevenSeg(0); --Display que mostra a Unidade
 							
 					  when others =>
-							display_salgado          <= "1111111"; --Desligando Display
-							display_dinheiro_centena <= "1111111"; --Desligando Display
-							display_dinheiro_dezena  <= "1111111"; --Desligando Display
-							display_dinheiro_unidade <= "1111111"; --Desligando Display
+							hexDisplay_choice   <= "1111111"; --Desligando Display
+							hexDisplay_centena <= "1111111"; --Desligando Display
+							hexDisplay_dezena  <= "1111111"; --Desligando Display
+							hexDisplay_unidade <= "1111111"; --Desligando Display
 					end case;
 					
 				when Coin_Reception =>
-					display_salgado				 <= converterDisplay7(0);
+					hexDisplay_choice		<= intToSevenSeg(0);
 						
-					 -- Obtendo a Centena
-					 display_dinheiro_centena   <= converterDisplay7(to_integer(unsigned(balance)) / 100);
-
-					 -- Obtendo a Dezena
-					 display_dinheiro_dezena    <= converterDisplay7((to_integer(unsigned(balance)) / 10) mod 10);
-
-					 -- Obtendo a Unidade
-					 display_dinheiro_unidade   <= converterDisplay7(to_integer(unsigned(balance)) mod 10);
---					if (coin_confirm_signal = '0') then
---						 display_salgado				 <= converterDisplay7(0);
---						
---						 -- Obtendo a Centena
---						 display_dinheiro_centena   <= converterDisplay7(to_integer(unsigned(balance)) / 100);
---
---						 -- Obtendo a Dezena
---						 display_dinheiro_dezena    <= converterDisplay7((to_integer(unsigned(balance)) / 10) mod 10);
---
---						 -- Obtendo a Unidade
---						 display_dinheiro_unidade   <= converterDisplay7(to_integer(unsigned(balance)) mod 10);
---					end if;
-				
+					-- Obtendo a Centena
+					hexDisplay_centena  <= intToSevenSeg(to_integer(unsigned(balance)) / 100);
+					-- Obtendo a Dezena
+					hexDisplay_dezena   <= intToSevenSeg((to_integer(unsigned(balance)) / 10) mod 10);
+					-- Obtendo a Unidade
+					hexDisplay_unidade  <= intToSevenSeg(to_integer(unsigned(balance)) mod 10);
 				when others =>
 			end case;
 		end if;
@@ -414,11 +340,9 @@ begin
 
 		case( CSTATE ) is
 			when INIT_STATE => -- Quando no estado inicial
-				if cancel_purchase = '1' then -- Cancela a compra e retorna todas as moedas
+				if cancel_purchase = '1' then -- Cancela a compra e reseta valores
 					E <= balance;
-					--balance <= "000000000";
 					P <= (others => '0');
-					--balance <= reset_balance;
 				
 					if V /= "000011001" and V /= "000110010" and V /= "001100100" and C = '1' then
 						E <= V; -- Retorna qualquer moeda invalida que fora inserida
@@ -435,7 +359,6 @@ begin
 						if stock_S0_reg <= 0  then
 							 -- Sem estoque pro produto 1
 							 -- Permanece no estado inicial
-							 --ESTQ <= "000000001";
 							 NSTATE <= INIT_STATE;
 						else
 							nRST_acc <= '1';
@@ -447,7 +370,6 @@ begin
 						if stock_S1_reg <= 0  then
 							 -- Sem estoque pro produto 2
 							 -- Permanece no estado inicial
-							 --ESTQ <= "000000001";
 							 NSTATE <= INIT_STATE;
 						else
 							nRST_acc <= '1';
@@ -459,7 +381,6 @@ begin
 						if stock_S2_reg <= 0  then
 							 -- Sem estoque pro produto 3
 							 -- Permanece no estado inicial
-							 --ESTQ <= "000000001";
 							 NSTATE <= INIT_STATE;
 						else
 							nRST_acc <= '1';
@@ -471,7 +392,6 @@ begin
 						if stock_S3_reg <= 0  then
 							 -- Sem estoque pro produto 4
 							 -- Permanece no estado inicial
-							 --ESTQ <= "000000001";
 							 NSTATE <= INIT_STATE;
 						else
 							nRST_acc <= '1';
@@ -483,7 +403,6 @@ begin
 						if stock_S4_reg <= 0  then
 							 -- Sem estoque pro produto 5
 							 -- Permanece no estado inicial
-							 --ESTQ <= "000000001";
 							 NSTATE <= INIT_STATE;
 						else
 							nRST_acc <= '1';
@@ -491,7 +410,6 @@ begin
 							E <= balance;
 							NSTATE <= Coin_Reception;
 						end if;
-				  -- Repete para as outras escolhas
 				  when others =>
 						null;
 				end case;
@@ -523,28 +441,20 @@ begin
  
 			when Coin_Reception => -- Quando no estado de recepcao de moedas
 				if cancel_purchase = '1' then -- Caso o cliente cancele
-					-- Cancela a compra e retorna ao estado inicial
+					-- Cancela a compra, reseta os valores e retorna ao estado inicial
 					E <= balance;
-					--balance <= "000000000";
 					P <= (others => '0');
-					--balance <= reset_balance;
 					NSTATE <= INIT_STATE;
 				else -- Caso a compra siga adiante
-					--if (coin_confirm_signal = '0') then
-						P <= balance; -- Acumulamos os valores de moeda em P
-					--end if;
+					P <= balance; -- Acumulamos os valores de moeda em P
 				
 					if V /= "000011001" and V /= "000110010" and V /= "001100100" then
 					-- Retornamos ao usuario qualquer moeda invalida
 						E <= V;
 					end if;
-					
---					if (balance_lower = '1') then
---						-- ...
---					end if;
 			
 					if ((balance_equal = '1' or balance_greater = '1') and dispense_signal = '0') then
-				-- Seguimos para o estado de liberacao do salgado se possivel
+					-- Se o acumulo de moedas for igual ou maior que o preco do salgado e houver o sinal para liberacao:
 						if cancel_purchase = '0' then
 							dispensation_EN <= '1';
 						end if;
@@ -554,30 +464,22 @@ begin
 			
 			when salgado_dispensation => -- Quando no estado de liberacao do salgado
 				if cancel_purchase = '1' then-- Caso o cliente cancele
-			-- Cancela a compra, limpa o acumulado em P e retorna ao estado inicial
+				-- Cancela a compra, limpa o acumulado em P e retorna ao estado inicial
 					E <= balance;
-					--balance <= "000000000";
 					P <= (others => '0');
-					--balance <= (others => '0');
 					NSTATE <= INIT_STATE;
 				elsif (dispense_signal = '0') then -- Caso a compra siga adiante
-					--dispensation_EN <= '1'; -- Sinal para liberacao
 					E <= coins_to_return; -- Troco
 					
 					nRST_acc <= '0'; -- Reset da compra
 					NSTATE <= INIT_STATE; -- Volta ao estado inicial
 				end if;
-				 
 			when others => -- Qualquer outro estado nao estara configurado para a maquina
 		end case ;
 	end process ; -- Fim do processo NSTATE (NextState)
 	
 	
 	-- Instancias para constroladores de display e manipulacao de valoes inseridos (acumulo, soma, subtracao, etc.)
-	--display : hex_controller port map(clk, nRST_acc, to_integer(unsigned(balance)), display4, display3, display2, display1);
-	
-	--display : hex_controller port map(clk, nRST_acc, to_integer(unsigned(000000101)), display4, display3, display2, display1);
-	
 	mux : mux21 port map(S0, S1, s2, s3, s4, choice, price);
 	
 	accumulator : accumulator8 port map (clk, nRST_acc, C, V, balance, coin_confirm_signal, cancel_purchase);

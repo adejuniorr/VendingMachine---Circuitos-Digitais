@@ -3,32 +3,32 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'clk'
-Slack : -19.613
-TNS   : -1808.321
+Slack : -17.645
+TNS   : -1790.305
 
 Type  : Slow Model Setup 'cancel_purchase'
-Slack : -6.048
-TNS   : -56.946
+Slack : -4.874
+TNS   : -56.532
 
 Type  : Slow Model Setup 'choice[0]'
-Slack : -0.291
-TNS   : -0.501
+Slack : -0.416
+TNS   : -0.603
 
 Type  : Slow Model Hold 'cancel_purchase'
-Slack : -1.526
-TNS   : -21.006
+Slack : -1.514
+TNS   : -19.338
 
 Type  : Slow Model Hold 'choice[0]'
-Slack : -0.815
-TNS   : -5.383
+Slack : -0.632
+TNS   : -3.845
 
 Type  : Slow Model Hold 'clk'
-Slack : 0.445
+Slack : 0.166
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'clk'
 Slack : -1.631
-TNS   : -260.695
+TNS   : -270.471
 
 Type  : Slow Model Minimum Pulse Width 'cancel_purchase'
 Slack : -1.631
@@ -39,32 +39,32 @@ Slack : -1.631
 TNS   : -1.631
 
 Type  : Fast Model Setup 'clk'
-Slack : -6.715
-TNS   : -607.623
+Slack : -5.911
+TNS   : -597.159
 
 Type  : Fast Model Setup 'cancel_purchase'
-Slack : -1.396
-TNS   : -11.803
+Slack : -1.030
+TNS   : -8.453
 
 Type  : Fast Model Setup 'choice[0]'
-Slack : 0.680
+Slack : 0.546
 TNS   : 0.000
 
 Type  : Fast Model Hold 'cancel_purchase'
-Slack : -1.057
-TNS   : -17.735
+Slack : -1.068
+TNS   : -17.408
 
 Type  : Fast Model Hold 'choice[0]'
-Slack : -0.685
-TNS   : -5.230
+Slack : -0.660
+TNS   : -4.609
 
 Type  : Fast Model Hold 'clk'
-Slack : 0.156
-TNS   : 0.000
+Slack : -0.460
+TNS   : -1.301
 
 Type  : Fast Model Minimum Pulse Width 'clk'
 Slack : -1.380
-TNS   : -213.380
+TNS   : -221.380
 
 Type  : Fast Model Minimum Pulse Width 'cancel_purchase'
 Slack : -1.380

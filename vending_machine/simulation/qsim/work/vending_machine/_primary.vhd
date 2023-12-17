@@ -10,13 +10,21 @@ entity vending_machine is
         cancel_purchase : in     vl_logic;
         dispense_signal : in     vl_logic;
         coin_confirm_signal: in     vl_logic;
-        display_salgado : out    vl_logic_vector(6 downto 0);
-        display_dinheiro_centena: out    vl_logic_vector(6 downto 0);
-        display_dinheiro_dezena: out    vl_logic_vector(6 downto 0);
-        display_dinheiro_unidade: out    vl_logic_vector(6 downto 0);
+        hexDisplay_choice: out    vl_logic_vector(6 downto 0);
+        hexDisplay_centena: out    vl_logic_vector(6 downto 0);
+        hexDisplay_dezena: out    vl_logic_vector(6 downto 0);
+        hexDisplay_unidade: out    vl_logic_vector(6 downto 0);
         P               : out    vl_logic_vector(8 downto 0);
         E               : out    vl_logic_vector(8 downto 0);
-        D               : out    vl_logic_vector(2 downto 0);
-        ESTQ            : out    vl_logic_vector(8 downto 0)
+        D1              : out    vl_logic_vector(2 downto 0);
+        D2              : out    vl_logic_vector(2 downto 0);
+        D3              : out    vl_logic_vector(2 downto 0);
+        D4              : out    vl_logic_vector(2 downto 0);
+        D5              : out    vl_logic_vector(2 downto 0);
+        ESTQ1           : out    vl_logic_vector(8 downto 0);
+        ESTQ2           : out    vl_logic_vector(8 downto 0);
+        ESTQ3           : out    vl_logic_vector(8 downto 0);
+        ESTQ4           : out    vl_logic_vector(8 downto 0);
+        ESTQ5           : out    vl_logic_vector(8 downto 0)
     );
 end vending_machine;

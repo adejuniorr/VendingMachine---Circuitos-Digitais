@@ -70,12 +70,9 @@
 # ERROR! Vector Mismatch for output port P[7] :: @time = 5355000.000 ps
 #      Expected value = x00000000
 #      Real value = 010010110
-# ERROR! Vector Mismatch for output port D[0] :: @time = 23511000.000 ps
-#      Expected value = 000
-#      Real value = 001
-# ERROR! Vector Mismatch for output port ESTQ[0] :: @time = 24964500.000 ps
-#      Expected value = 000000000
-#      Real value = 000000001
-#          16 mismatched vectors : Simulation failed !
-# ** Note: $finish    : vending_machine.vt(1354)
+# ERROR! Vector Mismatch for output port P[3] :: @time = 6426000.000 ps
+#      Expected value = x00000000
+#      Real value = 011001000
+#          15 mismatched vectors : Simulation failed !
+# ** Note: $finish    : vending_machine.vt(2243)
 #    Time: 30 us  Iteration: 0  Instance: /vending_machine_vlg_vec_tst/tb_out
